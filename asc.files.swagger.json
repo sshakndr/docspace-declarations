@@ -467,17 +467,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReference<System.Int32>"
+                  "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReference"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReference<System.Int32>"
+                  "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReference"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReference<System.Int32>"
+                  "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReference"
                 }
               }
             }
@@ -1700,22 +1700,8 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
           }
         },
-        "security": [
-          {
-            "asc_auth_key": [
-              "read",
-              "write"
-            ]
-          }
-        ],
         "x-shortName": "Get primary external link"
       }
     },
@@ -3354,22 +3340,8 @@
                 }
               }
             }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
           }
         },
-        "security": [
-          {
-            "asc_auth_key": [
-              "read",
-              "write"
-            ]
-          }
-        ],
         "x-shortName": "Get primary external link"
       }
     },
@@ -4942,6 +4914,77 @@
           }
         ],
         "x-shortName": "Check files and folders for conflicts"
+      }
+    },
+    "/api/2.0/files/fileops/duplicate": {
+      "put": {
+        "tags": [
+          "Files / Operations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.RequestDto.DuplicateRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.RequestDto.DuplicateRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.RequestDto.DuplicateRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "asc_auth_key": [
+              "read",
+              "write"
+            ]
+          }
+        ]
       }
     },
     "/api/2.0/files/fileops/checkdestfolder": {
@@ -7065,54 +7108,6 @@
         "x-shortName": "Upload an image for room logo"
       }
     },
-    "/api/2.0/files/rooms/accept": {
-      "post": {
-        "tags": [
-          "Files / Rooms"
-        ],
-        "summary": "Accepts an invitation to a room via an external link.",
-        "requestBody": {
-          "description": "Request parameters for accepting invitations",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.RequestDto.AcceptInvitationDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.RequestDto.AcceptInvitationDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.RequestDto.AcceptInvitationDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "security": [
-          {
-            "asc_auth_key": [
-              "read",
-              "write"
-            ]
-          }
-        ],
-        "x-shortName": "Accept an invitation"
-      }
-    },
     "/api/2.0/files/rooms/{id}/indexexport": {
       "post": {
         "tags": [
@@ -9031,18 +9026,6 @@
         },
         "additionalProperties": false
       },
-      "ASC.Files.Core.ApiModels.RequestDto.AcceptInvitationDto": {
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "Link key",
-            "nullable": true,
-            "example": "some text"
-          }
-        },
-        "additionalProperties": false
-      },
       "ASC.Files.Core.ApiModels.RequestDto.ArchiveRoomRequestDto": {
         "type": "object",
         "properties": {
@@ -9318,6 +9301,9 @@
             "description": "Password",
             "nullable": true,
             "example": "some text"
+          },
+          "toForm": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -9579,6 +9565,22 @@
         },
         "additionalProperties": false
       },
+      "ASC.Files.Core.ApiModels.RequestDto.DuplicateRequestDto": {
+        "type": "object",
+        "properties": {
+          "folderIds": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "fileIds": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ASC.Files.Core.ApiModels.RequestDto.FileBaseBatchRequestDto": {
         "type": "object",
         "properties": {
@@ -9644,6 +9646,13 @@
           "path": {
             "type": "string",
             "description": "The file name or relative path for the formula editor",
+            "nullable": true,
+            "example": "some text"
+          },
+          "link": {
+            "type": "string",
+            "description": "Link to file",
+            "format": "uri",
             "nullable": true,
             "example": "some text"
           }
@@ -9788,6 +9797,8 @@
             "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.LinkType"
           },
           "password": {
+            "maxLength": 255,
+            "minLength": 0,
             "type": "string",
             "description": "Link password",
             "nullable": true,
@@ -10212,7 +10223,7 @@
         "type": "object",
         "properties": {
           "document": {
-            "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.DocumentConfigDto<System.Int32>"
+            "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.DocumentConfigDto"
           },
           "documentType": {
             "type": "string",
@@ -10488,7 +10499,7 @@
         },
         "additionalProperties": false
       },
-      "ASC.Files.Core.ApiModels.ResponseDto.DocumentConfigDto<System.Int32>": {
+      "ASC.Files.Core.ApiModels.ResponseDto.DocumentConfigDto": {
         "type": "object",
         "properties": {
           "fileType": {
@@ -10527,7 +10538,7 @@
             "example": "some text"
           },
           "referenceData": {
-            "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReferenceData<System.Int32>"
+            "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReferenceData"
           },
           "title": {
             "type": "string",
@@ -11026,6 +11037,12 @@
             "nullable": true,
             "example": "false"
           },
+          "isForm": {
+            "type": "boolean",
+            "description": "Is there a form or not",
+            "nullable": true,
+            "example": "false"
+          },
           "startFilling": {
             "type": "boolean",
             "description": "Specifies if the filling has started or not",
@@ -11491,12 +11508,6 @@
                 "type": "string"
               },
               "Document": {
-                "type": "string"
-              },
-              "OFormTemplate": {
-                "type": "string"
-              },
-              "OForm": {
                 "type": "string"
               },
               "Pdf": {
@@ -12767,10 +12778,10 @@
           15,
           16,
           17,
-          18,
-          19,
           20,
-          21
+          21,
+          22,
+          23
         ],
         "type": "integer",
         "format": "int32"
@@ -13139,6 +13150,7 @@
           5097,
           5098,
           5099,
+          5100,
           6000,
           6001,
           6002,
@@ -13179,6 +13191,12 @@
           6037,
           6038,
           6039,
+          6040,
+          6041,
+          6042,
+          6043,
+          6044,
+          6045,
           7000,
           7001,
           7002,
@@ -13269,8 +13287,6 @@
           5,
           6,
           7,
-          8,
-          9,
           10
         ],
         "type": "integer",
@@ -13380,11 +13396,11 @@
         },
         "additionalProperties": false
       },
-      "ASC.Web.Files.Services.DocumentService.FileReference<System.Int32>": {
+      "ASC.Web.Files.Services.DocumentService.FileReference": {
         "type": "object",
         "properties": {
           "referenceData": {
-            "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReferenceData<System.Int32>"
+            "$ref": "#/components/schemas/ASC.Web.Files.Services.DocumentService.FileReferenceData"
           },
           "error": {
             "type": "string",
@@ -13417,14 +13433,14 @@
         },
         "additionalProperties": false
       },
-      "ASC.Web.Files.Services.DocumentService.FileReferenceData<System.Int32>": {
+      "ASC.Web.Files.Services.DocumentService.FileReferenceData": {
         "type": "object",
         "properties": {
           "fileKey": {
-            "type": "integer",
+            "type": "string",
             "description": "File key",
-            "format": "int32",
-            "example": "1234"
+            "nullable": true,
+            "example": "some text"
           },
           "instanceId": {
             "type": "string",
@@ -13641,7 +13657,8 @@
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "type": "integer",
         "format": "int32"
