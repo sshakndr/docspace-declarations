@@ -5,6 +5,44 @@
     "version": "v2"
   },
   "paths": {
+    "/api/2.0/files/file/fillresult": {
+      "get": {
+        "tags": [
+          "files"
+        ],
+        "parameters": [
+          {
+            "name": "fillingSessionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FillingFormResultDto<System.Int32>"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FillingFormResultDto<System.Int32>"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FillingFormResultDto<System.Int32>"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/2.0/files/file/{fileId}/saveediting": {
       "put": {
         "tags": [
@@ -72,7 +110,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Saved file parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -150,7 +188,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "File key for Document Service",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -260,7 +309,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File changes",
             "content": {
               "text/plain": {
                 "schema": {
@@ -354,7 +403,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Configuration parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -398,7 +447,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File download link",
             "content": {
               "text/plain": {
                 "schema": {
@@ -463,7 +512,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File reference data",
             "content": {
               "text/plain": {
                 "schema": {
@@ -521,7 +570,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with their access rights to the protected file",
             "content": {
               "text/plain": {
                 "schema": {
@@ -588,30 +637,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of actions performed on the file",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
                 }
               }
             }
@@ -675,30 +715,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated information about file versions",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
                 }
               }
             }
@@ -740,30 +771,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Information about file versions: folder ID, version, version group, content length, pure content length, file status, URL to view a file, web URL, file type, file extension, comment, encrypted or not, thumbnail URL, thumbnail status, locked or not, user ID who locked a file, denies file downloading or not, denies file sharing or not, file accessibility",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
                 }
               }
             }
@@ -793,7 +815,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File download link",
             "content": {
               "text/plain": {
                 "schema": {
@@ -851,7 +873,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true - the PDF file is form, false - the PDF file is not a form",
             "content": {
               "text/plain": {
                 "schema": {
@@ -929,7 +951,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Copied file entry information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1008,7 +1030,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1086,7 +1108,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1164,7 +1186,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1242,30 +1264,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -1317,7 +1330,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1379,7 +1392,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1434,7 +1447,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File version history data",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1478,30 +1491,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Version history data",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
                 }
               }
             }
@@ -1551,7 +1555,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Locked file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1629,30 +1633,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Version history data: file ID, key, file version, version group, a user who updated a file, creation time, history changes in the string format, list of history changes, server version",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.EditHistoryDto"
                 }
               }
             }
@@ -1682,7 +1677,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File security information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1782,30 +1777,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File security information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               }
             }
@@ -1869,7 +1855,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File security information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1947,7 +1933,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2013,7 +1999,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2078,7 +2064,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2143,7 +2129,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New file information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2208,25 +2194,16 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file IDs",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               }
             }
           }
@@ -2275,7 +2252,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Link to the form",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Check the form draft"
@@ -2309,7 +2297,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2387,7 +2375,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2452,7 +2440,24 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "No content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.NoContentResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.NoContentResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.NoContentResult"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -2503,7 +2508,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Information about created session",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -2544,30 +2560,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of actions in the folder",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.HistoryDto"
                 }
               }
             }
@@ -2631,7 +2638,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New folder parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2707,30 +2714,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -2772,7 +2770,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Folder parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2834,7 +2832,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Folder parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3032,7 +3030,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Folder contents",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3076,30 +3074,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file entry information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               }
             }
@@ -3143,30 +3132,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file entry information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               }
             }
@@ -3210,30 +3190,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file entry information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               }
             }
@@ -3264,7 +3235,7 @@
         "summary": "Returns the used space of files in the root folders.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Used space of files in the root folders",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3322,7 +3293,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Folder security information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3399,7 +3370,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "The \"My documents\" section contents",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3482,7 +3453,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "The \"Private Room\" section contents",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3574,30 +3545,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of section contents with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto<System.Int32>"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto<System.Int32>"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderContentDto<System.Int32>"
                 }
               }
             }
@@ -3674,7 +3636,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "The \"Trash\" section contents",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3752,7 +3714,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Inserted file",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3915,7 +3877,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Inserted file",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3981,7 +3943,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Inserted file",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4106,7 +4085,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Inserted file",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4162,7 +4141,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Uploaded file(s)",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4212,30 +4202,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Conversion result",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
                 }
               }
             }
@@ -4297,30 +4278,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Conversion result",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.ConversationResultDto"
                 }
               }
             }
@@ -4384,7 +4356,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Updated comment",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4432,30 +4415,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4492,30 +4466,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4566,30 +4531,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4620,30 +4576,21 @@
         "summary": "Deletes all the files and folders from the \"Trash\" folder.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4674,30 +4621,21 @@
         "summary": "Returns a list of all the active operations.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4734,30 +4672,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4808,30 +4737,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -4870,30 +4790,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file entry information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileEntryDto"
                 }
               }
             }
@@ -4942,30 +4853,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -5003,7 +4905,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Result",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5059,30 +4961,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of file operations",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileOperationDto"
                 }
               }
             }
@@ -5133,7 +5026,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Information about created session",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -5181,30 +5085,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of rooms with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
                 }
               }
             }
@@ -5255,30 +5150,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of rooms with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.Int32>"
                 }
               }
             }
@@ -5329,7 +5215,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5534,7 +5420,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5596,7 +5482,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5672,7 +5558,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File operation",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5750,7 +5636,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File operation",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5828,7 +5714,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File operation",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5906,7 +5792,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room security information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5970,30 +5856,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Security information of room files",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               }
             }
@@ -6057,7 +5934,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room security information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6121,30 +5998,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room security information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileShareDto"
                 }
               }
             }
@@ -6188,7 +6056,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room security information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6266,7 +6134,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6342,7 +6210,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6420,7 +6288,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6476,7 +6344,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6534,7 +6402,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6592,7 +6460,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6731,7 +6599,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6788,7 +6656,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6864,7 +6732,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6929,7 +6797,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "New tag name",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -6955,25 +6834,16 @@
         "summary": "Returns a list of custom tags.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of tag names",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               }
             }
           },
@@ -7071,7 +6941,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Upload result",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7129,7 +6999,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ok",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7172,7 +7042,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ok",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7260,7 +7130,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Document service information: the Document Server address, the Document Server address in the local private network, the Community Server address",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7325,7 +7195,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7368,30 +7238,21 @@
         "summary": "Returns a list of all the connected third-party accounts.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of connected providers information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Files.Services.WCFService.ThirdPartyParams"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Files.Services.WCFService.ThirdPartyParams"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Files.Services.WCFService.ThirdPartyParams"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Files.Services.WCFService.ThirdPartyParams"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Files.Services.WCFService.ThirdPartyParams"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Files.Services.WCFService.ThirdPartyParams"
                 }
               }
             }
@@ -7441,7 +7302,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Connected provider folder",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7506,7 +7367,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7571,7 +7432,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Archive",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7636,7 +7497,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the parameter is enabled",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7701,7 +7562,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the parameter is enabled",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7746,7 +7607,7 @@
         "summary": "Changes the ability to force save a file.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the parameter is enabled",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7791,7 +7652,7 @@
         "summary": "Returns all the file settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "File settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7822,7 +7683,7 @@
         "summary": "Returns the information about the Documents module.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Module information: ID, product class name, title, description, icon URL, large icon URL, start URL, primary or nor, help URL",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7867,7 +7728,7 @@
         "summary": "Checks if the Private Room settings are available or not.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the Private Room settings are available",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7912,7 +7773,7 @@
         "summary": "Changes the ability to store the forcesaved file versions.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7977,7 +7838,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8042,7 +7903,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8107,7 +7968,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8152,7 +8013,7 @@
         "summary": "Returns the trash bin auto-clearing setting.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "The auto-clearing setting properties: auto-clearing or not, a time interval when the auto-clearing will be performed",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8215,7 +8076,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "The auto-clearing setting properties: auto-clearing or not, a time interval when the auto-clearing will be performed",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8289,7 +8150,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated sharing rights (None, ReadWrite, Read, Restrict, Varies, Review, Comment, FillForms, CustomFilter, RoomAdmin, Editing, Collaborator)",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8363,7 +8224,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the parameter is enabled",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8409,7 +8270,7 @@
         "description": "Available provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of provider keys",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8485,7 +8346,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Third-party folder ID",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -8513,30 +8385,21 @@
         "summary": "Returns a list of the third-party services connected to the \"Common\" section.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of common third-party folderst",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.String>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.String>"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.String>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.String>"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.String>"
-                  }
+                  "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FolderDto<System.String>"
                 }
               }
             }
@@ -8567,7 +8430,7 @@
         "summary": "Return a backup of the connected third-party account.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Folder for the third-party account backup",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8631,7 +8494,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Folder for the third-party account backup",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8677,7 +8540,7 @@
         "description": "Available provider keys: Dropbox, Box, WebDav, OneDrive, GoogleDrive, kDrive, ownCloud, Nextcloud",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of provider",
             "content": {
               "text/plain": {
                 "schema": {
@@ -10270,6 +10133,10 @@
             "description": "Specifies if the filling has started or not",
             "nullable": true,
             "example": "true"
+          },
+          "fillingSessionId": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -11680,6 +11547,12 @@
             "nullable": true,
             "example": "None"
           },
+          "maxUploadThreadCount": {
+            "type": "integer",
+            "description": "Max upload thread count",
+            "format": "int32",
+            "example": "1234"
+          },
           "chunkUploadSize": {
             "type": "integer",
             "description": "Chunk upload size",
@@ -11726,6 +11599,32 @@
           },
           "roomsUsedSpace": {
             "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FilesStatisticsFolder"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ASC.Files.Core.ApiModels.ResponseDto.FillingFormResultDto<System.Int32>": {
+        "type": "object",
+        "properties": {
+          "formNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "completedForm": {
+            "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
+          },
+          "originalForm": {
+            "$ref": "#/components/schemas/ASC.Files.Core.ApiModels.ResponseDto.FileDto<System.Int32>"
+          },
+          "manager": {
+            "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
+          },
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isRoomMember": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -12536,6 +12435,9 @@
             "format": "uri",
             "nullable": true,
             "example": "some text"
+          },
+          "requiredConnectionUrl": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -13197,6 +13099,14 @@
           6043,
           6044,
           6045,
+          6046,
+          6047,
+          6048,
+          6049,
+          6050,
+          6051,
+          6052,
+          6053,
           7000,
           7001,
           7002,
@@ -13206,6 +13116,24 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "ASC.Web.Api.Models.Contact": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Contact type",
+            "nullable": true,
+            "example": "GTalk"
+          },
+          "value": {
+            "type": "string",
+            "description": "Contact value",
+            "nullable": true,
+            "example": "my@gmail.com"
+          }
+        },
+        "additionalProperties": false
       },
       "ASC.Web.Api.Models.EmployeeDto": {
         "type": "object",
@@ -13277,6 +13205,267 @@
         },
         "additionalProperties": false
       },
+      "ASC.Web.Api.Models.EmployeeFullDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID",
+            "format": "uuid",
+            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Display name",
+            "nullable": true,
+            "example": "some text"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title",
+            "nullable": true,
+            "example": "some text"
+          },
+          "avatar": {
+            "type": "string",
+            "description": "Avatar",
+            "nullable": true,
+            "example": "some text"
+          },
+          "avatarOriginal": {
+            "type": "string",
+            "description": "Original size avatar",
+            "nullable": true,
+            "example": "some text"
+          },
+          "avatarMax": {
+            "type": "string",
+            "description": "Maximum size avatar",
+            "nullable": true,
+            "example": "some text"
+          },
+          "avatarMedium": {
+            "type": "string",
+            "description": "Medium size avatar",
+            "nullable": true,
+            "example": "some text"
+          },
+          "avatarSmall": {
+            "type": "string",
+            "description": "Small avatar",
+            "nullable": true,
+            "example": "some text"
+          },
+          "profileUrl": {
+            "type": "string",
+            "description": "Profile URL",
+            "nullable": true,
+            "example": "some text"
+          },
+          "hasAvatar": {
+            "type": "boolean",
+            "description": "Specifies if the user has an avatar or not",
+            "example": "true"
+          },
+          "isAnonim": {
+            "type": "boolean",
+            "description": "Specifies if the user is an anonim or not",
+            "example": "true"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "First name",
+            "nullable": true,
+            "example": "some text"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last name",
+            "nullable": true,
+            "example": "some text"
+          },
+          "userName": {
+            "type": "string",
+            "description": "Username",
+            "nullable": true,
+            "example": "some text"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email",
+            "nullable": true,
+            "example": "some text"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ASC.Web.Api.Models.Contact"
+            },
+            "description": "List of contacts",
+            "nullable": true
+          },
+          "birthday": {
+            "$ref": "#/components/schemas/ASC.Api.Core.ApiDateTime"
+          },
+          "sex": {
+            "type": "string",
+            "description": "Sex",
+            "nullable": true,
+            "example": "some text"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ASC.Core.Users.EmployeeStatus"
+          },
+          "activationStatus": {
+            "$ref": "#/components/schemas/ASC.Core.Users.EmployeeActivationStatus"
+          },
+          "terminated": {
+            "$ref": "#/components/schemas/ASC.Api.Core.ApiDateTime"
+          },
+          "department": {
+            "type": "string",
+            "description": "Department",
+            "nullable": true,
+            "example": "some text"
+          },
+          "workFrom": {
+            "$ref": "#/components/schemas/ASC.Api.Core.ApiDateTime"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
+            },
+            "description": "List of groups",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "Location",
+            "nullable": true,
+            "example": "some text"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Notes",
+            "nullable": true,
+            "example": "some text"
+          },
+          "isAdmin": {
+            "type": "boolean",
+            "description": "Specifies if the user is an administrator or not",
+            "example": "false"
+          },
+          "isRoomAdmin": {
+            "type": "boolean",
+            "description": "Specifies if the user is a room administrator or not",
+            "example": "true"
+          },
+          "isLDAP": {
+            "type": "boolean",
+            "description": "Specifies if the LDAP settings are enabled for the user or not",
+            "example": "true"
+          },
+          "listAdminModules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of administrator modules",
+            "nullable": true,
+            "example": "some text"
+          },
+          "isOwner": {
+            "type": "boolean",
+            "description": "Specifies if the user is a portal owner or not",
+            "example": "true"
+          },
+          "isVisitor": {
+            "type": "boolean",
+            "description": "Specifies if the user is a portal visitor or not",
+            "example": "true"
+          },
+          "isCollaborator": {
+            "type": "boolean",
+            "description": "Specifies if the user is a portal collaborator or not",
+            "example": "true"
+          },
+          "cultureName": {
+            "type": "string",
+            "description": "Language",
+            "nullable": true,
+            "example": "some text"
+          },
+          "mobilePhone": {
+            "type": "string",
+            "description": "Mobile phone number",
+            "nullable": true,
+            "example": "some text"
+          },
+          "mobilePhoneActivationStatus": {
+            "$ref": "#/components/schemas/ASC.Core.Users.MobilePhoneActivationStatus"
+          },
+          "isSSO": {
+            "type": "boolean",
+            "description": "Specifies if the SSO settings are enabled for the user or not",
+            "example": "true"
+          },
+          "theme": {
+            "$ref": "#/components/schemas/ASC.Web.Core.Users.DarkThemeSettingsType"
+          },
+          "quotaLimit": {
+            "type": "integer",
+            "description": "Quota limit",
+            "format": "int64",
+            "nullable": true,
+            "example": "1234"
+          },
+          "usedSpace": {
+            "type": "number",
+            "description": "Portal used space",
+            "format": "double",
+            "nullable": true,
+            "example": "12345"
+          },
+          "shared": {
+            "type": "boolean",
+            "description": "Shared",
+            "nullable": true,
+            "example": "true"
+          },
+          "isCustomQuota": {
+            "type": "boolean",
+            "description": "Specifies if the user has a custom quota or not",
+            "nullable": true,
+            "example": "true"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ASC.Web.Api.Models.GroupSummaryDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID",
+            "format": "uuid",
+            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name",
+            "nullable": true,
+            "example": "some text"
+          },
+          "manager": {
+            "type": "string",
+            "description": "Manager",
+            "nullable": true,
+            "example": "some text"
+          }
+        },
+        "additionalProperties": false
+      },
       "ASC.Web.Core.Files.FileType": {
         "enum": [
           0,
@@ -13291,6 +13480,14 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "ASC.Web.Core.Users.DarkThemeSettingsType": {
+        "enum": [
+          "Base",
+          "Dark",
+          "System"
+        ],
+        "type": "string"
       },
       "ASC.Web.Files.Core.Compress.ICompress": {
         "type": "object",
@@ -13720,6 +13917,16 @@
           "provider_key": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Microsoft.AspNetCore.Mvc.NoContentResult": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
