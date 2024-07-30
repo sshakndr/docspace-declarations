@@ -226,17 +226,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto"
                 }
               }
             }
@@ -4305,17 +4305,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IpRestrictionBase"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IpRestrictionBase"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IpRestrictionBase"
                 }
               }
             }
@@ -4350,17 +4350,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
                 }
               }
             }
@@ -4413,17 +4413,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
                 }
               }
             }
@@ -6074,17 +6074,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.AdditionalWhiteLabelSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.AdditionalWhiteLabelSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.AdditionalWhiteLabelSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings"
                 }
               }
             }
@@ -10007,6 +10007,15 @@
         },
         "additionalProperties": false
       },
+      "ASC.IPSecurity.IPRestrictionsSettings": {
+        "type": "object",
+        "properties": {
+          "enable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "ASC.IPSecurity.IpRestrictionBase": {
         "type": "object",
         "properties": {
@@ -12533,6 +12542,27 @@
             "type": "boolean",
             "description": "Specifies if these settings are default or not",
             "example": "true"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
+          },
+          "roomId": {
+            "type": "string",
+            "description": "Room id",
+            "nullable": true,
+            "example": "some text"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false

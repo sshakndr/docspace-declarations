@@ -191,13 +191,19 @@
             "description": "Backup progress: completed or not, progress percentage, error, tenant ID, backup progress item (Backup, Restore, Transfer), link",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "application/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "text/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               }
             }
           },
@@ -230,13 +236,19 @@
             "description": "Backup progress: completed or not, progress percentage, error, tenant ID, backup progress item (Backup, Restore, Transfer), link",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "application/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "text/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               }
             }
           },
@@ -437,13 +449,19 @@
             "description": "Backup progress: completed or not, progress percentage, error, tenant ID, backup progress item (Backup, Restore, Transfer), link",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "application/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "text/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               }
             }
           },
@@ -476,13 +494,19 @@
             "description": "Backup progress: completed or not, progress percentage, error, tenant ID, backup progress item (Backup, Restore, Transfer), link",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "application/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               },
               "text/json": {
-                "schema": { }
+                "schema": {
+                  "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgress"
+                }
               }
             }
           }
@@ -708,6 +732,60 @@
           }
         },
         "additionalProperties": false
+      },
+      "ASC.Data.Backup.Contracts.BackupProgress": {
+        "type": "object",
+        "properties": {
+          "isCompleted": {
+            "type": "boolean",
+            "description": "Completed or not",
+            "example": "true"
+          },
+          "progress": {
+            "type": "integer",
+            "description": "Progress",
+            "format": "int32",
+            "example": "1234"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error",
+            "nullable": true,
+            "example": "some text"
+          },
+          "link": {
+            "type": "string",
+            "description": "Link",
+            "format": "uri",
+            "nullable": true,
+            "example": "some text"
+          },
+          "tenantId": {
+            "type": "integer",
+            "description": "Tenant id",
+            "format": "int32",
+            "example": "1234"
+          },
+          "backupProgressEnum": {
+            "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgressEnum"
+          },
+          "taskId": {
+            "type": "string",
+            "description": "Task id",
+            "nullable": true,
+            "example": "some text"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ASC.Data.Backup.Contracts.BackupProgressEnum": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "ASC.Data.Backup.Contracts.BackupStorageType": {
         "enum": [
