@@ -13,7 +13,7 @@
         "summary": "Checks if the current user is authenticated or not.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the current user is authenticated",
             "content": {
               "text/plain": {
                 "schema": {
@@ -62,7 +62,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Authentication data",
             "content": {
               "text/plain": {
                 "schema": {
@@ -123,7 +123,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Authentication data",
             "content": {
               "text/plain": {
                 "schema": {
@@ -154,7 +154,18 @@
         "summary": "Logs out of the current user account.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Ok",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Log out"
@@ -166,7 +177,18 @@
         "summary": "Logs out of the current user account.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Ok",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Log out"
@@ -200,21 +222,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Validation result: Ok, Invalid, or Expired",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto"
+                  "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto"
+                  "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto"
+                  "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
                 }
               }
             }
@@ -251,7 +273,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Authentication data",
             "content": {
               "text/plain": {
                 "schema": {
@@ -302,7 +324,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Authentication data",
             "content": {
               "text/plain": {
                 "schema": {
@@ -333,7 +355,7 @@
         "summary": "Returns the information about portal capabilities.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Portal capabilities",
             "content": {
               "text/plain": {
                 "schema": {
@@ -364,7 +386,7 @@
         "summary": "Returns the information about portal capabilities.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Portal capabilities",
             "content": {
               "text/plain": {
                 "schema": {
@@ -485,7 +507,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ok",
             "content": {
               "text/plain": {
                 "schema": {
@@ -697,30 +719,21 @@
         "summary": "Returns a list of all the portal modules.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of modules",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 }
               }
             }
@@ -751,30 +764,21 @@
         "summary": "Returns a list of all the portal modules with their information.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of modules with their information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Api.Core.Module"
-                  }
+                  "$ref": "#/components/schemas/ASC.Api.Core.Module"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Api.Core.Module"
-                  }
+                  "$ref": "#/components/schemas/ASC.Api.Core.Module"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Api.Core.Module"
-                  }
+                  "$ref": "#/components/schemas/ASC.Api.Core.Module"
                 }
               }
             }
@@ -805,7 +809,7 @@
         "summary": "Returns the used space of the current portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Used portal space",
             "content": {
               "text/plain": {
                 "schema": {
@@ -864,7 +868,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Current portal tariff",
             "content": {
               "text/plain": {
                 "schema": {
@@ -909,7 +913,7 @@
         "summary": "Returns the current portal quota.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Current portal quota",
             "content": {
               "text/plain": {
                 "schema": {
@@ -954,7 +958,7 @@
         "summary": "Returns the recommended quota for the current portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Recommended portal quota",
             "content": {
               "text/plain": {
                 "schema": {
@@ -999,7 +1003,7 @@
         "summary": "Returns the current portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Current portal information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1064,7 +1068,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Shortened link",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1103,7 +1118,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Portal path",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1239,7 +1265,18 @@
         "summary": "Deletes the current portal.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "URL to the feedback form about removing a portal",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1308,7 +1345,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "User information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1365,7 +1402,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Invitation link",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1393,7 +1441,7 @@
         "summary": "Returns a number of portal users.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Number of portal users",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1504,7 +1552,7 @@
         "summary": "Returns all the active connections to the portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Active portal connections",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1549,7 +1597,18 @@
         "summary": "Logs out from all the active connections of the current user and changes their password.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "URL to the confirmation message for changing a password",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1618,7 +1677,18 @@
         "summary": "Logs out from all the active connections except the current connection.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Current user name",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1659,7 +1729,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1704,30 +1774,21 @@
         "summary": "Returns a list of the latest changes (creation, modification, deletion, etc.) made by users to the entities (tasks, opportunities, files, etc.) on the portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of audit trail data",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
                 }
               }
             }
@@ -1836,30 +1897,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of filtered audit trail data",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.AuditEventDto"
                 }
               }
             }
@@ -1890,7 +1942,18 @@
         "summary": "Returns all the available audit trail types.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Audit trail types",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Get audit trail types"
@@ -1922,7 +1985,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Audit trail mappers",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Get audit trail mappers"
@@ -1936,7 +2010,18 @@
         "summary": "Generates the audit trail report.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "URL to the xlsx report file",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1964,7 +2049,7 @@
         "summary": "Returns the audit trail settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Audit settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2027,7 +2112,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Audit trail settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2090,7 +2175,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ok",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2131,7 +2216,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ok",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2181,7 +2266,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "FireBase user",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2246,7 +2331,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "FireBase user",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2291,30 +2376,21 @@
         "summary": "Returns all the latest user login activity, including successful logins and error logs.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of login events",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
                 }
               }
             }
@@ -2382,30 +2458,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of filtered login events",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.LoginEventDto"
                 }
               }
             }
@@ -2436,7 +2503,18 @@
         "summary": "Generates the login history report.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "URL to the xlsx report file",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -2464,7 +2542,7 @@
         "summary": "Returns the current portal SMTP settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "SMTP settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2527,7 +2605,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "SMTP settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2570,7 +2648,7 @@
         "summary": "Resets the SMTP settings of the current portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Default SMTP settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2612,9 +2690,10 @@
         "tags": [
           "Security / SMTP settings"
         ],
+        "summary": "Tests the SMTP settings for the current portal (sends test message to the user email).",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "SMTP operation status",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2647,7 +2726,8 @@
               "write"
             ]
           }
-        ]
+        ],
+        "x-shortName": "Test the SMTP settings"
       }
     },
     "/api/2.0/smtpsettings/smtp/test/status": {
@@ -2655,9 +2735,10 @@
         "tags": [
           "Security / SMTP settings"
         ],
+        "summary": "Returns the SMTP test process status.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "SMTP operation status",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2690,7 +2771,8 @@
               "write"
             ]
           }
-        ]
+        ],
+        "x-shortName": "Get the SMTP test process status"
       }
     },
     "/api/2.0/settings/authservice": {
@@ -2701,30 +2783,21 @@
         "summary": "Returns the authorization services.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Authorization services",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.AuthServiceRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.AuthServiceRequestsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.AuthServiceRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.AuthServiceRequestsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.AuthServiceRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.AuthServiceRequestsDto"
                 }
               }
             }
@@ -2773,7 +2846,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the authorization keys are changed",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2829,7 +2902,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2880,7 +2953,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about the result of saving the mail domain settings",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -2908,30 +2992,21 @@
         "summary": "Returns a list of all the available portal languages in the format of a two-letter or four-letter language code (e.g. \"de\", \"en-US\", etc.).",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of all the available portal languages",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                  "type": "string"
                 }
               }
             }
@@ -2948,30 +3023,21 @@
         "summary": "Returns a list of all the available portal time zones.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of all the available time zones with their IDs and display names",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TimezonesRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TimezonesRequestsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TimezonesRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TimezonesRequestsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TimezonesRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TimezonesRequestsDto"
                 }
               }
             }
@@ -3002,7 +3068,18 @@
         "summary": "Returns the portal hostname.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Portal hostname",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3050,7 +3127,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about changing DNS",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3078,7 +3166,18 @@
         "summary": "Returns the portal logo image URL.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Portal logo image URL",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3126,7 +3225,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Wizard settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3171,7 +3270,7 @@
         "summary": "Returns the portal color theme.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Settings of the portal themes",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3220,7 +3319,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Portal theme settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3275,7 +3374,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Portal theme settings: custom color theme settings, selected or not, limit",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3368,7 +3467,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated email activation settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3413,7 +3512,18 @@
         "summary": "Returns the socket settings.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Socket settings: hub URL",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3441,7 +3551,18 @@
         "summary": "Returns the portal payment settings.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Payment settings: sales email, feedback and support URL, link to pay for a portal, Standalone or not, current license, maximum quota quantity",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3469,7 +3590,7 @@
         "summary": "Returns the cookies lifetime value in minutes.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Lifetime value in minutes",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3532,7 +3653,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about the result of saving new settings",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3560,30 +3692,21 @@
         "summary": "Returns a list of the custom navigation items.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of the custom navigation items",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Studio.Core.CustomNavigationItem"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Studio.Core.CustomNavigationItem"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Studio.Core.CustomNavigationItem"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Studio.Core.CustomNavigationItem"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Studio.Core.CustomNavigationItem"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Studio.Core.CustomNavigationItem"
                 }
               }
             }
@@ -3614,7 +3737,7 @@
         "summary": "Returns a custom navigation item sample.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Custom navigation item",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3672,7 +3795,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Custom navigation item",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3737,7 +3860,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Custom navigation item",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3842,7 +3965,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3887,7 +4010,7 @@
         "summary": "Returns the storage encryption progress.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Storage encryption progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3935,7 +4058,18 @@
         "summary": "Returns the greeting settings for the current portal.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Greeting settings: tenant name",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3981,7 +4115,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about saving greeting settings successfully",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4009,7 +4154,7 @@
         "summary": "Checks if the greeting settings of the current portal are set to default or not.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the greeting settings of the current portal are set to default",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4054,7 +4199,18 @@
         "summary": "Restores the current portal greeting settings.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Greeting settings: tenant name",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4082,30 +4238,21 @@
         "summary": "Returns the IP portal restrictions.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of IP restrictions parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
-                  }
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
-                  }
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
-                  }
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               }
             }
@@ -4154,30 +4301,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of IP restrictions parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.IPSecurity.IpRestrictionBase"
-                  }
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.IPSecurity.IpRestrictionBase"
-                  }
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.IPSecurity.IpRestrictionBase"
-                  }
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               }
             }
@@ -4208,21 +4346,21 @@
         "summary": "Returns the IP restriction settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "IP restriction settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               }
             }
@@ -4271,21 +4409,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated IP restriction settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestrictionsSettings"
+                  "$ref": "#/components/schemas/ASC.IPSecurity.IPRestriction"
                 }
               }
             }
@@ -4316,7 +4454,7 @@
         "summary": "Refreshes the license.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4361,7 +4499,18 @@
         "summary": "Activates a license for the portal.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about the result of activating license",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4389,7 +4538,7 @@
         "summary": "Requests a portal license if necessary.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the license is required",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4444,7 +4593,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "License",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4492,7 +4652,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated login settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4535,7 +4695,7 @@
         "summary": "Returns the portal login settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Login settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4600,7 +4760,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about the result of saving new settings",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -4648,7 +4819,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about the result of sending a message",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Send a message to the administrator"
@@ -4682,7 +4864,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about sending a link to confirm joining the DocSpace",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Sends an invitation email"
@@ -4707,7 +4900,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Notification settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4772,7 +4965,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Notification settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4817,21 +5010,21 @@
         "summary": "Returns a list of rooms with the disabled notifications",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room notification settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto"
                 }
               }
             }
@@ -4880,21 +5073,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Room notification settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto"
                 }
               }
             }
@@ -4945,7 +5138,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message about changing the portal owner",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -5018,7 +5222,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Ok",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -5065,7 +5280,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Tenant room quota settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5130,7 +5345,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Tenant quota settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5213,7 +5428,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is sucessful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5276,7 +5491,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is sucessful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5339,30 +5554,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "White label logos",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WhiteLabelItemDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WhiteLabelItemDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WhiteLabelItemDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WhiteLabelItemDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WhiteLabelItemDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WhiteLabelItemDto"
                 }
               }
             }
@@ -5397,30 +5603,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Request properties of white label logos",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.IsDefaultWhiteLabelLogosDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.IsDefaultWhiteLabelLogosDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.IsDefaultWhiteLabelLogosDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.IsDefaultWhiteLabelLogosDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.IsDefaultWhiteLabelLogosDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.IsDefaultWhiteLabelLogosDto"
                 }
               }
             }
@@ -5469,7 +5666,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Logo text",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -5515,7 +5723,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5560,30 +5768,21 @@
         "summary": "Returns the licensor data.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of company white label settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.CompanyWhiteLabelSettings"
                 }
               }
             }
@@ -5634,7 +5833,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5677,7 +5876,7 @@
         "summary": "Returns the company white label settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Company white label settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5720,7 +5919,7 @@
         "summary": "Deletes the company white label settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Default company white label settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5785,7 +5984,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5828,7 +6027,7 @@
         "summary": "Returns the additional white label settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Additional white label settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5871,21 +6070,21 @@
         "summary": "Deletes the additional white label settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Default additional white label settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.AdditionalWhiteLabelSettingsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.AdditionalWhiteLabelSettingsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ASC.Web.Core.WhiteLabel.AdditionalWhiteLabelSettings"
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.AdditionalWhiteLabelSettingsDto"
                 }
               }
             }
@@ -5916,7 +6115,7 @@
         "summary": "Checks if the white label is enabled or not.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the white label is enabled",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5974,30 +6173,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Security settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               }
             }
@@ -6046,30 +6236,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Security settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               }
             }
@@ -6113,7 +6294,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true - module is enabled, false - module is disabled",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6158,7 +6339,18 @@
         "summary": "Returns a list of all the enabled modules.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "List of enabled modules",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -6186,7 +6378,7 @@
         "summary": "Returns the portal password settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Password settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6249,7 +6441,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Password settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6314,30 +6506,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Security settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.SecurityDto"
                 }
               }
             }
@@ -6381,30 +6564,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of product administrators with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               }
             }
@@ -6457,7 +6631,18 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Object with the user security information: product ID, user ID, administrator or not",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -6503,7 +6688,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Object with the user security information: product ID, user ID, administrator or not",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -6531,7 +6727,7 @@
         "summary": "Returns the current portal SSO settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "SSO settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6580,7 +6776,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "SSO settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6623,7 +6819,7 @@
         "summary": "Resets the SSO settings of the current portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Default SSO settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6668,7 +6864,7 @@
         "summary": "Returns the default portal SSO settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Default SSO settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -6713,7 +6909,18 @@
         "summary": "Returns the SSO settings constants.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "The SSO settings constants: SSO name ID format type, SSO binding type, SSO signing algorithm type, SSO SP certificate action type, SSO IDP certificate action type",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -6754,30 +6961,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Module space usage statistics",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.UsageSpaceStatItemDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.UsageSpaceStatItemDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.UsageSpaceStatItemDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.UsageSpaceStatItemDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.UsageSpaceStatItemDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.UsageSpaceStatItemDto"
                 }
               }
             }
@@ -6826,30 +7024,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of point charts",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.ChartPointDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.ChartPointDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.ChartPointDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.ChartPointDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.ChartPointDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.ChartPointDto"
                 }
               }
             }
@@ -6880,30 +7069,21 @@
         "summary": "Returns a list of all the portal storages.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of storages with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               }
             }
@@ -6952,7 +7132,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated storage settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7023,7 +7203,7 @@
         "summary": "Returns the storage progress.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Storage progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7071,30 +7251,21 @@
         "summary": "Returns a list of all the CDN storages.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of the CDN storages with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               }
             }
@@ -7143,7 +7314,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated CDN storage",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7214,30 +7385,21 @@
         "summary": "Returns a list of all the backup storages.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of the backup storages with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.StorageDto"
                 }
               }
             }
@@ -7268,7 +7430,18 @@
         "summary": "Returns a list of all Amazon regions.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "List of the Amazon regions",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -7296,30 +7469,21 @@
         "summary": "Returns all portal team templates that allow users to name their organization (or group), add members, and define their activities within the portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of team templates with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.SchemaRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.SchemaRequestsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.SchemaRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.SchemaRequestsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.SchemaRequestsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.SchemaRequestsDto"
                 }
               }
             }
@@ -7368,7 +7532,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Team template with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7431,7 +7595,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Custom team template with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7488,7 +7652,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Team template with the following parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7533,30 +7697,21 @@
         "summary": "Returns the current two-factor authentication settings.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "TFA settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TfaSettingsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TfaSettingsDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TfaSettingsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TfaSettingsDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TfaSettingsDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.TfaSettingsDto"
                 }
               }
             }
@@ -7605,7 +7760,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "True if the operation is successful",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7670,7 +7825,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "True if the code is valid",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7715,7 +7870,18 @@
         "summary": "Returns the confirmation email URL for authorization via SMS or TFA application.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Confirmation email URL",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -7763,7 +7929,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Confirmation email URL",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -7791,7 +7968,7 @@
         "summary": "Generates the setup TFA code for the current user.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Setup code",
             "content": {
               "text/plain": {
                 "schema": {
@@ -7836,25 +8013,16 @@
         "summary": "Returns the two-factor authentication application codes.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of TFA application codes",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               }
             }
           },
@@ -7884,25 +8052,16 @@
         "summary": "Requests the new backup codes for the two-factor authentication application.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "New backup codes",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": { }
-                }
+                "schema": { }
               }
             }
           },
@@ -7952,7 +8111,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Login URL",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -8000,7 +8170,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated tip settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8045,7 +8215,7 @@
         "summary": "Updates the tip subscription.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the user is subscribed to the tips",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8090,7 +8260,7 @@
         "summary": "Checks if the current user is subscribed to the tips or not.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Boolean value: true if the user is subscribed to the tips",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8135,30 +8305,21 @@
         "summary": "Returns a list of the tenant webhooks.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of tenant webhooks with their config parameters",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksConfigWithStatusDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksConfigWithStatusDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksConfigWithStatusDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksConfigWithStatusDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksConfigWithStatusDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksConfigWithStatusDto"
                 }
               }
             }
@@ -8207,7 +8368,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Tenant webhook with its config parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8270,7 +8431,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated tenant webhook with its config parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8328,7 +8489,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Tenant webhook with its config parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8384,7 +8545,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Webhook settings",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8498,30 +8659,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Logs of the webhook activities",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
                 }
               }
             }
@@ -8565,7 +8717,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Logs of the webhook activities",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8630,30 +8782,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Logs of the webhook activities",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebhooksLogDto"
                 }
               }
             }
@@ -8684,30 +8827,21 @@
         "summary": "Returns settings of all webhooks.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of webhook settings",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Webhooks.Core.Webhook"
-                  }
+                  "$ref": "#/components/schemas/ASC.Webhooks.Core.Webhook"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Webhooks.Core.Webhook"
-                  }
+                  "$ref": "#/components/schemas/ASC.Webhooks.Core.Webhook"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Webhooks.Core.Webhook"
-                  }
+                  "$ref": "#/components/schemas/ASC.Webhooks.Core.Webhook"
                 }
               }
             }
@@ -8749,7 +8883,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Web plugin",
             "content": {
               "text/plain": {
                 "schema": {
@@ -8802,30 +8936,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Web plugin",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebPluginDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebPluginDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebPluginDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebPluginDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebPluginDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.ApiModels.ResponseDto.WebPluginDto"
                 }
               }
             }
@@ -8867,7 +8992,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Web plugin",
             "content": {
               "text/plain": {
                 "schema": {
@@ -9882,15 +10007,6 @@
         },
         "additionalProperties": false
       },
-      "ASC.IPSecurity.IPRestrictionsSettings": {
-        "type": "object",
-        "properties": {
-          "enable": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
       "ASC.IPSecurity.IpRestrictionBase": {
         "type": "object",
         "properties": {
@@ -10117,6 +10233,14 @@
           6043,
           6044,
           6045,
+          6046,
+          6047,
+          6048,
+          6049,
+          6050,
+          6051,
+          6052,
+          6053,
           7000,
           7001,
           7002,
@@ -12128,9 +12252,8 @@
         "type": "object",
         "properties": {
           "roomsId": {
-            "type": "integer",
             "description": "Room ID",
-            "format": "int32",
+            "nullable": true,
             "example": "1234"
           },
           "mute": {
@@ -12414,27 +12537,6 @@
         },
         "additionalProperties": false
       },
-      "ASC.Web.Api.ApiModels.ResponseDto.ConfirmDto": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "$ref": "#/components/schemas/ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult"
-          },
-          "roomId": {
-            "type": "string",
-            "description": "Room id",
-            "nullable": true,
-            "example": "some text"
-          },
-          "title": {
-            "type": "string",
-            "description": "Title",
-            "nullable": true,
-            "example": "some text"
-          }
-        },
-        "additionalProperties": false
-      },
       "ASC.Web.Api.ApiModels.ResponseDto.CookieSettingsDto": {
         "type": "object",
         "properties": {
@@ -12631,19 +12733,14 @@
         },
         "additionalProperties": false
       },
-      "ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificayionSettingsDto": {
+      "ASC.Web.Api.ApiModels.ResponseDto.RoomsNotificationSettingsDto": {
         "type": "object",
         "properties": {
           "disabledRooms": {
             "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+            "items": { },
             "description": "List of rooms with the disabled notifications",
-            "format": "int32",
-            "nullable": true,
-            "example": "1234"
+            "nullable": true
           }
         },
         "additionalProperties": false

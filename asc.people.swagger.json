@@ -35,30 +35,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of groups",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.GroupDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.GroupDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.GroupDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.GroupDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.GroupDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.GroupDto"
                 }
               }
             }
@@ -107,7 +98,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Newly created group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -166,7 +157,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -242,7 +233,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -298,7 +289,24 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "No content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.NoContentResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.NoContentResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.NoContentResult"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -339,30 +347,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of groups",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.GroupSummaryDto"
                 }
               }
             }
@@ -417,7 +416,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -495,7 +494,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -571,7 +570,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -647,7 +646,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -725,7 +724,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Group with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -872,7 +871,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Deleted user profile with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -947,7 +946,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated user profile with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1022,7 +1021,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated user profile with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1100,7 +1099,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Detailed user information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1165,7 +1164,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Email with the password",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         },
         "x-shortName": "Remind a user password"
@@ -1211,7 +1221,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Thumbnail parameters",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1268,7 +1278,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Thumbnail parameters: original photo, retina, maximum size photo, big, medium, small",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1323,7 +1333,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Thumbnail parameters: original photo, retina, maximum size photo, big, medium, small",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1398,7 +1408,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated thumbnail parameters: original photo, retina, maximum size photo, big, medium, small",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1475,7 +1485,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Result of file uploading",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1540,7 +1550,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Notification",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1588,7 +1609,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Newly added user with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1631,30 +1652,21 @@
         "summary": "Returns a list of profiles for all the portal users.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -1705,30 +1717,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               }
             }
@@ -1777,30 +1780,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -1843,7 +1837,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Deleted user detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1918,7 +1912,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Updated user with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -1963,7 +1957,7 @@
         "summary": "Deletes the current user profile.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Detailed information about my profile",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2006,7 +2000,7 @@
         "summary": "Returns the detailed information about the current user profile.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Detailed information about my profile",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2062,7 +2056,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Detailed profile information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2125,7 +2119,18 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Message text",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -2165,7 +2170,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Detailed profile information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2230,30 +2235,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -2316,7 +2312,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Detailed user information",
             "content": {
               "text/plain": {
                 "schema": {
@@ -2381,30 +2377,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -2455,30 +2442,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "User detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -2607,30 +2585,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -2760,30 +2729,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -2825,30 +2785,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               }
             }
@@ -2891,30 +2842,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -3044,30 +2986,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeDto"
                 }
               }
             }
@@ -3182,7 +3115,7 @@
         "summary": "Returns a theme which is set to the current portal.",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Theme",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3245,7 +3178,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Theme",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3328,30 +3261,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of third-party accounts",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.AccountInfoDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.AccountInfoDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.AccountInfoDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.AccountInfoDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.AccountInfoDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.People.ApiModels.ResponseDto.AccountInfoDto"
                 }
               }
             }
@@ -3502,7 +3426,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Reassignment progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3567,7 +3491,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Reassignment progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3632,7 +3556,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Reassignment progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3690,7 +3614,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Deletion progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3735,7 +3659,18 @@
         "summary": "Sends instructions for deleting a user profile.",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Information message",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -3783,7 +3718,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Deletion progress",
             "content": {
               "text/plain": {
                 "schema": {
@@ -3887,30 +3822,21 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -3970,30 +3896,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -4055,30 +3972,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -4141,30 +4049,21 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "List of users with the detailed information",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
-                  }
+                  "$ref": "#/components/schemas/ASC.Web.Api.Models.EmployeeFullDto"
                 }
               }
             }
@@ -5480,6 +5379,16 @@
           "System"
         ],
         "type": "string"
+      },
+      "Microsoft.AspNetCore.Mvc.NoContentResult": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
       },
       "System.Collections.Generic.KeyValuePair<System.String, Microsoft.Extensions.Primitives.StringValues>": {
         "type": "object",
