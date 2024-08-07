@@ -549,7 +549,7 @@
           "dump": {
             "type": "boolean",
             "description": "Specifies if a dump will be created or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -579,7 +579,7 @@
           "notify": {
             "type": "boolean",
             "description": "Notifies users about portal restoring process or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -613,7 +613,7 @@
           "dump": {
             "type": "boolean",
             "description": "Specifies if a dump will be created or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -644,11 +644,12 @@
       },
       "ASC.Data.Backup.BackupAjaxHandler_BackupPeriod": {
         "enum": [
-          0,
-          1,
-          2
+          "EveryDay",
+          "EveryWeek",
+          "EveryMonth"
         ],
         "type": "integer",
+        "description": "[0 - Every day, 1 - Every week, 2 - Every month]",
         "format": "int32"
       },
       "ASC.Data.Backup.BackupAjaxHandler_CronParams": {
@@ -659,11 +660,15 @@
           },
           "hour": {
             "type": "integer",
-            "format": "int32"
+            "description": "Hour",
+            "format": "int32",
+            "example": 1234
           },
           "day": {
             "type": "integer",
-            "format": "int32"
+            "description": "Day",
+            "format": "int32",
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -680,6 +685,7 @@
               "type": "string",
               "nullable": true
             },
+            "description": "Storage parameters",
             "nullable": true
           },
           "cronParams": {
@@ -687,15 +693,21 @@
           },
           "backupsStored": {
             "type": "integer",
+            "description": "Maximum number of the stored backup copies",
             "format": "int32",
-            "nullable": true
+            "nullable": true,
+            "example": 1234
           },
           "lastBackupTime": {
             "type": "string",
-            "format": "date-time"
+            "description": "Last backup creation time",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "dump": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Dump",
+            "example": false
           }
         },
         "additionalProperties": false
@@ -707,7 +719,7 @@
             "type": "string",
             "description": "Backup ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "fileName": {
             "type": "string",
@@ -722,13 +734,13 @@
             "type": "string",
             "description": "Creation date",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "expiresOn": {
             "type": "string",
             "description": "Expiration date",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           }
         },
         "additionalProperties": false
@@ -739,13 +751,13 @@
           "isCompleted": {
             "type": "boolean",
             "description": "Completed or not",
-            "example": "true"
+            "example": true
           },
           "progress": {
             "type": "integer",
             "description": "Progress",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "error": {
             "type": "string",
@@ -764,7 +776,7 @@
             "type": "integer",
             "description": "Tenant id",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "backupProgressEnum": {
             "$ref": "#/components/schemas/ASC.Data.Backup.Contracts.BackupProgressEnum"
@@ -780,23 +792,25 @@
       },
       "ASC.Data.Backup.Contracts.BackupProgressEnum": {
         "enum": [
-          0,
-          1,
-          2
+          "Backup",
+          "Restore",
+          "Transfer"
         ],
         "type": "integer",
+        "description": "[0 - Backup, 1 - Restore, 2 - Transfer]",
         "format": "int32"
       },
       "ASC.Data.Backup.Contracts.BackupStorageType": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
+          "Documents",
+          "ThridpartyDocuments",
+          "CustomCloud",
+          "Local",
+          "DataStore",
+          "ThirdPartyConsumer"
         ],
         "type": "integer",
+        "description": "[0 - Documents, 1 - Thridparty documents, 2 - Custom cloud, 3 - Local, 4 - Data store, 5 - Thirdparty consumer]",
         "format": "int32"
       }
     },

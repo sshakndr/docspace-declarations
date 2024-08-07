@@ -1149,34 +1149,6 @@
         "x-shortName": "Get a path to the portal"
       }
     },
-    "/api/2.0/portal/deleteportalimmediately": {
-      "delete": {
-        "tags": [
-          "Portal / Settings"
-        ],
-        "summary": "Deletes the current portal immediately.",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        },
-        "security": [
-          {
-            "asc_auth_key": [
-              "read",
-              "write"
-            ]
-          }
-        ],
-        "x-shortName": "Delete a portal immediately"
-      }
-    },
     "/api/2.0/portal/suspend": {
       "post": {
         "tags": [
@@ -1523,7 +1495,7 @@
               "type": "string",
               "description": "User ID",
               "format": "uuid",
-              "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+              "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
             }
           },
           {
@@ -9170,13 +9142,17 @@
         "properties": {
           "utcTime": {
             "type": "string",
+            "description": "UtcTime",
             "format": "date-time",
-            "readOnly": true
+            "readOnly": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "timeZoneOffset": {
             "type": "string",
+            "description": "TimeZoneOffset",
             "format": "date-span",
-            "readOnly": true
+            "readOnly": true,
+            "example": "00:00:00"
           }
         },
         "additionalProperties": false
@@ -9186,38 +9162,56 @@
         "properties": {
           "id": {
             "type": "string",
-            "format": "uuid"
+            "description": "ID",
+            "format": "uuid",
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "appName": {
             "type": "string",
-            "nullable": true
+            "description": "Product class name",
+            "nullable": true,
+            "example": "some text"
           },
           "title": {
             "type": "string",
-            "nullable": true
+            "description": "Title",
+            "nullable": true,
+            "example": "some text"
           },
           "link": {
             "type": "string",
-            "nullable": true
+            "description": "Start link",
+            "nullable": true,
+            "example": "some text"
           },
           "iconUrl": {
             "type": "string",
-            "nullable": true
+            "description": "Icon URL",
+            "nullable": true,
+            "example": "some text"
           },
           "imageUrl": {
             "type": "string",
-            "nullable": true
+            "description": "Large image URL",
+            "nullable": true,
+            "example": "some text"
           },
           "helpUrl": {
             "type": "string",
-            "nullable": true
+            "description": "Help URL",
+            "nullable": true,
+            "example": "some text"
           },
           "description": {
             "type": "string",
-            "nullable": true
+            "description": "Description",
+            "nullable": true,
+            "example": "some text"
           },
           "isPrimary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the module is primary or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -9228,7 +9222,7 @@
           "completed": {
             "type": "boolean",
             "description": "Specifies if the SMTP operation is completed or not",
-            "example": "true"
+            "example": true
           },
           "id": {
             "type": "string",
@@ -9252,94 +9246,98 @@
             "type": "integer",
             "description": "Percentage of SMTP operation completion",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
       },
       "ASC.AuditTrail.Types.ActionType": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
+          "None",
+          "Create",
+          "Update",
+          "Delete",
+          "Link",
+          "Unlink",
+          "Attach",
+          "Detach",
+          "Send",
+          "Import",
+          "Export",
+          "UpdateAccess",
+          "Download",
+          "Upload",
+          "Copy",
+          "Move",
+          "Reassigns",
+          "Follow",
+          "Unfollow",
+          "Logout"
         ],
         "type": "integer",
+        "description": "[0 - None, 1 - Create, 2 - Update, 3 - Delete, 4 - Link, 5 - Unlink, 6 - Attach, 7 - Detach, 8 - Send, 9 - Import, 10 - Export, 11 - Update access, 12 - Download, 13 - Upload, 14 - Copy, 15 - Move, 16 - Reassigns, 17 - Follow, 18 - Unfollow, 19 - Logout]",
         "format": "int32"
       },
       "ASC.AuditTrail.Types.EntryType": {
         "enum": [
-          0,
-          1,
-          2,
-          23,
-          24,
-          25,
-          26
+          "None",
+          "File",
+          "Folder",
+          "User",
+          "Group",
+          "Room",
+          "Tag"
         ],
         "type": "integer",
+        "description": "[0 - None, 1 - File, 2 - Folder, 23 - User, 24 - Group, 25 - Room, 26 - Tag]",
         "format": "int32"
       },
       "ASC.AuditTrail.Types.ModuleType": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22,
-          23,
-          24,
-          25,
-          26,
-          27
+          "None",
+          "Files",
+          "Folders",
+          "DocumentsSettings",
+          "Companies",
+          "Persons",
+          "Contacts",
+          "CrmTasks",
+          "Opportunities",
+          "Invoices",
+          "Cases",
+          "CommonCrmSettings",
+          "ContactsSettings",
+          "ContactTypes",
+          "InvoiceSettings",
+          "OtherCrmSettings",
+          "Users",
+          "Groups",
+          "Projects",
+          "Milestones",
+          "Tasks",
+          "Discussions",
+          "TimeTracking",
+          "Reports",
+          "ProjectsSettings",
+          "General",
+          "Products",
+          "Rooms"
         ],
         "type": "integer",
+        "description": "[0 - None, 1 - Files, 2 - Folders, 3 - Documents settings, 4 - Companies, 5 - Persons, 6 - Contacts, 7 - Crm tasks, 8 - Opportunities, 9 - Invoices, 10 - Cases, 11 - Common crm settings, 12 - Contacts settings, 13 - Contact types, 14 - Invoice settings, 15 - Other crm settings, 16 - Users, 17 - Groups, 18 - Projects, 19 - Milestones, 20 - Tasks, 21 - Discussions, 22 - Time tracking, 23 - Reports, 24 - Projects settings, 25 - General, 26 - Products, 27 - Rooms]",
         "format": "int32"
       },
       "ASC.AuditTrail.Types.ProductType": {
         "enum": [
-          0,
-          2,
-          3,
-          4,
-          5,
-          7
+          "None",
+          "Documents",
+          "Login",
+          "Others",
+          "People",
+          "Settings"
         ],
         "type": "integer",
+        "description": "[0 - None, 2 - Documents, 3 - Login, 4 - Others, 5 - People, 7 - Settings]",
         "format": "int32"
       },
       "ASC.Core.Billing.Quota": {
@@ -9347,11 +9345,15 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "ID",
+            "format": "int32",
+            "example": 1234
           },
           "quantity": {
             "type": "integer",
-            "format": "int32"
+            "description": "Quantity",
+            "format": "int32",
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -9361,32 +9363,43 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "ID",
+            "format": "int32",
+            "example": 1234
           },
           "state": {
             "$ref": "#/components/schemas/ASC.Core.Billing.TariffState"
           },
           "dueDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Due date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "delayDueDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Delay due date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "licenseDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "License date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "customerId": {
             "type": "string",
-            "nullable": true
+            "description": "Customer ID",
+            "nullable": true,
+            "example": "some text"
           },
           "quotas": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ASC.Core.Billing.Quota"
             },
+            "description": "List of quotas",
             "nullable": true
           }
         },
@@ -9394,12 +9407,13 @@
       },
       "ASC.Core.Billing.TariffState": {
         "enum": [
-          0,
-          1,
-          2,
-          3
+          "Trial",
+          "Paid",
+          "Delay",
+          "NotPaid"
         ],
         "type": "integer",
+        "description": "[0 - Trial, 1 - Paid, 2 - Delay, 3 - Not paid]",
         "format": "int32"
       },
       "ASC.Core.Common.EF.FireBaseUser": {
@@ -9407,27 +9421,39 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "ID",
+            "format": "int32",
+            "example": 1234
           },
           "userId": {
             "type": "string",
-            "format": "uuid"
+            "description": "User ID",
+            "format": "uuid",
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "tenantId": {
             "type": "integer",
-            "format": "int32"
+            "description": "Tenant ID",
+            "format": "int32",
+            "example": 1234
           },
           "firebaseDeviceToken": {
             "type": "string",
-            "nullable": true
+            "description": "Firebase device token",
+            "nullable": true,
+            "example": "some text"
           },
           "application": {
             "type": "string",
-            "nullable": true
+            "description": "Application",
+            "nullable": true,
+            "example": "some text"
           },
           "isSubscribed": {
             "type": "boolean",
-            "nullable": true
+            "description": "Specifies if the user is subscribed to the push notifications or not",
+            "nullable": true,
+            "example": true
           },
           "tenant": {
             "$ref": "#/components/schemas/ASC.Core.Common.EF.Model.DbTenant"
@@ -9440,44 +9466,64 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "Id",
+            "format": "int32",
+            "example": 1234
           },
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Name",
+            "nullable": true,
+            "example": "some text"
           },
           "alias": {
             "type": "string",
-            "nullable": true
+            "description": "Alias",
+            "nullable": true,
+            "example": "some text"
           },
           "mappedDomain": {
             "type": "string",
-            "nullable": true
+            "description": "Mapped domain",
+            "nullable": true,
+            "example": "some text"
           },
           "version": {
             "type": "integer",
-            "format": "int32"
+            "description": "Version",
+            "format": "int32",
+            "example": 1234
           },
           "version_Changed": {
             "type": "string",
+            "description": "Version_changed",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "versionChanged": {
             "type": "string",
-            "format": "date-time"
+            "description": "Version changed",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "language": {
             "type": "string",
-            "nullable": true
+            "description": "Language",
+            "nullable": true,
+            "example": "some text"
           },
           "timeZone": {
             "type": "string",
-            "nullable": true
+            "description": "Time zone",
+            "nullable": true,
+            "example": "some text"
           },
           "trustedDomainsRaw": {
             "type": "string",
-            "nullable": true
+            "description": "Trusted domains raw",
+            "nullable": true,
+            "example": "some text"
           },
           "trustedDomainsEnabled": {
             "$ref": "#/components/schemas/ASC.Core.Tenants.TenantTrustedDomainsType"
@@ -9487,38 +9533,54 @@
           },
           "statusChanged": {
             "type": "string",
+            "description": "Status changed",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "statusChangedHack": {
             "type": "string",
-            "format": "date-time"
+            "description": "Status changed hack",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "creationDateTime": {
             "type": "string",
-            "format": "date-time"
+            "description": "Creation date time",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "ownerId": {
             "type": "string",
+            "description": "Owner id",
             "format": "uuid",
-            "nullable": true
+            "nullable": true,
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "paymentId": {
             "type": "string",
-            "nullable": true
+            "description": "Payment id",
+            "nullable": true,
+            "example": "some text"
           },
           "industry": {
             "$ref": "#/components/schemas/ASC.Core.Tenants.TenantIndustry"
           },
           "lastModified": {
             "type": "string",
-            "format": "date-time"
+            "description": "Last modified",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "spam": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Spam",
+            "example": true
           },
           "calls": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Calls",
+            "example": true
           },
           "partner": {
             "$ref": "#/components/schemas/ASC.Core.Common.EF.Model.DbTenantPartner"
@@ -9531,19 +9593,27 @@
         "properties": {
           "tenantId": {
             "type": "integer",
-            "format": "int32"
+            "description": "Tenant id",
+            "format": "int32",
+            "example": 1234
           },
           "partnerId": {
             "type": "string",
-            "nullable": true
+            "description": "Partner id",
+            "nullable": true,
+            "example": "some text"
           },
           "affiliateId": {
             "type": "string",
-            "nullable": true
+            "description": "Affiliate id",
+            "nullable": true,
+            "example": "some text"
           },
           "campaign": {
             "type": "string",
-            "nullable": true
+            "description": "Campaign",
+            "nullable": true,
+            "example": "some text"
           },
           "tenant": {
             "$ref": "#/components/schemas/ASC.Core.Common.EF.Model.DbTenant"
@@ -9556,11 +9626,15 @@
         "properties": {
           "loginHistoryLifeTime": {
             "type": "integer",
-            "format": "int32"
+            "description": "Login history lifetime",
+            "format": "int32",
+            "example": 1234
           },
           "auditTrailLifeTime": {
             "type": "integer",
-            "format": "int32"
+            "description": "Audit trail lifetime",
+            "format": "int32",
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -9579,43 +9653,50 @@
         "properties": {
           "regex": {
             "type": "string",
+            "description": "Regex",
             "nullable": true,
-            "readOnly": true
+            "readOnly": true,
+            "example": "some text"
           },
           "minLength": {
             "type": "integer",
+            "description": "Min length",
             "format": "int32",
-            "readOnly": true
+            "readOnly": true,
+            "example": 1234
           },
           "maxLength": {
             "type": "integer",
+            "description": "Max length",
             "format": "int32",
-            "readOnly": true
+            "readOnly": true,
+            "example": 63
           }
         },
         "additionalProperties": false
       },
       "ASC.Core.Tenants.TenantIndustry": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16
+          "Other",
+          "Accounting",
+          "AdvertisingMarketingPR",
+          "Banking",
+          "Consulting",
+          "Design",
+          "Education",
+          "Environment",
+          "FinancialServices",
+          "HealthCare",
+          "IT",
+          "Legal",
+          "Manufacturing",
+          "PublicSector",
+          "Publishing",
+          "RetailSales",
+          "Telecommunications"
         ],
         "type": "integer",
+        "description": "[0 - Other, 1 - Accounting, 2 - Advertising marketing PR, 3 - Banking, 4 - Consulting, 5 - Design, 6 - Education, 7 - Environment, 8 - Financial services, 9 - Health care, 10 - IT, 11 - Legal, 12 - Manufacturing, 13 - Public sector, 14 - Publishing, 15 - Retail sales, 16 - Telecommunications]",
         "format": "int32"
       },
       "ASC.Core.Tenants.TenantQuota": {
@@ -9623,102 +9704,160 @@
         "properties": {
           "tenantId": {
             "type": "integer",
-            "format": "int32"
+            "description": "Tenant ID",
+            "format": "int32",
+            "example": 1234
           },
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Name",
+            "nullable": true,
+            "example": "Default"
           },
           "price": {
             "type": "number",
-            "format": "double"
+            "description": "Price",
+            "format": "double",
+            "example": "10.0"
           },
           "priceCurrencySymbol": {
             "type": "string",
-            "nullable": true
+            "description": "Price currency symbol",
+            "nullable": true,
+            "example": "some text"
           },
           "productId": {
             "type": "string",
-            "nullable": true
+            "description": "Product ID",
+            "nullable": true,
+            "example": "some text"
           },
           "visible": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the tenant quota is visible or not",
+            "example": true
           },
           "features": {
             "type": "string",
-            "nullable": true
+            "description": "Tenant quota features",
+            "nullable": true,
+            "example": "some text"
           },
           "maxFileSize": {
             "type": "integer",
-            "format": "int64"
+            "description": "Maximum file size",
+            "format": "int64",
+            "example": 26214400
           },
           "maxTotalSize": {
             "type": "integer",
-            "format": "int64"
+            "description": "Maximum total size",
+            "format": "int64",
+            "example": 9223372036854775807
           },
           "countUser": {
             "type": "integer",
-            "format": "int32"
+            "description": "Number of portal users",
+            "format": "int32",
+            "example": 1234
           },
           "countRoomAdmin": {
             "type": "integer",
-            "format": "int32"
+            "description": "Number of portal room administrators",
+            "format": "int32",
+            "example": 1234
           },
           "usersInRoom": {
             "type": "integer",
-            "format": "int32"
+            "description": "Number of room users",
+            "format": "int32",
+            "example": 1234
           },
           "countRoom": {
             "type": "integer",
-            "format": "int32"
+            "description": "Number of rooms",
+            "format": "int32",
+            "example": 1234
           },
           "nonProfit": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the tenant quota is nonprofit or not",
+            "example": true
           },
           "trial": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the tenant quota is trial or not",
+            "example": true
           },
           "free": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the tenant quota is free or not",
+            "example": true
           },
           "update": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the tenant quota is updated or not",
+            "example": true
           },
           "audit": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the audit trail is available or not",
+            "example": true
           },
           "docsEdition": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if this tenant quota is Docs edition or not",
+            "example": true
           },
           "ldap": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the LDAP settings are available or not",
+            "example": true
           },
           "sso": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the SSO settings are available or not",
+            "example": true
           },
           "statistic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the statistic settings are available or not",
+            "example": true
           },
           "whiteLabel": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the white label settings are available or not",
+            "example": true
           },
           "customization": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the customization settings are available or not",
+            "example": true
           },
           "custom": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the custom domain URL is available or not",
+            "example": true
           },
           "autoBackupRestore": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the automatic Backup&amp;Restore feature is available or not",
+            "example": true
           },
           "oauth": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if Oauth is available or not",
+            "example": true
           },
           "contentSearch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the content search is available or not",
+            "example": true
           },
           "thirdParty": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the third-party accounts linking is available or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -9727,16 +9866,22 @@
         "type": "object",
         "properties": {
           "enableQuota": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the quota is enabled or not",
+            "example": true
           },
           "quota": {
             "type": "integer",
-            "format": "int64"
+            "description": "Quota",
+            "format": "int64",
+            "example": 1234
           },
           "lastRecalculateDate": {
             "type": "string",
+            "description": "Date of the last quota recalculation",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           }
         },
         "additionalProperties": false
@@ -9745,61 +9890,71 @@
         "type": "object",
         "properties": {
           "enableQuota": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the quota is enabled or not",
+            "example": true
           },
           "defaultQuota": {
             "type": "integer",
-            "format": "int64"
+            "description": "Default quota",
+            "format": "int64",
+            "example": 1234
           },
           "lastRecalculateDate": {
             "type": "string",
+            "description": "Date of the last quota recalculation",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           }
         },
         "additionalProperties": false
       },
       "ASC.Core.Tenants.TenantStatus": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "Active",
+          "Suspended",
+          "RemovePending",
+          "Transfering",
+          "Restoring",
+          "Migrating",
+          "Encryption"
         ],
         "type": "integer",
+        "description": "[0 - Active, 1 - Suspended, 2 - Remove pending, 3 - Transfering, 4 - Restoring, 5 - Migrating, 6 - Encryption]",
         "format": "int32"
       },
       "ASC.Core.Tenants.TenantTrustedDomainsType": {
         "enum": [
-          0,
-          1,
-          2
+          "None",
+          "Custom",
+          "All"
         ],
         "type": "integer",
+        "description": "[0 - None, 1 - Custom, 2 - All]",
         "format": "int32"
       },
       "ASC.Core.Users.EmployeeActivationStatus": {
         "enum": [
-          0,
-          1,
-          2,
-          4
+          "NotActivated",
+          "Activated",
+          "Pending",
+          "AutoGenerated"
         ],
         "type": "integer",
+        "description": "[0 - Not activated, 1 - Activated, 2 - Pending, 4 - Auto generated]",
         "format": "int32"
       },
       "ASC.Core.Users.EmployeeStatus": {
         "enum": [
-          1,
-          2,
-          4,
-          5,
-          7
+          "Active",
+          "Terminated",
+          "Pending",
+          "Default",
+          "All"
         ],
         "type": "integer",
+        "description": "[1 - Active, 2 - Terminated, 4 - Pending, 5 - Default, 7 - All]",
         "format": "int32"
       },
       "ASC.Core.Users.EmployeeType": {
@@ -9810,14 +9965,16 @@
           "DocSpaceAdmin",
           "Collaborator"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "[0 - All, 1 - Room admin, 2 - User, 3 - DocSpace admin, 4 - Collaborator]"
       },
       "ASC.Core.Users.MobilePhoneActivationStatus": {
         "enum": [
-          0,
-          1
+          "NotActivated",
+          "Activated"
         ],
         "type": "integer",
+        "description": "[0 - Not activated, 1 - Activated]",
         "format": "int32"
       },
       "ASC.Core.Users.UserInfo": {
@@ -9825,28 +9982,40 @@
         "properties": {
           "id": {
             "type": "string",
-            "format": "uuid"
+            "description": "ID",
+            "format": "uuid",
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "firstName": {
             "type": "string",
-            "nullable": true
+            "description": "First name",
+            "nullable": true,
+            "example": "some text"
           },
           "lastName": {
             "type": "string",
-            "nullable": true
+            "description": "Last name",
+            "nullable": true,
+            "example": "some text"
           },
           "userName": {
             "type": "string",
-            "nullable": true
+            "description": "Username",
+            "nullable": true,
+            "example": "some text"
           },
           "birthDate": {
             "type": "string",
+            "description": "Birthday",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "sex": {
             "type": "boolean",
-            "nullable": true
+            "description": "Sex (male or female)",
+            "nullable": true,
+            "example": true
           },
           "status": {
             "$ref": "#/components/schemas/ASC.Core.Users.EmployeeStatus"
@@ -9856,86 +10025,124 @@
           },
           "terminatedDate": {
             "type": "string",
+            "description": "The date and time when the user account was terminated",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "title": {
             "type": "string",
-            "nullable": true
+            "description": "Title",
+            "nullable": true,
+            "example": "some text"
           },
           "workFromDate": {
             "type": "string",
+            "description": "Registration date",
             "format": "date-time",
-            "nullable": true
+            "nullable": true,
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "email": {
             "type": "string",
-            "nullable": true
+            "description": "Email",
+            "nullable": true,
+            "example": "some text"
           },
           "contacts": {
             "type": "string",
-            "nullable": true
+            "description": "List of contacts in the string format",
+            "nullable": true,
+            "example": "some text"
           },
           "contactsList": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "nullable": true
+            "description": "List of contacts",
+            "nullable": true,
+            "example": "some text"
           },
           "location": {
             "type": "string",
-            "nullable": true
+            "description": "Location",
+            "nullable": true,
+            "example": "some text"
           },
           "notes": {
             "type": "string",
-            "nullable": true
+            "description": "Notes",
+            "nullable": true,
+            "example": "some text"
           },
           "removed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the user account was removed or not",
+            "example": true
           },
           "lastModified": {
             "type": "string",
-            "format": "date-time"
+            "description": "Last modified date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "tenantId": {
             "type": "integer",
-            "format": "int32"
+            "description": "Tenant ID",
+            "format": "int32",
+            "example": 1234
           },
           "isActive": {
             "type": "boolean",
-            "readOnly": true
+            "description": "Spceifies if the user is active or not",
+            "readOnly": true,
+            "example": true
           },
           "cultureName": {
             "type": "string",
-            "nullable": true
+            "description": "Language",
+            "nullable": true,
+            "example": "some text"
           },
           "mobilePhone": {
             "type": "string",
-            "nullable": true
+            "description": "Mobile phone",
+            "nullable": true,
+            "example": "some text"
           },
           "mobilePhoneActivationStatus": {
             "$ref": "#/components/schemas/ASC.Core.Users.MobilePhoneActivationStatus"
           },
           "sid": {
             "type": "string",
-            "nullable": true
+            "description": "LDAP user identificator",
+            "nullable": true,
+            "example": "some text"
           },
           "ldapQouta": {
             "type": "integer",
-            "format": "int64"
+            "description": "LDAP user quota attribute",
+            "format": "int64",
+            "example": 1234
           },
           "ssoNameId": {
             "type": "string",
-            "nullable": true
+            "description": "SSO SAML user identificator",
+            "nullable": true,
+            "example": "some text"
           },
           "ssoSessionId": {
             "type": "string",
-            "nullable": true
+            "description": "SSO SAML user session identificator",
+            "nullable": true,
+            "example": "some text"
           },
           "createDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Creation date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "checkActivation": {
             "type": "boolean",
@@ -9949,7 +10156,9 @@
         "properties": {
           "module": {
             "type": "string",
-            "nullable": true
+            "description": "Storage name",
+            "nullable": true,
+            "example": "some text"
           },
           "props": {
             "type": "object",
@@ -9957,6 +10166,7 @@
               "type": "string",
               "nullable": true
             },
+            "description": "Storage properties",
             "nullable": true
           },
           "switch": {
@@ -9970,7 +10180,9 @@
         "properties": {
           "module": {
             "type": "string",
-            "nullable": true
+            "description": "Storage name",
+            "nullable": true,
+            "example": "some text"
           },
           "props": {
             "type": "object",
@@ -9978,6 +10190,7 @@
               "type": "string",
               "nullable": true
             },
+            "description": "Storage properties",
             "nullable": true
           },
           "switch": {
@@ -9991,18 +10204,26 @@
         "properties": {
           "ip": {
             "type": "string",
-            "nullable": true
+            "description": "IP address",
+            "nullable": true,
+            "example": "some text"
           },
           "forAdmin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if this address is for administrator users only or not",
+            "example": true
           },
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "Restiction ID",
+            "format": "int32",
+            "example": 1234
           },
           "tenantId": {
             "type": "integer",
-            "format": "int32"
+            "description": "Tenant ID",
+            "format": "int32",
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -10011,7 +10232,9 @@
         "type": "object",
         "properties": {
           "enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the IP restrictions are enabled or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -10021,243 +10244,248 @@
         "properties": {
           "ip": {
             "type": "string",
-            "nullable": true
+            "description": "IP address",
+            "nullable": true,
+            "example": "some text"
           },
           "forAdmin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if this address is for administrator users only or not",
+            "example": true
           }
         },
         "additionalProperties": false
       },
       "ASC.MessagingSystem.Core.MessageAction": {
         "enum": [
-          1000,
-          1001,
-          1002,
-          1003,
-          1004,
-          1005,
-          1006,
-          1007,
-          1008,
-          1009,
-          1010,
-          1011,
-          1012,
-          1013,
-          1014,
-          1015,
-          1016,
-          1017,
-          1018,
-          1019,
-          1020,
-          1021,
-          1022,
-          1023,
-          1024,
-          1025,
-          1026,
-          4000,
-          4001,
-          4002,
-          4003,
-          4004,
-          4005,
-          4006,
-          4007,
-          4008,
-          4009,
-          4010,
-          4011,
-          4012,
-          4013,
-          4014,
-          4015,
-          4016,
-          4017,
-          4018,
-          4019,
-          4020,
-          4021,
-          4022,
-          4023,
-          4024,
-          4025,
-          4026,
-          4027,
-          4028,
-          4029,
-          4030,
-          4031,
-          4032,
-          4033,
-          4034,
-          4035,
-          4036,
-          4037,
-          5000,
-          5001,
-          5002,
-          5003,
-          5004,
-          5005,
-          5006,
-          5007,
-          5008,
-          5009,
-          5010,
-          5011,
-          5012,
-          5013,
-          5014,
-          5015,
-          5016,
-          5017,
-          5018,
-          5019,
-          5020,
-          5021,
-          5022,
-          5023,
-          5024,
-          5025,
-          5026,
-          5027,
-          5028,
-          5029,
-          5030,
-          5031,
-          5032,
-          5033,
-          5034,
-          5035,
-          5036,
-          5037,
-          5038,
-          5039,
-          5040,
-          5041,
-          5042,
-          5043,
-          5044,
-          5045,
-          5046,
-          5047,
-          5048,
-          5049,
-          5050,
-          5051,
-          5052,
-          5053,
-          5054,
-          5055,
-          5056,
-          5057,
-          5058,
-          5059,
-          5060,
-          5061,
-          5062,
-          5063,
-          5064,
-          5065,
-          5066,
-          5068,
-          5069,
-          5070,
-          5071,
-          5072,
-          5073,
-          5074,
-          5075,
-          5076,
-          5077,
-          5078,
-          5079,
-          5080,
-          5081,
-          5082,
-          5083,
-          5084,
-          5085,
-          5086,
-          5087,
-          5088,
-          5089,
-          5090,
-          5091,
-          5092,
-          5093,
-          5094,
-          5095,
-          5096,
-          5097,
-          5098,
-          5099,
-          5100,
-          6000,
-          6001,
-          6002,
-          6003,
-          6004,
-          6005,
-          6006,
-          6007,
-          6008,
-          6009,
-          6010,
-          6011,
-          6012,
-          6013,
-          6014,
-          6015,
-          6016,
-          6017,
-          6018,
-          6019,
-          6020,
-          6021,
-          6022,
-          6023,
-          6024,
-          6025,
-          6026,
-          6027,
-          6028,
-          6029,
-          6030,
-          6031,
-          6032,
-          6033,
-          6034,
-          6035,
-          6036,
-          6037,
-          6038,
-          6039,
-          6040,
-          6041,
-          6042,
-          6043,
-          6044,
-          6045,
-          6046,
-          6047,
-          6048,
-          6049,
-          6050,
-          6051,
-          6052,
-          6053,
-          7000,
-          7001,
-          7002,
-          7003,
-          7004,
-          -1
+          "LoginSuccess",
+          "LoginSuccessViaSocialAccount",
+          "LoginFailInvalidCombination",
+          "LoginFailSocialAccountNotFound",
+          "LoginFailDisabledProfile",
+          "LoginFail",
+          "Logout",
+          "LoginSuccessViaSms",
+          "LoginFailViaSms",
+          "LoginFailIpSecurity",
+          "LoginSuccessViaApi",
+          "LoginSuccessViaSocialApp",
+          "LoginSuccessViaApiSms",
+          "LoginFailViaApi",
+          "LoginFailViaApiSms",
+          "LoginSuccessViaSSO",
+          "SessionStarted",
+          "SessionCompleted",
+          "LoginFailViaSSO",
+          "LoginSuccessViaApiSocialAccount",
+          "LoginFailViaApiSocialAccount",
+          "LoginSuccesViaTfaApp",
+          "LoginFailViaTfaApp",
+          "LoginFailBruteForce",
+          "LoginSuccessViaApiTfa",
+          "LoginFailViaApiTfa",
+          "LoginFailRecaptcha",
+          "UserCreated",
+          "GuestCreated",
+          "UserCreatedViaInvite",
+          "GuestCreatedViaInvite",
+          "UserActivated",
+          "GuestActivated",
+          "UserUpdated",
+          "UserUpdatedLanguage",
+          "UserAddedAvatar",
+          "UserDeletedAvatar",
+          "UserUpdatedAvatarThumbnails",
+          "UserLinkedSocialAccount",
+          "UserUnlinkedSocialAccount",
+          "UserSentActivationInstructions",
+          "UserSentEmailChangeInstructions",
+          "UserSentPasswordChangeInstructions",
+          "UserSentDeleteInstructions",
+          "UserUpdatedPassword",
+          "UserDeleted",
+          "UsersUpdatedType",
+          "UsersUpdatedStatus",
+          "UsersSentActivationInstructions",
+          "UsersDeleted",
+          "SentInviteInstructions",
+          "UserImported",
+          "GuestImported",
+          "GroupCreated",
+          "GroupUpdated",
+          "GroupDeleted",
+          "UserUpdatedMobileNumber",
+          "UserDataReassigns",
+          "UserDataRemoving",
+          "UserConnectedTfaApp",
+          "UserDisconnectedTfaApp",
+          "UserLogoutActiveConnections",
+          "UserLogoutActiveConnection",
+          "UserLogoutActiveConnectionsForUser",
+          "SendJoinInvite",
+          "FileCreated",
+          "FileRenamed",
+          "FileUpdated",
+          "FileCreatedVersion",
+          "FileDeletedVersion",
+          "FileUpdatedRevisionComment",
+          "FileLocked",
+          "FileUnlocked",
+          "FileUpdatedAccess",
+          "FileDownloaded",
+          "FileDownloadedAs",
+          "FileUploaded",
+          "FileImported",
+          "FileCopied",
+          "FileCopiedWithOverwriting",
+          "FileMoved",
+          "FileMovedWithOverwriting",
+          "FileMovedToTrash",
+          "FileDeleted",
+          "FolderCreated",
+          "FolderRenamed",
+          "FolderUpdatedAccess",
+          "FolderCopied",
+          "FolderCopiedWithOverwriting",
+          "FolderMoved",
+          "FolderMovedWithOverwriting",
+          "FolderMovedToTrash",
+          "FolderDeleted",
+          "ThirdPartyCreated",
+          "ThirdPartyUpdated",
+          "ThirdPartyDeleted",
+          "DocumentsThirdPartySettingsUpdated",
+          "DocumentsOverwritingSettingsUpdated",
+          "DocumentsUploadingFormatsSettingsUpdated",
+          "UserFileUpdated",
+          "FileConverted",
+          "FileSendAccessLink",
+          "DocumentServiceLocationSetting",
+          "AuthorizationKeysSetting",
+          "FullTextSearchSetting",
+          "StartTransferSetting",
+          "StartBackupSetting",
+          "LicenseKeyUploaded",
+          "FileChangeOwner",
+          "FileRestoreVersion",
+          "DocumentSendToSign",
+          "DocumentSignComplete",
+          "UserUpdatedEmail",
+          "DocumentsStoreForcesave",
+          "DocumentsForcesave",
+          "StartStorageEncryption",
+          "PrivacyRoomEnable",
+          "PrivacyRoomDisable",
+          "StartStorageDecryption",
+          "FileOpenedForChange",
+          "FileMarkedAsFavorite",
+          "FileRemovedFromFavorite",
+          "FolderDownloaded",
+          "FileRemovedFromList",
+          "FolderRemovedFromList",
+          "FileExternalLinkAccessUpdated",
+          "TrashEmptied",
+          "FileRevisionDownloaded",
+          "FileMarkedAsRead",
+          "FileReaded",
+          "FolderMarkedAsRead",
+          "FolderUpdatedAccessFor",
+          "FileUpdatedAccessFor",
+          "DocumentsExternalShareSettingsUpdated",
+          "RoomCreated",
+          "RoomRenamed",
+          "RoomArchived",
+          "RoomUnarchived",
+          "RoomDeleted",
+          "RoomUpdateAccessForUser",
+          "TagCreated",
+          "TagsDeleted",
+          "AddedRoomTags",
+          "DeletedRoomTags",
+          "RoomLogoCreated",
+          "RoomLogoDeleted",
+          "RoomInvitationLinkUpdated",
+          "DocumentsKeepNewFileNameSettingsUpdated",
+          "RoomRemoveUser",
+          "RoomCreateUser",
+          "RoomInvitationLinkCreated",
+          "RoomInvitationLinkDeleted",
+          "RoomExternalLinkCreated",
+          "RoomExternalLinkUpdated",
+          "RoomExternalLinkDeleted",
+          "FileExternalLinkCreated",
+          "FileExternalLinkUpdated",
+          "FileExternalLinkDeleted",
+          "RoomGroupAdded",
+          "RoomUpdateAccessForGroup",
+          "RoomGroupRemove",
+          "RoomExternalLinkRevoked",
+          "RoomExternalLinkRenamed",
+          "FileUploadedWithOverwriting",
+          "RoomCopied",
+          "LanguageSettingsUpdated",
+          "TimeZoneSettingsUpdated",
+          "DnsSettingsUpdated",
+          "TrustedMailDomainSettingsUpdated",
+          "PasswordStrengthSettingsUpdated",
+          "TwoFactorAuthenticationSettingsUpdated",
+          "AdministratorMessageSettingsUpdated",
+          "DefaultStartPageSettingsUpdated",
+          "ProductsListUpdated",
+          "AdministratorAdded",
+          "AdministratorOpenedFullAccess",
+          "AdministratorDeleted",
+          "UsersOpenedProductAccess",
+          "GroupsOpenedProductAccess",
+          "ProductAccessOpened",
+          "ProductAccessRestricted",
+          "ProductAddedAdministrator",
+          "ProductDeletedAdministrator",
+          "GreetingSettingsUpdated",
+          "TeamTemplateChanged",
+          "ColorThemeChanged",
+          "OwnerSentChangeOwnerInstructions",
+          "OwnerUpdated",
+          "OwnerSentPortalDeactivationInstructions",
+          "OwnerSentPortalDeleteInstructions",
+          "PortalDeactivated",
+          "PortalDeleted",
+          "LoginHistoryReportDownloaded",
+          "AuditTrailReportDownloaded",
+          "SSOEnabled",
+          "SSODisabled",
+          "PortalAccessSettingsUpdated",
+          "CookieSettingsUpdated",
+          "MailServiceSettingsUpdated",
+          "CustomNavigationSettingsUpdated",
+          "AuditSettingsUpdated",
+          "TwoFactorAuthenticationDisabled",
+          "TwoFactorAuthenticationEnabledBySms",
+          "TwoFactorAuthenticationEnabledByTfaApp",
+          "PortalRenamed",
+          "QuotaPerRoomChanged",
+          "QuotaPerRoomDisabled",
+          "QuotaPerUserChanged",
+          "QuotaPerUserDisabled",
+          "QuotaPerPortalChanged",
+          "QuotaPerPortalDisabled",
+          "FormSubmit",
+          "FormOpenedForFilling",
+          "CustomQuotaPerRoomDefault",
+          "CustomQuotaPerRoomChanged",
+          "CustomQuotaPerRoomDisabled",
+          "CustomQuotaPerUserDefault",
+          "CustomQuotaPerUserChanged",
+          "CustomQuotaPerUserDisabled",
+          "ContactAdminMailSent",
+          "RoomInviteLinkUsed",
+          "UserCreatedAndAddedToRoom",
+          "GuestCreatedAndAddedToRoom",
+          "ContactSalesMailSent",
+          "None"
         ],
         "type": "integer",
+        "description": "[1000 - Login success, 1001 - Login success via social account, 1002 - Login fail invalid combination, 1003 - Login fail social account not found, 1004 - Login fail disabled profile, 1005 - Login fail, 1006 - Logout, 1007 - Login success via sms, 1008 - Login fail via sms, 1009 - Login fail ip security, 1010 - Login success via api, 1011 - Login success via social app, 1012 - Login success via api sms, 1013 - Login fail via api, 1014 - Login fail via api sms, 1015 - Login success via SSO, 1016 - Session started, 1017 - Session completed, 1018 - Login fail via SSO, 1019 - Login success via api social account, 1020 - Login fail via api social account, 1021 - Login succes via tfa app, 1022 - Login fail via Tfa app, 1023 - Login fail brute force, 1024 - Login success via api tfa, 1025 - Login fail via api tfa, 1026 - Login fail recaptcha, 4000 - User created, 4001 - Guest created, 4002 - User created via invite, 4003 - Guest created via invite, 4004 - User activated, 4005 - Guest activated, 4006 - User updated, 4007 - User updated language, 4008 - User added avatar, 4009 - User deleted avatar, 4010 - User updated avatar thumbnails, 4011 - User linked social account, 4012 - User unlinked social account, 4013 - User sent activation instructions, 4014 - User sent email change instructions, 4015 - User sent password change instructions, 4016 - User sent delete instructions, 4017 - User updated password, 4018 - User deleted, 4019 - Users updated type, 4020 - Users updated status, 4021 - Users sent activation instructions, 4022 - Users deleted, 4023 - Sent invite instructions, 4024 - User imported, 4025 - Guest imported, 4026 - Group created, 4027 - Group updated, 4028 - Group deleted, 4029 - User updated mobile number, 4030 - User data reassigns, 4031 - User data removing, 4032 - User connected tfa app, 4033 - User disconnected tfa app, 4034 - User logout active connections, 4035 - User logout active connection, 4036 - User logout active connections for user, 4037 - Send join invite, 5000 - File created, 5001 - File renamed, 5002 - File updated, 5003 - File created version, 5004 - File deleted version, 5005 - File updated revision comment, 5006 - File locked, 5007 - File unlocked, 5008 - File updated access, 5009 - File downloaded, 5010 - File downloaded as, 5011 - File uploaded, 5012 - File imported, 5013 - File copied, 5014 - File copied with overwriting, 5015 - File moved, 5016 - File moved with overwriting, 5017 - File moved to trash, 5018 - File deleted, 5019 - Folder created, 5020 - Folder renamed, 5021 - Folder updated access, 5022 - Folder copied, 5023 - Folder copied with overwriting, 5024 - Folder moved, 5025 - Folder moved with overwriting, 5026 - Folder moved to trash, 5027 - Folder deleted, 5028 - ThirdParty created, 5029 - ThirdParty updated, 5030 - ThirdParty deleted, 5031 - Documents ThirdParty settings updated, 5032 - Documents overwriting settings updated, 5033 - Documents uploading formats settings updated, 5034 - User file updated, 5035 - File converted, 5036 - File send access link, 5037 - Document service location setting, 5038 - Authorization keys setting, 5039 - Full text search setting, 5040 - Start transfer setting, 5041 - Start backup setting, 5042 - License key uploaded, 5043 - File change owner, 5044 - File restore version, 5045 - Document send to sign, 5046 - Document sign complete, 5047 - User updated email, 5048 - Documents store forcesave, 5049 - Documents forcesave, 5050 - Start storage encryption, 5051 - Privacy room enable, 5052 - Privacy room disable, 5053 - Start storage decryption, 5054 - File opened for change, 5055 - File marked as favorite, 5056 - File removed from favorite, 5057 - Folder downloaded, 5058 - File removed from list, 5059 - Folder removed from list, 5060 - File external link access updated, 5061 - Trash emptied, 5062 - File revision downloaded, 5063 - File marked as read, 5064 - File readed, 5065 - Folder marked as read, 5066 - Folder updated access for, 5068 - File updated access for, 5069 - Documents external share settings updated, 5070 - Room created, 5071 - Room renamed, 5072 - Room archived, 5073 - Room unarchived, 5074 - Room deleted, 5075 - Room update access for user, 5076 - Tag created, 5077 - Tags deleted, 5078 - Added room tags, 5079 - Deleted room tags, 5080 - Room logo created, 5081 - Room logo deleted, 5082 - Room invitation link updated, 5083 - Documents keep new file name settings updated, 5084 - Room remove user, 5085 - Room create user, 5086 - Room invitation link created, 5087 - Room invitation link deleted, 5088 - Room external link created, 5089 - Room external link updated, 5090 - Room external link deleted, 5091 - File external link created, 5092 - File external link updated, 5093 - File external link deleted, 5094 - Room group added, 5095 - Room update access for group, 5096 - Room group remove, 5097 - Room external link revoked, 5098 - Room external link renamed, 5099 - File uploaded with overwriting, 5100 - Room copied, 6000 - Language settings updated, 6001 - Time zone settings updated, 6002 - Dns settings updated, 6003 - Trusted mail domain settings updated, 6004 - Password strength settings updated, 6005 - Two factor authentication settings updated, 6006 - Administrator message settings updated, 6007 - Default start page settings updated, 6008 - Products list updated, 6009 - Administrator added, 6010 - Administrator opened full access, 6011 - Administrator deleted, 6012 - Users opened product access, 6013 - Groups opened product access, 6014 - Product access opened, 6015 - Product access restricted, 6016 - Product added administrator, 6017 - Product deleted administrator, 6018 - Greeting settings updated, 6019 - Team template changed, 6020 - Color theme changed, 6021 - Owner sent change owner instructions, 6022 - Owner updated, 6023 - Owner sent portal deactivation instructions, 6024 - Owner sent portal delete instructions, 6025 - Portal deactivated, 6026 - Portal deleted, 6027 - Login history report downloaded, 6028 - Audit trail report downloaded, 6029 - SSO enabled, 6030 - SSO disabled, 6031 - Portal access settings updated, 6032 - Cookie settings updated, 6033 - Mail service settings updated, 6034 - Custom navigation settings updated, 6035 - Audit settings updated, 6036 - Two factor authentication disabled, 6037 - Two factor authentication enabled by sms, 6038 - Two factor authentication enabled by tfa app, 6039 - Portal renamed, 6040 - Quota per room changed, 6041 - Quota per room disabled, 6042 - Quota per user changed, 6043 - Quota per user disabled, 6044 - Quota per portal changed, 6045 - Quota per portal disabled, 6046 - Form submit, 6047 - Form opened for filling, 6048 - Custom quota per room default, 6049 - Custom quota per room changed, 6050 - Custom quota per room disabled, 6051 - Custom quota per user default, 6052 - Custom quota per user changed, 6053 - Custom quota per user disabled, 7000 - Contact admin mail sent, 7001 - Room invite link used, 7002 - User created and added to room, 7003 - Guest created and added to room, 7004 - Contact sales mail sent, -1 - None]",
         "format": "int32"
       },
       "ASC.Migration.Core.Models.Api.MigratingApiFiles": {
@@ -10267,19 +10495,19 @@
             "type": "integer",
             "description": "FoldersCount",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "filesCount": {
             "type": "integer",
             "description": "FilesCount",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "bytesTotal": {
             "type": "integer",
             "description": "BytesTotal",
             "format": "int64",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -10288,22 +10516,30 @@
         "type": "object",
         "properties": {
           "shouldImport": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should import",
+            "example": true
           },
           "groupName": {
             "type": "string",
-            "nullable": true
+            "description": "Group name",
+            "nullable": true,
+            "example": "some text"
           },
           "moduleName": {
             "type": "string",
-            "nullable": true
+            "description": "Module name",
+            "nullable": true,
+            "example": "some text"
           },
           "userUidList": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "nullable": true
+            "description": "List of user uid",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
@@ -10312,7 +10548,9 @@
         "type": "object",
         "properties": {
           "shouldImport": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should import",
+            "example": true
           },
           "key": {
             "type": "string",
@@ -10364,7 +10602,7 @@
           },
           "operation": {
             "type": "string",
-            "description": "",
+            "description": "Operation",
             "nullable": true,
             "example": "some text"
           },
@@ -10373,7 +10611,7 @@
             "items": {
               "type": "string"
             },
-            "description": "",
+            "description": "Failed archives",
             "nullable": true,
             "example": "some text"
           },
@@ -10382,7 +10620,7 @@
             "items": {
               "$ref": "#/components/schemas/ASC.Migration.Core.Models.Api.MigratingApiUser"
             },
-            "description": "",
+            "description": "Users",
             "nullable": true
           },
           "withoutEmailUsers": {
@@ -10390,7 +10628,7 @@
             "items": {
               "$ref": "#/components/schemas/ASC.Migration.Core.Models.Api.MigratingApiUser"
             },
-            "description": "",
+            "description": "Without email users",
             "nullable": true
           },
           "existUsers": {
@@ -10398,7 +10636,7 @@
             "items": {
               "$ref": "#/components/schemas/ASC.Migration.Core.Models.Api.MigratingApiUser"
             },
-            "description": "",
+            "description": "Exist users",
             "nullable": true
           },
           "groups": {
@@ -10406,57 +10644,57 @@
             "items": {
               "$ref": "#/components/schemas/ASC.Migration.Core.Models.Api.MigratingApiGroup"
             },
-            "description": "",
+            "description": "Groups",
             "nullable": true
           },
           "importPersonalFiles": {
             "type": "boolean",
-            "description": "",
-            "example": "true"
+            "description": "Import personal files",
+            "example": true
           },
           "importSharedFiles": {
             "type": "boolean",
-            "description": "",
-            "example": "true"
+            "description": "Import shared files",
+            "example": true
           },
           "importSharedFolders": {
             "type": "boolean",
-            "description": "",
-            "example": "true"
+            "description": "Import shared folders",
+            "example": true
           },
           "importCommonFiles": {
             "type": "boolean",
-            "description": "",
-            "example": "true"
+            "description": "Import common files",
+            "example": true
           },
           "importProjectFiles": {
             "type": "boolean",
-            "description": "",
-            "example": "true"
+            "description": "Import project files",
+            "example": true
           },
           "importGroups": {
             "type": "boolean",
-            "description": "",
-            "example": "true"
+            "description": "Import groups",
+            "example": true
           },
           "successedUsers": {
             "type": "integer",
-            "description": "",
+            "description": "Successed users",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "failedUsers": {
             "type": "integer",
-            "description": "",
+            "description": "Failed users",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "files": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "",
+            "description": "Files",
             "nullable": true,
             "example": "some text"
           },
@@ -10465,7 +10703,7 @@
             "items": {
               "type": "string"
             },
-            "description": "",
+            "description": "Errors",
             "nullable": true,
             "example": "some text"
           }
@@ -10477,45 +10715,56 @@
         "properties": {
           "key": {
             "type": "string",
-            "nullable": true
+            "description": "Key",
+            "nullable": true,
+            "example": "some text"
           },
           "emplType": {
             "$ref": "#/components/schemas/ASC.Core.Users.EmployeeType"
           },
           "email": {
             "type": "string",
-            "nullable": true
+            "description": "Email",
+            "nullable": true,
+            "example": "some text"
           },
           "uiD": {
             "type": "string",
+            "description": "User ID",
             "format": "uuid",
-            "nullable": true
+            "nullable": true,
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "type": {
             "$ref": "#/components/schemas/ASC.Web.Studio.Utility.ConfirmType"
           },
           "first": {
             "type": "string",
-            "nullable": true
+            "description": "Access an account for the first time or not",
+            "nullable": true,
+            "example": "some text"
           },
           "roomId": {
             "type": "string",
-            "nullable": true
+            "description": "Room ID",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
       },
       "ASC.Security.Cryptography.EmailValidationKeyProvider_ValidationResult": {
         "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
+          "Ok",
+          "Invalid",
+          "Expired",
+          "TariffLimit",
+          "UserExisted",
+          "UserExcluded",
+          "QuotaFailed"
         ],
         "type": "integer",
+        "description": "[0 - Ok, 1 - Invalid, 2 - Expired, 3 - Tariff limit, 4 - User existed, 5 - User excluded, 6 - Quota failed]",
         "format": "int32"
       },
       "ASC.Security.Cryptography.PasswordHasher": {
@@ -10523,18 +10772,24 @@
         "properties": {
           "size": {
             "type": "integer",
+            "description": "Size",
             "format": "int32",
-            "readOnly": true
+            "readOnly": true,
+            "example": 1234
           },
           "iterations": {
             "type": "integer",
+            "description": "Iterations",
             "format": "int32",
-            "readOnly": true
+            "readOnly": true,
+            "example": 1234
           },
           "salt": {
             "type": "string",
+            "description": "Salt",
             "nullable": true,
-            "readOnly": true
+            "readOnly": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
@@ -10635,7 +10890,7 @@
           "session": {
             "type": "boolean",
             "description": "Session based authentication or not",
-            "example": "true"
+            "example": true
           },
           "confirmData": {
             "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.RequestsDto.ConfirmData"
@@ -10714,7 +10969,7 @@
             "type": "boolean",
             "description": "Access an account for the first time or not",
             "nullable": true,
-            "example": "true"
+            "example": true
           },
           "key": {
             "type": "string",
@@ -10757,7 +11012,7 @@
           "enable": {
             "type": "boolean",
             "description": "Enables IP restrictions or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -10797,7 +11052,7 @@
           "inviteUsersAsVisitors": {
             "type": "boolean",
             "description": "Invites as a user or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -10821,7 +11076,7 @@
             "type": "string",
             "description": "Owner ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           }
         },
         "additionalProperties": false
@@ -10832,12 +11087,12 @@
           "enableQuota": {
             "type": "boolean",
             "description": "Specifies if the quota settings are enabled or not",
-            "example": "true"
+            "example": true
           },
           "defaultQuota": {
             "description": "Default quota value",
             "format": "int64",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -10933,18 +11188,18 @@
             "type": "string",
             "description": "Product ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "userId": {
             "type": "string",
             "description": "User ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "administrator": {
             "type": "boolean",
             "description": "Administrator or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -10980,7 +11235,7 @@
           "notifyUsers": {
             "type": "boolean",
             "description": "Specifies if the users will be notified about the encryption process or note",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -11012,13 +11267,13 @@
             "type": "integer",
             "description": "Tenant ID",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "quota": {
             "type": "integer",
             "description": "Quota",
             "format": "int64",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -11037,7 +11292,7 @@
             "description": "User ID",
             "format": "uuid",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "trustedIps": {
             "type": "array",
@@ -11056,7 +11311,7 @@
             },
             "description": "List of users who must use the TFA verification",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "mandatoryGroups": {
             "type": "array",
@@ -11066,7 +11321,7 @@
             },
             "description": "List of groups who must use the TFA verification",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           }
         },
         "additionalProperties": false
@@ -11089,12 +11344,12 @@
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the TFA settings are enabled or not",
-            "example": "true"
+            "example": true
           },
           "avaliable": {
             "type": "boolean",
             "description": "Specifies if the TFA settings are available or not",
-            "example": "true"
+            "example": true
           },
           "trustedIps": {
             "type": "array",
@@ -11113,7 +11368,7 @@
             },
             "description": "List of users who must use the TFA verification",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "mandatoryGroups": {
             "type": "array",
@@ -11123,7 +11378,7 @@
             },
             "description": "List of groups who must use the TFA verification",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           }
         },
         "additionalProperties": false
@@ -11164,7 +11419,7 @@
           "show": {
             "type": "boolean",
             "description": "Specifies whether to show tips for the user or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -11175,7 +11430,7 @@
           "turnOn": {
             "type": "boolean",
             "description": "Specifies if the administrator messages are enabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -11192,7 +11447,7 @@
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the module security settings are enabled or not",
-            "example": "true"
+            "example": true
           },
           "subjects": {
             "type": "array",
@@ -11202,7 +11457,7 @@
             },
             "description": "List of user/group IDs with the access to the module",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           }
         },
         "additionalProperties": false
@@ -11227,7 +11482,7 @@
           "enabled": {
             "type": "boolean",
             "description": "Enabled",
-            "example": "true"
+            "example": true
           },
           "settings": {
             "type": "string",
@@ -11294,7 +11549,7 @@
           "subscribeFromSite": {
             "type": "boolean",
             "description": "Subscribed from the site or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -11306,7 +11561,7 @@
             "type": "integer",
             "description": "ID",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "date": {
             "$ref": "#/components/schemas/ASC.Api.Core.ApiDateTime"
@@ -11321,7 +11576,7 @@
             "type": "string",
             "description": "User ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "action": {
             "type": "string",
@@ -11417,12 +11672,12 @@
             "type": "string",
             "description": "Token expiration time",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "sms": {
             "type": "boolean",
             "description": "Specifies if the authentication code is sent by SMS or not",
-            "example": "false"
+            "example": false
           },
           "phoneNoise": {
             "type": "string",
@@ -11433,7 +11688,7 @@
           "tfa": {
             "type": "boolean",
             "description": "Specifies if the two-factor application is used or not",
-            "example": "false"
+            "example": false
           },
           "tfaKey": {
             "type": "string",
@@ -11457,7 +11712,7 @@
           "ldapEnabled": {
             "type": "boolean",
             "description": "Specifies if the LDAP settings are enabled or not",
-            "example": "true"
+            "example": true
           },
           "ldapDomain": {
             "type": "string",
@@ -11483,7 +11738,7 @@
           "oauthEnabled": {
             "type": "boolean",
             "description": "Specifies if OAuth is enabled or not",
-            "example": "true"
+            "example": true
           },
           "ssoUrl": {
             "type": "string",
@@ -11508,19 +11763,19 @@
             "type": "string",
             "description": "Date",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "hosts": {
             "type": "integer",
             "description": "Hosts",
             "format": "int32",
-            "example": "0"
+            "example": 0
           },
           "hits": {
             "type": "integer",
             "description": "Hits",
             "format": "int32",
-            "example": "0"
+            "example": 0
           }
         },
         "additionalProperties": false
@@ -11660,7 +11915,7 @@
             "type": "integer",
             "description": "ID",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "date": {
             "$ref": "#/components/schemas/ASC.Api.Core.ApiDateTime"
@@ -11675,7 +11930,7 @@
             "type": "string",
             "description": "User ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "login": {
             "type": "string",
@@ -11737,17 +11992,17 @@
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the plugins are enabled or not",
-            "example": "true"
+            "example": true
           },
           "upload": {
             "type": "boolean",
             "description": "Specifies if the plugins can be uploaded or not",
-            "example": "true"
+            "example": true
           },
           "delete": {
             "type": "boolean",
             "description": "Specifies if the plugins can be deleted or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -11780,12 +12035,12 @@
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the security settings are enabled or not",
-            "example": "true"
+            "example": true
           },
           "isSubItem": {
             "type": "boolean",
             "description": "Specifies if this module is a subitem or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -11826,7 +12081,7 @@
             "type": "number",
             "description": "UTC hours offset",
             "format": "double",
-            "example": "-8.5"
+            "example": -8.5
           },
           "greetingSettings": {
             "type": "string",
@@ -11838,7 +12093,7 @@
             "type": "string",
             "description": "Owner ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "nameSchemaId": {
             "type": "string",
@@ -11850,29 +12105,29 @@
             "type": "boolean",
             "description": "Specifies if a user can join to the portal or not",
             "nullable": true,
-            "example": "true"
+            "example": true
           },
           "enableAdmMess": {
             "type": "boolean",
             "description": "Specifies if a user can send a message to the administrator or not",
             "nullable": true,
-            "example": "true"
+            "example": true
           },
           "thirdpartyEnable": {
             "type": "boolean",
             "description": "Specifies if a user can connect third-party providers or not",
             "nullable": true,
-            "example": "true"
+            "example": true
           },
           "docSpace": {
             "type": "boolean",
             "description": "Specifies if this is a DocSpace portal or not",
-            "example": "true"
+            "example": true
           },
           "standalone": {
             "type": "boolean",
             "description": "Specifies if this is a standalone portal or not",
-            "example": "true"
+            "example": true
           },
           "baseDomain": {
             "type": "string",
@@ -11910,7 +12165,7 @@
           "debugInfo": {
             "type": "boolean",
             "description": "Specifies if the debug information will be sent or not",
-            "example": "true"
+            "example": true
           },
           "socketUrl": {
             "type": "string",
@@ -11981,12 +12236,12 @@
           "cookieSettingsEnabled": {
             "type": "boolean",
             "description": "Specifies whether the cookie settings are enabled",
-            "example": "true"
+            "example": true
           },
           "limitedAccessSpace": {
             "type": "boolean",
             "description": "Limited access space",
-            "example": "true"
+            "example": true
           },
           "userNameRegex": {
             "type": "string",
@@ -11999,7 +12254,7 @@
             "description": "Invitation limit",
             "format": "int32",
             "nullable": true,
-            "example": "1234"
+            "example": 1234
           },
           "plugins": {
             "$ref": "#/components/schemas/ASC.Web.Api.ApiModel.ResponseDto.PluginsDto"
@@ -12014,7 +12269,7 @@
             "type": "integer",
             "description": "Max image upload size",
             "format": "int64",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -12033,7 +12288,7 @@
             "description": "Port",
             "format": "int32",
             "nullable": true,
-            "example": "25"
+            "example": 25
           },
           "senderAddress": {
             "type": "string",
@@ -12062,22 +12317,22 @@
           "enableSSL": {
             "type": "boolean",
             "description": "Enables SSL or not",
-            "example": "true"
+            "example": true
           },
           "enableAuth": {
             "type": "boolean",
             "description": "Enables authentication or not",
-            "example": "false"
+            "example": false
           },
           "useNtlm": {
             "type": "boolean",
             "description": "Specifies whether to use NTLM or not",
-            "example": "false"
+            "example": false
           },
           "isDefaultSettings": {
             "type": "boolean",
             "description": "Specifies if the current settings are default or not",
-            "example": "false"
+            "example": false
           }
         },
         "additionalProperties": false
@@ -12108,12 +12363,12 @@
           "current": {
             "type": "boolean",
             "description": "Specifies if this is the current storage or not",
-            "example": "true"
+            "example": true
           },
           "isSet": {
             "type": "boolean",
             "description": "Specifies if this storage can be set or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12136,7 +12391,7 @@
           "disabled": {
             "type": "boolean",
             "description": "Specifies if the module space is disabled or not",
-            "example": "false"
+            "example": false
           },
           "size": {
             "type": "string",
@@ -12180,7 +12435,7 @@
             "description": "Selected or not",
             "format": "int32",
             "nullable": true,
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -12191,7 +12446,7 @@
           "isSendWelcomeEmail": {
             "type": "boolean",
             "description": "Is send welcome email",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12208,7 +12463,7 @@
           "isSubscribed": {
             "type": "boolean",
             "description": "Specifies if the user is subscribed to the push notification or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12222,7 +12477,7 @@
             "type": "integer",
             "description": "Maximum number of the user attempts to log in",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "blockTime": {
             "maximum": 9999,
@@ -12230,7 +12485,7 @@
             "type": "integer",
             "description": "The duration of the account suspension for unsuccessful login attempts",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "checkPeriod": {
             "maximum": 9999,
@@ -12238,7 +12493,7 @@
             "type": "integer",
             "description": "Expected server response time",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -12252,7 +12507,7 @@
           "isEnabled": {
             "type": "boolean",
             "description": "Specifies if the notification type is enabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12263,12 +12518,12 @@
           "roomsId": {
             "description": "Room ID",
             "nullable": true,
-            "example": "1234"
+            "example": 1234
           },
           "mute": {
             "type": "boolean",
             "description": "Specifies if the room notifications are disabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12284,7 +12539,7 @@
             },
             "description": "List of webhook IDs",
             "nullable": true,
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           }
         },
         "additionalProperties": false
@@ -12296,7 +12551,7 @@
             "type": "integer",
             "description": "ID",
             "format": "int32",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": 1234
           },
           "name": {
             "type": "string",
@@ -12321,13 +12576,13 @@
             "type": "boolean",
             "description": "Enabled or not",
             "nullable": true,
-            "example": "true"
+            "example": true
           },
           "ssl": {
             "type": "boolean",
             "description": "SSL",
             "nullable": true,
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12339,7 +12594,7 @@
             "type": "integer",
             "description": "Login event",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "items": {
             "type": "array",
@@ -12359,24 +12614,24 @@
             "type": "integer",
             "description": "Id",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "tenantId": {
             "type": "integer",
             "description": "Tenant id",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "userId": {
             "type": "string",
             "description": "User id",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "mobile": {
             "type": "boolean",
             "description": "Mobile",
-            "example": "true"
+            "example": true
           },
           "ip": {
             "type": "string",
@@ -12426,17 +12681,17 @@
           "startDocsEnabled": {
             "type": "boolean",
             "description": "Specifies if the start document is enabled or not",
-            "example": "true"
+            "example": true
           },
           "helpCenterEnabled": {
             "type": "boolean",
             "description": "Specifies if the help center is enabled or not",
-            "example": "true"
+            "example": true
           },
           "feedbackAndSupportEnabled": {
             "type": "boolean",
             "description": "Specifies if feedback and support are available or not",
-            "example": "true"
+            "example": true
           },
           "feedbackAndSupportUrl": {
             "type": "string",
@@ -12447,7 +12702,7 @@
           "userForumEnabled": {
             "type": "boolean",
             "description": "Specifies if the user forum is enabled or not",
-            "example": "true"
+            "example": true
           },
           "userForumUrl": {
             "type": "string",
@@ -12459,7 +12714,7 @@
           "videoGuidesEnabled": {
             "type": "boolean",
             "description": "Specifies if the video guides are enabled or not",
-            "example": "true"
+            "example": true
           },
           "videoGuidesUrl": {
             "type": "string",
@@ -12484,12 +12739,12 @@
           "licenseAgreementsEnabled": {
             "type": "boolean",
             "description": "Specifies if the license agreements are enabled or not",
-            "example": "true"
+            "example": true
           },
           "isDefault": {
             "type": "boolean",
             "description": "Specifies if these settings are default or not",
-            "example": "true"
+            "example": true
           },
           "licenseAgreementsUrl": {
             "type": "string",
@@ -12536,12 +12791,12 @@
           "isLicensor": {
             "type": "boolean",
             "description": "Specifies if a company is a licensor or not",
-            "example": "true"
+            "example": true
           },
           "isDefault": {
             "type": "boolean",
             "description": "Specifies if these settings are default or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12574,12 +12829,12 @@
             "type": "integer",
             "description": "Lifetime value in minutes",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the cookie settings are enabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12620,13 +12875,13 @@
             "type": "integer",
             "description": "Selected",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "limit": {
             "type": "integer",
             "description": "Limit",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -12643,7 +12898,7 @@
           "default": {
             "type": "boolean",
             "description": "Specifies if the white label logo is default or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12655,19 +12910,19 @@
             "type": "integer",
             "description": "Maximum number of the user attempts to log in",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "blockTime": {
             "type": "integer",
             "description": "The time for which the user will be blocked after unsuccessful login attempts",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "checkPeriod": {
             "type": "integer",
             "description": "The time to wait for a response from the server",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -12679,7 +12934,7 @@
             "type": "number",
             "description": "Migration progress",
             "format": "double",
-            "example": "1.0"
+            "example": 1
           },
           "error": {
             "type": "string",
@@ -12693,7 +12948,7 @@
           "isCompleted": {
             "type": "boolean",
             "description": "Specifies whether the migration is completed",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12707,7 +12962,7 @@
           "isEnabled": {
             "type": "boolean",
             "description": "Specifies if the notification type is enabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -12719,22 +12974,22 @@
             "type": "integer",
             "description": "Min length",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "upperCase": {
             "type": "boolean",
             "description": "Upper case",
-            "example": "true"
+            "example": true
           },
           "digits": {
             "type": "boolean",
             "description": "Digits",
-            "example": "true"
+            "example": true
           },
           "specSymbols": {
             "type": "boolean",
             "description": "Spec symbols",
-            "example": "true"
+            "example": true
           },
           "allowedCharactersRegexStr": {
             "type": "string",
@@ -12793,7 +13048,7 @@
           "calls": {
             "type": "boolean",
             "description": "Specifies if the calls are available for this tenant or not",
-            "example": "true"
+            "example": true
           },
           "campaign": {
             "type": "string",
@@ -12806,7 +13061,7 @@
             "description": "Creation date and time",
             "format": "date-time",
             "readOnly": true,
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "hostedRegion": {
             "type": "string",
@@ -12819,7 +13074,7 @@
             "description": "Tenant ID",
             "format": "int32",
             "readOnly": true,
-            "example": "1234"
+            "example": 1234
           },
           "industry": {
             "$ref": "#/components/schemas/ASC.Core.Tenants.TenantIndustry"
@@ -12834,7 +13089,7 @@
             "type": "string",
             "description": "Last modified date",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "mappedDomain": {
             "type": "string",
@@ -12852,7 +13107,7 @@
             "type": "string",
             "description": "Owner ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "paymentId": {
             "type": "string",
@@ -12863,7 +13118,7 @@
           "spam": {
             "type": "boolean",
             "description": "Specifies if the ONLYOFFICE newsletter is allowed or not",
-            "example": "true"
+            "example": true
           },
           "status": {
             "$ref": "#/components/schemas/ASC.Core.Tenants.TenantStatus"
@@ -12873,7 +13128,7 @@
             "description": "The date and time when the tenant status was changed",
             "format": "date-time",
             "readOnly": true,
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "timeZone": {
             "type": "string",
@@ -12903,13 +13158,13 @@
             "type": "integer",
             "description": "Version",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "versionChanged": {
             "type": "string",
             "description": "The date and time when the tenant version was changed",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           }
         },
         "additionalProperties": false
@@ -12978,17 +13233,17 @@
             "type": "string",
             "description": "Create on",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "enabled": {
             "type": "boolean",
             "description": "Enabled",
-            "example": "true"
+            "example": true
           },
           "system": {
             "type": "boolean",
             "description": "System",
-            "example": "true"
+            "example": true
           },
           "url": {
             "type": "string",
@@ -13013,7 +13268,7 @@
             "type": "integer",
             "description": "ID",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "name": {
             "type": "string",
@@ -13036,12 +13291,12 @@
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the webhooks are enabled or not",
-            "example": "true"
+            "example": true
           },
           "ssl": {
             "type": "boolean",
             "description": "SSL",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13056,7 +13311,7 @@
             "type": "integer",
             "description": "Status",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           }
         },
         "additionalProperties": false
@@ -13068,7 +13323,7 @@
             "type": "integer",
             "description": "ID",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "configName": {
             "type": "string",
@@ -13080,7 +13335,7 @@
             "type": "string",
             "description": "Creation time",
             "format": "date-time",
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "method": {
             "type": "string",
@@ -13122,14 +13377,14 @@
             "type": "integer",
             "description": "Status",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "delivery": {
             "type": "string",
             "description": "Delivery time",
             "format": "date-time",
             "nullable": true,
-            "example": "2008-04-10T06-30-00.000Z"
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           }
         },
         "additionalProperties": false
@@ -13177,12 +13432,12 @@
             "type": "integer",
             "description": "Lifetime value in minutes",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "enabled": {
             "type": "boolean",
             "description": "Specifies if the cookie settings are enabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13199,7 +13454,7 @@
           "enable": {
             "type": "boolean",
             "description": "Enabled or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13211,7 +13466,7 @@
             "type": "string",
             "description": "ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "displayName": {
             "type": "string",
@@ -13264,12 +13519,12 @@
           "hasAvatar": {
             "type": "boolean",
             "description": "Specifies if the user has an avatar or not",
-            "example": "true"
+            "example": true
           },
           "isAnonim": {
             "type": "boolean",
             "description": "Specifies if the user is an anonim or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13281,7 +13536,7 @@
             "type": "string",
             "description": "ID",
             "format": "uuid",
-            "example": "9924256A-739C-462b-AF15-E652A3B1B6EB"
+            "example": "75a5f745-f697-4418-b38d-0fe0d277e258"
           },
           "name": {
             "type": "string",
@@ -13305,44 +13560,46 @@
             "type": "integer",
             "description": "Minimum password length",
             "format": "int32",
-            "example": "1234"
+            "example": 1234
           },
           "upperCase": {
             "type": "boolean",
             "description": "Specifies if the password must include the uppercase letters or not",
-            "example": "true"
+            "example": true
           },
           "digits": {
             "type": "boolean",
             "description": "Specifies if the password must include the digits or not",
-            "example": "true"
+            "example": true
           },
           "specSymbols": {
             "type": "boolean",
             "description": "Specifies if the password must include the special symbols or not",
-            "example": "true"
+            "example": true
           }
         },
         "additionalProperties": false
       },
       "ASC.Web.Core.Notify.NotificationType": {
         "enum": [
-          0,
-          1,
-          2,
-          3
+          "Badges",
+          "RoomsActivity",
+          "DailyFeed",
+          "UsefullTips"
         ],
         "type": "integer",
+        "description": "[0 - Badges, 1 - Rooms activity, 2 - Daily feed, 3 - Usefull tips]",
         "format": "int32"
       },
       "ASC.Web.Core.RecaptchaType": {
         "enum": [
-          0,
-          1,
-          2,
-          3
+          "Default",
+          "AndroidV2",
+          "iOSV2",
+          "hCaptcha"
         ],
         "type": "integer",
+        "description": "[0 - Default, 1 - AndroidV2, 2 - iOSV2, 3 - hCaptcha]",
         "format": "int32"
       },
       "ASC.Web.Core.Utility.Settings.CustomColorThemesSettingsColorItem": {
@@ -13350,11 +13607,15 @@
         "properties": {
           "accent": {
             "type": "string",
-            "nullable": true
+            "description": "Accent color",
+            "nullable": true,
+            "example": "#4781D1"
           },
           "buttons": {
             "type": "string",
-            "nullable": true
+            "description": "Button color",
+            "nullable": true,
+            "example": "#5299E0"
           }
         },
         "additionalProperties": false
@@ -13364,11 +13625,15 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "Theme ID",
+            "format": "int32",
+            "example": 1
           },
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Theme name",
+            "nullable": true,
+            "example": "blue"
           },
           "main": {
             "$ref": "#/components/schemas/ASC.Web.Core.Utility.Settings.CustomColorThemesSettingsColorItem"
@@ -13383,7 +13648,9 @@
         "type": "object",
         "properties": {
           "completed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the Wizard settings are completed or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13392,46 +13659,70 @@
         "type": "object",
         "properties": {
           "startDocsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the start document is enabled or not",
+            "example": true
           },
           "helpCenterEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the help center is enabled or not",
+            "example": true
           },
           "feedbackAndSupportEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if feedback and support are available or not",
+            "example": true
           },
           "feedbackAndSupportUrl": {
             "type": "string",
-            "nullable": true
+            "description": "Feedback and support URL",
+            "nullable": true,
+            "example": "some text"
           },
           "userForumEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the user forum is enabled or not",
+            "example": true
           },
           "userForumUrl": {
             "type": "string",
-            "nullable": true
+            "description": "User forum URL",
+            "nullable": true,
+            "example": "some text"
           },
           "videoGuidesEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the video guides are enabled or not",
+            "example": true
           },
           "videoGuidesUrl": {
             "type": "string",
-            "nullable": true
+            "description": "Video guides URL",
+            "nullable": true,
+            "example": "some text"
           },
           "salesEmail": {
             "type": "string",
-            "nullable": true
+            "description": "Sales email",
+            "nullable": true,
+            "example": "some text"
           },
           "buyUrl": {
             "type": "string",
-            "nullable": true
+            "description": "URL to pay for the portal",
+            "nullable": true,
+            "example": "some text"
           },
           "licenseAgreementsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the license agreements are enabled or not",
+            "example": true
           },
           "licenseAgreementsUrl": {
             "type": "string",
-            "nullable": true
+            "description": "License agreements URL",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
@@ -13450,29 +13741,41 @@
         "properties": {
           "companyName": {
             "type": "string",
-            "nullable": true
+            "description": "Company name",
+            "nullable": true,
+            "example": "some text"
           },
           "site": {
             "type": "string",
+            "description": "Site",
             "format": "uri",
-            "nullable": true
+            "nullable": true,
+            "example": "some text"
           },
           "email": {
             "type": "string",
+            "description": "Email address",
             "format": "email",
-            "nullable": true
+            "nullable": true,
+            "example": "some text"
           },
           "address": {
             "type": "string",
-            "nullable": true
+            "description": "Address",
+            "nullable": true,
+            "example": "some text"
           },
           "phone": {
             "type": "string",
+            "description": "Phone",
             "format": "tel",
-            "nullable": true
+            "nullable": true,
+            "example": "some text"
           },
           "IsLicensor": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if a company is a licensor or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13491,29 +13794,44 @@
         "properties": {
           "id": {
             "type": "string",
-            "format": "uuid"
+            "description": "Id",
+            "format": "uuid",
+            "example": "00000000-0000-0000-0000-000000000000"
           },
           "label": {
             "type": "string",
-            "nullable": true
+            "description": "Label",
+            "nullable": true,
+            "example": "Label"
           },
           "url": {
             "type": "string",
-            "nullable": true
+            "description": "URL",
+            "format": "uri",
+            "nullable": true,
+            "example": "Url"
           },
           "bigImg": {
             "type": "string",
-            "nullable": true
+            "description": "Big image",
+            "nullable": true,
+            "example": "data:image\\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAADFBMVEUAAADJycnJycnJycmiuNtHAAAAA3RSTlMAf4C\\/aSLHAAAAyElEQVR4Xu3NsQ3CMBSE4YubFB4ilHQegdGSjWACvEpGoEyBYiL05AdnXUGHolx10lf82MmOpfLeo5UoJUhBlpKkRCnhUy7b9XCWkqQMUkYlXVHSf8kTvkHKqKQrSnopg5SRxTMklLmS1MwaSWpmCSQ1MyOzWGZCYrEMEFksA4QqlAFuJJYBcCKxjM3FMySeIfEMC2dMOONCGZZgmdr1ly3TSrJMK9EyJBaaGrHQikYstAiJZRYSyiQEdyg5S8Evckih\\/YPscsdej0H6dc0TYw4AAAAASUVORK5CYII="
           },
           "smallImg": {
             "type": "string",
-            "nullable": true
+            "description": "Small image",
+            "nullable": true,
+            "example": "data:image\\/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8\\/9hAAAAUUlEQVR4AWMY\\/KC5o\\/cAEP9HxxgKcSpCGELYADyu2E6mAQjNxBlAWPNxkHdwGkBIM3KYYDUAr2ZCAE+oH8eujrAXDsA0k2EAAtDXAGLx4MpsADUgvkRKUlqfAAAAAElFTkSuQmCC"
           },
           "showInMenu": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Show in menu or not",
+            "example": true
           },
           "showOnHomePage": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Show on home page or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13522,7 +13840,9 @@
         "type": "object",
         "properties": {
           "show": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Shown or hidden",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13541,15 +13861,21 @@
         "properties": {
           "name": {
             "type": "string",
-            "nullable": true
+            "description": "Name",
+            "nullable": true,
+            "example": "some text"
           },
           "value": {
             "type": "string",
-            "nullable": true
+            "description": "Value",
+            "nullable": true,
+            "example": "some text"
           },
           "title": {
             "type": "string",
-            "nullable": true
+            "description": "Title",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
@@ -13558,31 +13884,45 @@
         "type": "object",
         "properties": {
           "selfSigned": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if a certificate is self-signed or not",
+            "example": true
           },
           "crt": {
             "type": "string",
-            "nullable": true
+            "description": "Certificate",
+            "nullable": true,
+            "example": "some text"
           },
           "key": {
             "type": "string",
-            "nullable": true
+            "description": "Key",
+            "nullable": true,
+            "example": "some text"
           },
           "action": {
             "type": "string",
-            "nullable": true
+            "description": "Action",
+            "nullable": true,
+            "example": "some text"
           },
           "domainName": {
             "type": "string",
-            "nullable": true
+            "description": "Domain name",
+            "nullable": true,
+            "example": "some text"
           },
           "startDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Start date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           },
           "expiredDate": {
             "type": "string",
-            "format": "date-time"
+            "description": "Expiration date",
+            "format": "date-time",
+            "example": "2008-04-10T06:30:00.0000000+04:00"
           }
         },
         "additionalProperties": false
@@ -13592,27 +13932,39 @@
         "properties": {
           "firstName": {
             "type": "string",
-            "nullable": true
+            "description": "First name",
+            "nullable": true,
+            "example": "some text"
           },
           "lastName": {
             "type": "string",
-            "nullable": true
+            "description": "Last name",
+            "nullable": true,
+            "example": "some text"
           },
           "email": {
             "type": "string",
-            "nullable": true
+            "description": "Email",
+            "nullable": true,
+            "example": "some text"
           },
           "title": {
             "type": "string",
-            "nullable": true
+            "description": "Title",
+            "nullable": true,
+            "example": "some text"
           },
           "location": {
             "type": "string",
-            "nullable": true
+            "description": "Location",
+            "nullable": true,
+            "example": "some text"
           },
           "phone": {
             "type": "string",
-            "nullable": true
+            "description": "Phone",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
@@ -13622,23 +13974,35 @@
         "properties": {
           "verifyAlgorithm": {
             "type": "string",
-            "nullable": true
+            "description": "Verification algorithm",
+            "nullable": true,
+            "example": "some text"
           },
           "verifyAuthResponsesSign": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the signatures of the SAML authentication responses sent to SP will be verified or not",
+            "example": true
           },
           "verifyLogoutRequestsSign": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the signatures of the SAML logout requests sent to SP will be verified or not",
+            "example": true
           },
           "verifyLogoutResponsesSign": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the signatures of the SAML logout responses sent to SP will be verified or not",
+            "example": true
           },
           "decryptAlgorithm": {
             "type": "string",
-            "nullable": true
+            "description": "Decryption algorithm",
+            "nullable": true,
+            "example": "some text"
           },
           "decryptAssertions": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the assertions will be decrypted or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13648,27 +14012,39 @@
         "properties": {
           "entityId": {
             "type": "string",
-            "nullable": true
+            "description": "Entity ID",
+            "nullable": true,
+            "example": "some text"
           },
           "ssoUrl": {
             "type": "string",
-            "nullable": true
+            "description": "SSO URL",
+            "nullable": true,
+            "example": "some text"
           },
           "ssoBinding": {
             "type": "string",
-            "nullable": true
+            "description": "SSO binding",
+            "nullable": true,
+            "example": "some text"
           },
           "sloUrl": {
             "type": "string",
-            "nullable": true
+            "description": "SLO URL",
+            "nullable": true,
+            "example": "some text"
           },
           "sloBinding": {
             "type": "string",
-            "nullable": true
+            "description": "SLO binding",
+            "nullable": true,
+            "example": "some text"
           },
           "nameIdFormat": {
             "type": "string",
-            "nullable": true
+            "description": "Name ID format",
+            "nullable": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
@@ -13678,7 +14054,9 @@
         "properties": {
           "enableSso": {
             "type": "boolean",
-            "nullable": true
+            "description": "Specifies if SSO is enabled or not",
+            "nullable": true,
+            "example": true
           },
           "idpSettings": {
             "$ref": "#/components/schemas/ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoIdpSettings"
@@ -13688,6 +14066,7 @@
             "items": {
               "$ref": "#/components/schemas/ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoCertificate"
             },
+            "description": "List of IDP certificates",
             "nullable": true
           },
           "idpCertificateAdvanced": {
@@ -13695,13 +14074,16 @@
           },
           "spLoginLabel": {
             "type": "string",
-            "nullable": true
+            "description": "SP login label",
+            "nullable": true,
+            "example": "some text"
           },
           "spCertificates": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoCertificate"
             },
+            "description": "List of SP certificates",
             "nullable": true
           },
           "spCertificateAdvanced": {
@@ -13711,7 +14093,9 @@
             "$ref": "#/components/schemas/ASC.Web.Studio.UserControls.Management.SingleSignOnSettings.SsoFieldMapping"
           },
           "hideAuthPage": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the authentication page will be hidden or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13721,27 +14105,41 @@
         "properties": {
           "signingAlgorithm": {
             "type": "string",
-            "nullable": true
+            "description": "Signing algorithm",
+            "nullable": true,
+            "example": "some text"
           },
           "signAuthRequests": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if SP will sign the SAML authentication requests sent to IdP or not",
+            "example": true
           },
           "signLogoutRequests": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if SP will sign the SAML logout requests sent to IdP or not",
+            "example": true
           },
           "signLogoutResponses": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if sign the SAML logout responses sent to IdP or not",
+            "example": true
           },
           "encryptAlgorithm": {
             "type": "string",
-            "nullable": true
+            "description": "Encryption algorithm",
+            "nullable": true,
+            "example": "some text"
           },
           "decryptAlgorithm": {
             "type": "string",
-            "nullable": true
+            "description": "Decryption algorithm",
+            "nullable": true,
+            "example": "some text"
           },
           "encryptAssertions": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the assertions will be encrypted or not",
+            "example": true
           }
         },
         "additionalProperties": false
@@ -13767,49 +14165,63 @@
           "TfaAuth",
           "Wizard"
         ],
-        "type": "string"
+        "type": "string",
+        "description": "[0 - Emp invite, 1 - Link invite, 2 - Portal suspend, 3 - Portal continue, 4 - Portal remove, 5 - Dns change, 6 - Portal owner change, 7 - Activation, 8 - Email change, 9 - Email activation, 10 - Password change, 11 - Profile remove, 12 - Phone activation, 13 - Phone auth, 14 - Auth, 15 - Tfa activation, 16 - Tfa auth, 17 - Wizard]"
       },
       "ASC.Webhooks.Core.Webhook": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32"
+            "description": "ID",
+            "format": "int32",
+            "example": 1234
           },
           "route": {
             "type": "string",
-            "nullable": true
+            "description": "Route",
+            "nullable": true,
+            "example": "some text"
           },
           "method": {
             "type": "string",
-            "nullable": true
+            "description": "Method",
+            "nullable": true,
+            "example": "some text"
           },
           "disable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if a webhook is disabled or not",
+            "example": true
           },
           "name": {
             "type": "string",
+            "description": "Name",
             "nullable": true,
-            "readOnly": true
+            "readOnly": true,
+            "example": "some text"
           },
           "description": {
             "type": "string",
+            "description": "Description",
             "nullable": true,
-            "readOnly": true
+            "readOnly": true,
+            "example": "some text"
           }
         },
         "additionalProperties": false
       },
       "ASC.Webhooks.Core.WebhookGroupStatus": {
         "enum": [
-          0,
-          1,
-          2,
-          4,
-          8,
-          16
+          "None",
+          "NotSent",
+          "Status2xx",
+          "Status3xx",
+          "Status4xx",
+          "Status5xx"
         ],
         "type": "integer",
+        "description": "[0 - None, 1 - Not sent, 2 - Status2xx, 4 - Status3xx, 8 - Status4xx, 16 - Status5xx]",
         "format": "int32"
       },
       "Google.Authenticator.SetupCode": {
