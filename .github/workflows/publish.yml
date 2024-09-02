@@ -1,0 +1,52 @@
+name: publish
+
+permissions:
+  contents: write
+
+on:
+  # schedule:
+  # - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup mise
+      uses: jdx/mise-action@v2
+
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Build Declarations
+      run: pnpm build
+
+    - name: Setup Git
+      run: |
+        u=$(curl --silent --header "Accept: application/json" "https://api.github.com/users/${{github.actor}}")
+        id=$(echo "$u" | jq --raw-output ".id")
+        git config --global user.name "${{github.actor}}"
+        git config --global user.email "$id+${{github.actor}}@users.noreply.github.com"
+
+    - name: Publish Declarations
+      run: |
+        temp=$(mktemp -d)
+        git clone \
+          --quiet \
+          --no-checkout \
+          --single-branch \
+          --branch dist \
+          "https://${{secrets.PUBLISH_TOKEN}}@github.com/${{github.repository}}.git" \
+          "$temp"
+        cd ./dist
+        mv "$temp/.git" .
+        git add .
+        if git diff-index --quiet HEAD --; then
+          echo "No changes to commit"
+        else
+          git commit --quiet --message "$(date --utc)"
+          git push
+        fi
