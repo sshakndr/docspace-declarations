@@ -10,7 +10,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Saves edits to a file with the ID specified in the request.",
+        "summary": "Save file edits",
         "parameters": [
           {
             "name": "fileId",
@@ -106,7 +106,8 @@
             ]
           }
         ],
-        "x-shortName": "Save file edits"
+        "x-shortName": "Save file edits",
+        "description": "Saves edits to a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/startedit": {
@@ -114,7 +115,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Informs about opening a file with the ID specified in the request for editing, locking it from being deleted or moved (this method is called by the mobile editors).",
+        "summary": "Start file editing",
         "parameters": [
           {
             "name": "fileId",
@@ -153,13 +154,13 @@
             "description": "File key for Document Service",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -178,7 +179,8 @@
             ]
           }
         ],
-        "x-shortName": "Start file editing"
+        "x-shortName": "Start file editing",
+        "description": "Informs about opening a file with the ID specified in the request for editing, locking it from being deleted or moved (this method is called by the mobile editors)."
       }
     },
     "/api/2.0/files/file/{fileId}/startfilling": {
@@ -186,7 +188,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Starts filling a file with the ID specified in the request.",
+        "summary": "Starts filling",
         "parameters": [
           {
             "name": "fileId",
@@ -219,7 +221,8 @@
             ]
           }
         ],
-        "x-shortName": "Starts filling"
+        "x-shortName": "Starts filling",
+        "description": "Starts filling a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/trackeditfile": {
@@ -227,7 +230,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Tracks file changes when editing.",
+        "summary": "Track file editing",
         "parameters": [
           {
             "name": "fileId",
@@ -305,7 +308,8 @@
             ]
           }
         ],
-        "x-shortName": "Track file editing"
+        "x-shortName": "Track file editing",
+        "description": "Tracks file changes when editing."
       }
     },
     "/api/2.0/files/file/{fileId}/openedit": {
@@ -313,7 +317,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the initialization configuration of a file to open it in the editor.",
+        "summary": "Open a file",
         "parameters": [
           {
             "name": "fileId",
@@ -385,7 +389,8 @@
             }
           }
         },
-        "x-shortName": "Open a file"
+        "x-shortName": "Open a file",
+        "description": "Returns the initialization configuration of a file to open it in the editor."
       }
     },
     "/api/2.0/files/file/{fileId}/presigned": {
@@ -393,7 +398,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns a link to download a file with the ID specified in the request asynchronously.",
+        "summary": "Get file download link asynchronously",
         "parameters": [
           {
             "name": "fileId",
@@ -443,7 +448,8 @@
             ]
           }
         ],
-        "x-shortName": "Get file download link asynchronously"
+        "x-shortName": "Get file download link asynchronously",
+        "description": "Returns a link to download a file with the ID specified in the request asynchronously."
       }
     },
     "/api/2.0/files/file/referencedata": {
@@ -451,7 +457,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the reference data to uniquely identify a file in its system and check the availability of insering data into the destination spreadsheet by the external link.",
+        "summary": "Get reference data",
         "requestBody": {
           "description": "Request parameters for getting reference data",
           "content": {
@@ -508,7 +514,8 @@
             ]
           }
         ],
-        "x-shortName": "Get reference data"
+        "x-shortName": "Get reference data",
+        "description": "Returns the reference data to uniquely identify a file in its system and check the availability of insering data into the destination spreadsheet by the external link."
       }
     },
     "/api/2.0/files/file/{fileId}/protectusers": {
@@ -516,7 +523,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns a list of users with their access rights to the protected file with the ID specified in the request.",
+        "summary": "Get users with the access to the protected file",
         "parameters": [
           {
             "name": "fileId",
@@ -575,7 +582,8 @@
             ]
           }
         ],
-        "x-shortName": "Get users with the access to the protected file"
+        "x-shortName": "Get users with the access to the protected file",
+        "description": "Returns a list of users with their access rights to the protected file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/log": {
@@ -583,7 +591,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Get the list of actions performed on the file with the specified identifier",
+        "summary": "Get file history",
         "parameters": [
           {
             "name": "fileId",
@@ -633,7 +641,8 @@
             ]
           }
         ],
-        "x-shortName": "Get file history"
+        "x-shortName": "Get file history",
+        "description": "Get the list of actions performed on the file with the specified identifier"
       }
     },
     "/api/2.0/files/file/{fileId}/history": {
@@ -641,7 +650,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Changes the version history of a file with the ID specified in the request.",
+        "summary": "Change version history",
         "parameters": [
           {
             "name": "fileId",
@@ -711,13 +720,14 @@
             ]
           }
         ],
-        "x-shortName": "Change version history"
+        "x-shortName": "Change version history",
+        "description": "Changes the version history of a file with the ID specified in the request."
       },
       "get": {
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the detailed information about all the available file versions with the ID specified in the request.",
+        "summary": "Get file versions",
         "parameters": [
           {
             "name": "fileId",
@@ -753,7 +763,8 @@
             }
           }
         },
-        "x-shortName": "Get file versions"
+        "x-shortName": "Get file versions",
+        "description": "Returns the detailed information about all the available file versions with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/presigneduri": {
@@ -761,7 +772,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns a link to download a file with the ID specified in the request.",
+        "summary": "Get file download link",
         "parameters": [
           {
             "name": "fileId",
@@ -811,7 +822,8 @@
             ]
           }
         ],
-        "x-shortName": "Get file download link"
+        "x-shortName": "Get file download link",
+        "description": "Returns a link to download a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/isformpdf": {
@@ -819,7 +831,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Checks if the PDF file is form or not.",
+        "summary": "Check the PDF file",
         "parameters": [
           {
             "name": "fileId",
@@ -869,7 +881,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the PDF file"
+        "x-shortName": "Check the PDF file",
+        "description": "Checks if the PDF file is form or not."
       }
     },
     "/api/2.0/files/file/{fileId}/copyas": {
@@ -877,7 +890,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Copies (and converts if possible) an existing file to the specified folder.",
+        "summary": "Copy a file",
         "parameters": [
           {
             "name": "fileId",
@@ -947,7 +960,8 @@
             ]
           }
         ],
-        "x-shortName": "Copy a file"
+        "x-shortName": "Copy a file",
+        "description": "Copies (and converts if possible) an existing file to the specified folder."
       }
     },
     "/api/2.0/files/{folderId}/file": {
@@ -955,8 +969,8 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates a new file in the specified folder with the title specified in the request.",
-        "description": "If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet, or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.",
+        "summary": "Create a file",
+        "description": "Creates a new file in the specified folder with the title specified in the request.\n\n**Note**: If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet, or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.",
         "parameters": [
           {
             "name": "folderId",
@@ -1034,7 +1048,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates an HTML (.html) file in the selected folder with the title and contents specified in the request.",
+        "summary": "Create an HTML file",
         "parameters": [
           {
             "name": "folderId",
@@ -1104,7 +1118,8 @@
             ]
           }
         ],
-        "x-shortName": "Create an HTML file"
+        "x-shortName": "Create an HTML file",
+        "description": "Creates an HTML (.html) file in the selected folder with the title and contents specified in the request."
       }
     },
     "/api/2.0/files/{folderId}/text": {
@@ -1112,7 +1127,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates a text (.txt) file in the selected folder with the title and contents specified in the request.",
+        "summary": "Create a txt file",
         "parameters": [
           {
             "name": "folderId",
@@ -1182,7 +1197,8 @@
             ]
           }
         ],
-        "x-shortName": "Create a txt file"
+        "x-shortName": "Create a txt file",
+        "description": "Creates a text (.txt) file in the selected folder with the title and contents specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}": {
@@ -1190,7 +1206,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Deletes a file with the ID specified in the request.",
+        "summary": "Delete a file",
         "parameters": [
           {
             "name": "fileId",
@@ -1260,13 +1276,14 @@
             ]
           }
         ],
-        "x-shortName": "Delete a file"
+        "x-shortName": "Delete a file",
+        "description": "Deletes a file with the ID specified in the request."
       },
       "get": {
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the detailed information about a file with the ID specified in the request.",
+        "summary": "Get file information",
         "parameters": [
           {
             "name": "fileId",
@@ -1312,13 +1329,14 @@
             }
           }
         },
-        "x-shortName": "Get file information"
+        "x-shortName": "Get file information",
+        "description": "Returns the detailed information about a file with the ID specified in the request."
       },
       "put": {
         "tags": [
           "Files / Files"
         ],
-        "summary": "Updates the information of the selected file with the parameters specified in the request.",
+        "summary": "Update a file",
         "parameters": [
           {
             "name": "fileId",
@@ -1374,7 +1392,8 @@
             }
           }
         },
-        "x-shortName": "Update a file"
+        "x-shortName": "Update a file",
+        "description": "Updates the information of the selected file with the parameters specified in the request."
       }
     },
     "/api/2.0/files/file/fillresult": {
@@ -1420,7 +1439,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns a URL to the changes of a file version specified in the request.",
+        "summary": "Get changes URL",
         "parameters": [
           {
             "name": "fileId",
@@ -1467,7 +1486,8 @@
             }
           }
         },
-        "x-shortName": "Get changes URL"
+        "x-shortName": "Get changes URL",
+        "description": "Returns a URL to the changes of a file version specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/edit/history": {
@@ -1475,7 +1495,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the version history of a file with the ID specified in the request.",
+        "summary": "Get version history",
         "parameters": [
           {
             "name": "fileId",
@@ -1511,7 +1531,8 @@
             }
           }
         },
-        "x-shortName": "Get version history"
+        "x-shortName": "Get version history",
+        "description": "Returns the version history of a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/lock": {
@@ -1519,7 +1540,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Locks a file with the ID specified in the request.",
+        "summary": "Lock a file",
         "parameters": [
           {
             "name": "fileId",
@@ -1589,7 +1610,8 @@
             ]
           }
         ],
-        "x-shortName": "Lock a file"
+        "x-shortName": "Lock a file",
+        "description": "Locks a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/restoreversion": {
@@ -1597,7 +1619,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Restores a file version specified in the request.",
+        "summary": "Restore a file version",
         "parameters": [
           {
             "name": "fileId",
@@ -1653,7 +1675,8 @@
             }
           }
         },
-        "x-shortName": "Restore a file version"
+        "x-shortName": "Restore a file version",
+        "description": "Restores a file version specified in the request."
       }
     },
     "/api/2.0/files/file/{id}/link": {
@@ -1661,7 +1684,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the primary external link by the identifier specified in the request.",
+        "summary": "Get primary external link",
         "parameters": [
           {
             "name": "id",
@@ -1697,7 +1720,8 @@
             }
           }
         },
-        "x-shortName": "Get primary external link"
+        "x-shortName": "Get primary external link",
+        "description": "Returns the primary external link by the identifier specified in the request."
       }
     },
     "/api/2.0/files/{fileId}/order": {
@@ -1761,7 +1785,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Returns the external links of a file with the ID specified in the request.",
+        "summary": "Get file external links",
         "parameters": [
           {
             "name": "fileId",
@@ -1811,7 +1835,8 @@
             ]
           }
         ],
-        "x-shortName": "Get file external links"
+        "x-shortName": "Get file external links",
+        "description": "Returns the external links of a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{id}/links": {
@@ -1819,7 +1844,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Sets an external link to a file with the ID specified in the request.",
+        "summary": "Set an external link",
         "parameters": [
           {
             "name": "id",
@@ -1889,7 +1914,8 @@
             ]
           }
         ],
-        "x-shortName": "Set an external link"
+        "x-shortName": "Set an external link",
+        "description": "Sets an external link to a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{id}/saveaspdf": {
@@ -1897,7 +1923,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Saves a file with the identifier specified in the request as a PDF document",
+        "summary": "Save as pdf",
         "parameters": [
           {
             "name": "id",
@@ -1967,7 +1993,8 @@
             ]
           }
         ],
-        "x-shortName": "Save as pdf"
+        "x-shortName": "Save as pdf",
+        "description": "Saves a file with the identifier specified in the request as a PDF document"
       }
     },
     "/api/2.0/files/@my/file": {
@@ -1975,8 +2002,8 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates a new file in the \"My documents\" section with the title specified in the request.",
-        "description": "If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet, or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.",
+        "summary": "Create a file in the \"My documents\" section",
+        "description": "Creates a new file in the \"My documents\" section with the title specified in the request.\n\n**Note**: If a file extension is different from DOCX/XLSX/PPTX and refers to one of the known text, spreadsheet, or presentation formats, it will be changed to DOCX/XLSX/PPTX accordingly. If the file extension is not specified or is unknown, the DOCX extension will be added to the file title.",
         "requestBody": {
           "description": "Request parameters for creating a file",
           "content": {
@@ -2041,7 +2068,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates an HTML (.html) file in the \"My documents\" section with the title and contents specified in the request.",
+        "summary": "Create an HTML file in the \"My documents\" section",
         "requestBody": {
           "description": "Request parameters for creating an HTML file",
           "content": {
@@ -2098,7 +2125,8 @@
             ]
           }
         ],
-        "x-shortName": "Create an HTML file in the \"My documents\" section"
+        "x-shortName": "Create an HTML file in the \"My documents\" section",
+        "description": "Creates an HTML (.html) file in the \"My documents\" section with the title and contents specified in the request."
       }
     },
     "/api/2.0/files/@my/text": {
@@ -2106,7 +2134,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates a text (.txt) file in the \"My documents\" section with the title and contents specified in the request.",
+        "summary": "Create a text file in the \"My documents\" section",
         "requestBody": {
           "description": "Request parameters for creating a text file",
           "content": {
@@ -2163,7 +2191,8 @@
             ]
           }
         ],
-        "x-shortName": "Create a text file in the \"My documents\" section"
+        "x-shortName": "Create a text file in the \"My documents\" section",
+        "description": "Creates a text (.txt) file in the \"My documents\" section with the title and contents specified in the request."
       }
     },
     "/api/2.0/files/thumbnails": {
@@ -2171,7 +2200,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates thumbnails for the files with the IDs specified in the request.",
+        "summary": "Create thumbnails",
         "requestBody": {
           "description": "Base batch request parameters",
           "content": {
@@ -2197,18 +2226,19 @@
             "description": "List of file IDs",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Create thumbnails"
+        "x-shortName": "Create thumbnails",
+        "description": "Creates thumbnails for the files with the IDs specified in the request."
       }
     },
     "/api/2.0/files/masterform/{fileId}/checkfillformdraft": {
@@ -2216,7 +2246,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Checks if the current file is a form draft which can be filled out.",
+        "summary": "Check the form draft",
         "parameters": [
           {
             "name": "fileId",
@@ -2255,18 +2285,19 @@
             "description": "Link to the form",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Check the form draft"
+        "x-shortName": "Check the form draft",
+        "description": "Checks if the current file is a form draft which can be filled out."
       }
     },
     "/api/2.0/files/templates": {
@@ -2274,7 +2305,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Adds files with the IDs specified in the request to the template list.",
+        "summary": "Add template files",
         "requestBody": {
           "description": "Request parameters for adding files to the template list",
           "content": {
@@ -2331,13 +2362,14 @@
             ]
           }
         ],
-        "x-shortName": "Add template files"
+        "x-shortName": "Add template files",
+        "description": "Adds files with the IDs specified in the request to the template list."
       },
       "delete": {
         "tags": [
           "Files / Files"
         ],
-        "summary": "Removes files with the IDs specified in the request from the template list.",
+        "summary": "Delete template files",
         "requestBody": {
           "description": "List of file IDs",
           "content": {
@@ -2409,7 +2441,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete template files"
+        "x-shortName": "Delete template files",
+        "description": "Removes files with the IDs specified in the request from the template list."
       }
     },
     "/api/2.0/files/recent": {
@@ -2417,7 +2450,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Removes files with the IDs specified in the request from the \"Recent\" section.",
+        "summary": "Delete recent files",
         "requestBody": {
           "description": "Base batch request parameters",
           "content": {
@@ -2474,7 +2507,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete recent files"
+        "x-shortName": "Delete recent files",
+        "description": "Removes files with the IDs specified in the request from the \"Recent\" section."
       }
     },
     "/api/2.0/files/file/{fileId}/edit_session": {
@@ -2482,7 +2516,7 @@
         "tags": [
           "Files / Files"
         ],
-        "summary": "Creates a session to edit the existing file with multiple chunks (needed for WebDAV).",
+        "summary": "Create the editing session",
         "parameters": [
           {
             "name": "fileId",
@@ -2511,13 +2545,13 @@
             "description": "Information about created session",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -2536,7 +2570,8 @@
             ]
           }
         ],
-        "x-shortName": "Create the editing session"
+        "x-shortName": "Create the editing session",
+        "description": "Creates a session to edit the existing file with multiple chunks (needed for WebDAV)."
       }
     },
     "/api/2.0/files/folder/{folderId}/log": {
@@ -2544,7 +2579,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Get the activity history of a folder with a specified identifier",
+        "summary": "Get folder history",
         "parameters": [
           {
             "name": "folderId",
@@ -2594,7 +2629,8 @@
             ]
           }
         ],
-        "x-shortName": "Get folder history"
+        "x-shortName": "Get folder history",
+        "description": "Get the activity history of a folder with a specified identifier"
       }
     },
     "/api/2.0/files/folder/{folderId}": {
@@ -2602,7 +2638,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Creates a new folder with the title specified in the request. The parent folder ID can be also specified.",
+        "summary": "Create a folder",
         "parameters": [
           {
             "name": "folderId",
@@ -2672,13 +2708,14 @@
             ]
           }
         ],
-        "x-shortName": "Create a folder"
+        "x-shortName": "Create a folder",
+        "description": "Creates a new folder with the title specified in the request. The parent folder ID can be also specified."
       },
       "delete": {
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Deletes a folder with the ID specified in the request.",
+        "summary": "Delete a folder",
         "parameters": [
           {
             "name": "folderId",
@@ -2748,13 +2785,14 @@
             ]
           }
         ],
-        "x-shortName": "Delete a folder"
+        "x-shortName": "Delete a folder",
+        "description": "Deletes a folder with the ID specified in the request."
       },
       "get": {
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the detailed information about a folder with the ID specified in the request.",
+        "summary": "Get folder information",
         "parameters": [
           {
             "name": "folderId",
@@ -2790,13 +2828,14 @@
             }
           }
         },
-        "x-shortName": "Get folder information"
+        "x-shortName": "Get folder information",
+        "description": "Returns the detailed information about a folder with the ID specified in the request."
       },
       "put": {
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Renames the selected folder with a new title specified in the request.",
+        "summary": "Rename a folder",
         "parameters": [
           {
             "name": "folderId",
@@ -2866,7 +2905,8 @@
             ]
           }
         ],
-        "x-shortName": "Rename a folder"
+        "x-shortName": "Rename a folder",
+        "description": "Renames the selected folder with a new title specified in the request."
       }
     },
     "/api/2.0/files/folder/{folderId}/order": {
@@ -2934,7 +2974,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the detailed list of files and folders located in the folder with the ID specified in the request.",
+        "summary": "Get a folder by ID",
         "parameters": [
           {
             "name": "folderId",
@@ -3050,7 +3090,8 @@
             }
           }
         },
-        "x-shortName": "Get a folder by ID"
+        "x-shortName": "Get a folder by ID",
+        "description": "Returns the detailed list of files and folders located in the folder with the ID specified in the request."
       }
     },
     "/api/2.0/files/folder/{folderId}/path": {
@@ -3058,7 +3099,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns a path to the folder with the ID specified in the request.",
+        "summary": "Get the folder path",
         "parameters": [
           {
             "name": "folderId",
@@ -3108,7 +3149,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the folder path"
+        "x-shortName": "Get the folder path",
+        "description": "Returns a path to the folder with the ID specified in the request."
       }
     },
     "/api/2.0/files/{folderId}/subfolders": {
@@ -3116,7 +3158,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns a list of all the subfolders from a folder with the ID specified in the request.",
+        "summary": "Get subfolders",
         "parameters": [
           {
             "name": "folderId",
@@ -3166,7 +3208,8 @@
             ]
           }
         ],
-        "x-shortName": "Get subfolders"
+        "x-shortName": "Get subfolders",
+        "description": "Returns a list of all the subfolders from a folder with the ID specified in the request."
       }
     },
     "/api/2.0/files/{folderId}/news": {
@@ -3174,7 +3217,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns a list of all the new items from a folder with the ID specified in the request.",
+        "summary": "Get new folder items",
         "parameters": [
           {
             "name": "folderId",
@@ -3224,7 +3267,8 @@
             ]
           }
         ],
-        "x-shortName": "Get new folder items"
+        "x-shortName": "Get new folder items",
+        "description": "Returns a list of all the new items from a folder with the ID specified in the request."
       }
     },
     "/api/2.0/files/filesusedspace": {
@@ -3232,7 +3276,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the used space of files in the root folders.",
+        "summary": "Get used space of files",
         "responses": {
           "200": {
             "description": "Used space of files in the root folders",
@@ -3269,7 +3313,8 @@
             ]
           }
         ],
-        "x-shortName": "Get used space of files"
+        "x-shortName": "Get used space of files",
+        "description": "Returns the used space of files in the root folders."
       }
     },
     "/api/2.0/files/folder/{id}/link": {
@@ -3277,7 +3322,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the primary external link by the identifier specified in the request.",
+        "summary": "Get primary external link",
         "parameters": [
           {
             "name": "id",
@@ -3313,7 +3358,8 @@
             }
           }
         },
-        "x-shortName": "Get primary external link"
+        "x-shortName": "Get primary external link",
+        "description": "Returns the primary external link by the identifier specified in the request."
       }
     },
     "/api/2.0/files/@my": {
@@ -3321,7 +3367,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the detailed list of files and folders located in the \"My documents\" section.",
+        "summary": "Get the \"My documents\" section",
         "parameters": [
           {
             "name": "userIdOrGroupId",
@@ -3404,7 +3450,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the \"My documents\" section"
+        "x-shortName": "Get the \"My documents\" section",
+        "description": "Returns the detailed list of files and folders located in the \"My documents\" section."
       }
     },
     "/api/2.0/files/@privacy": {
@@ -3412,7 +3459,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the detailed list of files and folders located in the \"Private Room\" section.",
+        "summary": "Get the \"Private Room\" section",
         "parameters": [
           {
             "name": "userIdOrGroupId",
@@ -3487,7 +3534,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the \"Private Room\" section"
+        "x-shortName": "Get the \"Private Room\" section",
+        "description": "Returns the detailed list of files and folders located in the \"Private Room\" section."
       }
     },
     "/api/2.0/files/@root": {
@@ -3495,7 +3543,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns all the sections matching the parameters specified in the request.",
+        "summary": "Get filtered sections",
         "parameters": [
           {
             "name": "userIdOrGroupId",
@@ -3579,7 +3627,8 @@
             ]
           }
         ],
-        "x-shortName": "Get filtered sections"
+        "x-shortName": "Get filtered sections",
+        "description": "Returns all the sections matching the parameters specified in the request."
       }
     },
     "/api/2.0/files/@trash": {
@@ -3587,7 +3636,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Returns the detailed list of files and folders located in the \"Trash\" section.",
+        "summary": "Get the \"Trash\" section",
         "parameters": [
           {
             "name": "userIdOrGroupId",
@@ -3670,7 +3719,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the \"Trash\" section"
+        "x-shortName": "Get the \"Trash\" section",
+        "description": "Returns the detailed list of files and folders located in the \"Trash\" section."
       }
     },
     "/api/2.0/files/{folderId}/upload/check": {
@@ -3764,7 +3814,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Inserts a file specified in the request to the selected folder by single file uploading.",
+        "summary": "Insert a file",
         "parameters": [
           {
             "name": "folderId",
@@ -3911,7 +3961,8 @@
             ]
           }
         ],
-        "x-shortName": "Insert a file"
+        "x-shortName": "Insert a file",
+        "description": "Inserts a file specified in the request to the selected folder by single file uploading."
       }
     },
     "/api/2.0/files/{folderId}/upload": {
@@ -3919,8 +3970,8 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Uploads a file specified in the request to the selected folder by single file uploading or standart multipart/form-data method.",
-        "description": " You can upload files in two different ways:\r\n <ol>\r\n<li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>\r\n<li>Using standart multipart/form-data method.</li>\r\n</ol>",
+        "summary": "Upload a file",
+        "description": "Uploads a file specified in the request to the selected folder by single file uploading or standart multipart/form-data method.\n\n**Note**:  You can upload files in two different ways:\r\n <ol>\r\n<li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>\r\n<li>Using standart multipart/form-data method.</li>\r\n</ol>",
         "parameters": [
           {
             "name": "folderId",
@@ -3985,7 +4036,7 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Inserts a file specified in the request to the \"My documents\" section by single file uploading.",
+        "summary": "Insert a file to the \"My documents\" section",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -4119,7 +4170,8 @@
             ]
           }
         ],
-        "x-shortName": "Insert a file to the \"My documents\" section"
+        "x-shortName": "Insert a file to the \"My documents\" section",
+        "description": "Inserts a file specified in the request to the \"My documents\" section by single file uploading."
       }
     },
     "/api/2.0/files/@my/upload": {
@@ -4127,8 +4179,8 @@
         "tags": [
           "Files / Folders"
         ],
-        "summary": "Uploads a file specified in the request to the \"My documents\" section by single file uploading or standart multipart/form-data method.",
-        "description": " You can upload files in two different ways:\r\n <ol>\r\n<li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>\r\n<li>Using standart multipart/form-data method.</li>\r\n</ol>",
+        "summary": "Upload a file to the \"My documents\" section",
+        "description": "Uploads a file specified in the request to the \"My documents\" section by single file uploading or standart multipart/form-data method.\n\n**Note**:  You can upload files in two different ways:\r\n <ol>\r\n<li>Using single file upload. You should set the Content-Type and Content-Disposition headers to specify a file name and content type, and send the file to the request body.</li>\r\n<li>Using standart multipart/form-data method.</li>\r\n</ol>",
         "parameters": [
           {
             "name": "inDto",
@@ -4144,13 +4196,13 @@
             "description": "Uploaded file(s)",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4177,7 +4229,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Checks the conversion status of a file with the ID specified in the request.",
+        "summary": "Get conversion status",
         "parameters": [
           {
             "name": "fileId",
@@ -4236,13 +4288,14 @@
             ]
           }
         ],
-        "x-shortName": "Get conversion status"
+        "x-shortName": "Get conversion status",
+        "description": "Checks the conversion status of a file with the ID specified in the request."
       },
       "put": {
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Starts a conversion operation of a file with the ID specified in the request.",
+        "summary": "Start file conversion",
         "parameters": [
           {
             "name": "fileId",
@@ -4312,7 +4365,8 @@
             ]
           }
         ],
-        "x-shortName": "Start file conversion"
+        "x-shortName": "Start file conversion",
+        "description": "Starts a conversion operation of a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/file/{fileId}/comment": {
@@ -4320,7 +4374,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Updates a comment in a file with the ID specified in the request.",
+        "summary": "Update a comment",
         "parameters": [
           {
             "name": "fileId",
@@ -4359,13 +4413,13 @@
             "description": "Updated comment",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4384,7 +4438,8 @@
             ]
           }
         ],
-        "x-shortName": "Update a comment"
+        "x-shortName": "Update a comment",
+        "description": "Updates a comment in a file with the ID specified in the request."
       }
     },
     "/api/2.0/files/fileops/bulkdownload": {
@@ -4392,7 +4447,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Starts the download process of files and folders with the IDs specified in the request.",
+        "summary": "Bulk download",
         "requestBody": {
           "description": "Request parameters for downloading files",
           "content": {
@@ -4435,7 +4490,8 @@
             }
           }
         },
-        "x-shortName": "Bulk download"
+        "x-shortName": "Bulk download",
+        "description": "Starts the download process of files and folders with the IDs specified in the request."
       }
     },
     "/api/2.0/files/fileops/copy": {
@@ -4443,7 +4499,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Copies all the selected files and folders to the folder with the ID specified in the request.",
+        "summary": "Copy to a folder",
         "requestBody": {
           "description": "Request parameters for copying files",
           "content": {
@@ -4500,7 +4556,8 @@
             ]
           }
         ],
-        "x-shortName": "Copy to a folder"
+        "x-shortName": "Copy to a folder",
+        "description": "Copies all the selected files and folders to the folder with the ID specified in the request."
       }
     },
     "/api/2.0/files/fileops/delete": {
@@ -4508,7 +4565,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Deletes the files and folders with the IDs specified in the request.",
+        "summary": "Delete files and folders",
         "requestBody": {
           "description": "Request parameters for deleting files",
           "content": {
@@ -4565,7 +4622,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete files and folders"
+        "x-shortName": "Delete files and folders",
+        "description": "Deletes the files and folders with the IDs specified in the request."
       }
     },
     "/api/2.0/files/fileops/emptytrash": {
@@ -4573,7 +4631,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Deletes all the files and folders from the \"Trash\" folder.",
+        "summary": "Empty the \"Trash\" folder",
         "responses": {
           "200": {
             "description": "List of file operations",
@@ -4610,7 +4668,8 @@
             ]
           }
         ],
-        "x-shortName": "Empty the \"Trash\" folder"
+        "x-shortName": "Empty the \"Trash\" folder",
+        "description": "Deletes all the files and folders from the \"Trash\" folder."
       }
     },
     "/api/2.0/files/fileops": {
@@ -4618,7 +4677,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Returns a list of all the active operations.",
+        "summary": "Get active operations",
         "responses": {
           "200": {
             "description": "List of file operations",
@@ -4641,7 +4700,8 @@
             }
           }
         },
-        "x-shortName": "Get active operations"
+        "x-shortName": "Get active operations",
+        "description": "Returns a list of all the active operations."
       }
     },
     "/api/2.0/files/fileops/markasread": {
@@ -4649,7 +4709,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Marks the files and folders with the IDs specified in the request as read.",
+        "summary": "Mark as read",
         "requestBody": {
           "description": "Base batch request parameters",
           "content": {
@@ -4706,7 +4766,8 @@
             ]
           }
         ],
-        "x-shortName": "Mark as read"
+        "x-shortName": "Mark as read",
+        "description": "Marks the files and folders with the IDs specified in the request as read."
       }
     },
     "/api/2.0/files/fileops/move": {
@@ -4714,7 +4775,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Moves all the selected files and folders to the folder with the ID specified in the request.",
+        "summary": "Move to a folder",
         "requestBody": {
           "description": "Request parameters for moving files and folders",
           "content": {
@@ -4771,13 +4832,14 @@
             ]
           }
         ],
-        "x-shortName": "Move to a folder"
+        "x-shortName": "Move to a folder",
+        "description": "Moves all the selected files and folders to the folder with the ID specified in the request."
       },
       "get": {
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Checks a batch of files and folders for conflicts when moving or copying them to the folder with the ID specified in the request.",
+        "summary": "Check files and folders for conflicts",
         "parameters": [
           {
             "name": "inDto",
@@ -4824,7 +4886,8 @@
             ]
           }
         ],
-        "x-shortName": "Check files and folders for conflicts"
+        "x-shortName": "Check files and folders for conflicts",
+        "description": "Checks a batch of files and folders for conflicts when moving or copying them to the folder with the ID specified in the request."
       }
     },
     "/api/2.0/files/fileops/duplicate": {
@@ -4946,7 +5009,7 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Finishes an operation with the ID specified in the request or all the active operations.",
+        "summary": "Finish active operations",
         "parameters": [
           {
             "name": "id",
@@ -4981,7 +5044,8 @@
             }
           }
         },
-        "x-shortName": "Finish active operations"
+        "x-shortName": "Finish active operations",
+        "description": "Finishes an operation with the ID specified in the request or all the active operations."
       }
     },
     "/api/2.0/files/{folderId}/upload/create_session": {
@@ -4989,8 +5053,8 @@
         "tags": [
           "Files / Operations"
         ],
-        "summary": "Creates a session to upload large files in multiple chunks to the folder with the ID specified in the request.",
-        "description": "Each chunk can have different length but the length should be multiple of <b>512</b> and greater or equal to <b>10 mb</b>. Last chunk can have any size.\r\nAfter the initial response to the request with the <b>200 OK</b> status, you must get the <em>location</em> field value from the response. Send all your chunks to this location.\r\nEach chunk must be sent in the exact order the chunks appear in the file.\r\nAfter receiving each chunk, the server will respond with the current information about the upload session if no errors occurred.\r\nWhen the number of bytes uploaded is equal to the number of bytes you sent in the initial request, the server responds with the <b>201 Created</b> status and sends you information about the uploaded file.",
+        "summary": "Chunked upload",
+        "description": "Creates a session to upload large files in multiple chunks to the folder with the ID specified in the request.\n\n**Note**: Each chunk can have different length but the length should be multiple of <b>512</b> and greater or equal to <b>10 mb</b>. Last chunk can have any size.\r\nAfter the initial response to the request with the <b>200 OK</b> status, you must get the <em>location</em> field value from the response. Send all your chunks to this location.\r\nEach chunk must be sent in the exact order the chunks appear in the file.\r\nAfter receiving each chunk, the server will respond with the current information about the upload session if no errors occurred.\r\nWhen the number of bytes uploaded is equal to the number of bytes you sent in the initial request, the server responds with the <b>201 Created</b> status and sends you information about the uploaded file.",
         "parameters": [
           {
             "name": "folderId",
@@ -5029,13 +5093,13 @@
             "description": "Information about created session",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -5062,7 +5126,7 @@
         "tags": [
           "Files / Quota"
         ],
-        "summary": "Changes a quota limit for the rooms with the IDs specified in the request.",
+        "summary": "Change a room quota limit",
         "requestBody": {
           "description": "Request parameters for updating room",
           "content": {
@@ -5119,7 +5183,8 @@
             ]
           }
         ],
-        "x-shortName": "Change a room quota limit"
+        "x-shortName": "Change a room quota limit",
+        "description": "Changes a quota limit for the rooms with the IDs specified in the request."
       }
     },
     "/api/2.0/files/rooms/resetquota": {
@@ -5127,7 +5192,7 @@
         "tags": [
           "Files / Quota"
         ],
-        "summary": "Resets a quota limit for the rooms with the IDs specified in the request.",
+        "summary": "Reset a room quota limit",
         "requestBody": {
           "description": "Request parameters for updating room",
           "content": {
@@ -5184,7 +5249,8 @@
             ]
           }
         ],
-        "x-shortName": "Reset a room quota limit"
+        "x-shortName": "Reset a room quota limit",
+        "description": "Resets a quota limit for the rooms with the IDs specified in the request."
       }
     },
     "/api/2.0/files/rooms": {
@@ -5192,7 +5258,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Creates a room in the \"Rooms\" section.",
+        "summary": "Create a room",
         "requestBody": {
           "description": "Request parameters for creating a room",
           "content": {
@@ -5249,13 +5315,14 @@
             ]
           }
         ],
-        "x-shortName": "Create a room"
+        "x-shortName": "Create a room",
+        "description": "Creates a room in the \"Rooms\" section."
       },
       "get": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Returns the contents of the \"Rooms\" section by the parameters specified in the request.",
+        "summary": "Get rooms",
         "parameters": [
           {
             "name": "type",
@@ -5396,7 +5463,8 @@
             ]
           }
         ],
-        "x-shortName": "Get rooms"
+        "x-shortName": "Get rooms",
+        "description": "Returns the contents of the \"Rooms\" section by the parameters specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}": {
@@ -5404,7 +5472,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Returns the room information.",
+        "summary": "Get room information",
         "parameters": [
           {
             "name": "id",
@@ -5440,13 +5508,14 @@
             }
           }
         },
-        "x-shortName": "Get room information"
+        "x-shortName": "Get room information",
+        "description": "Returns the room information."
       },
       "put": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Renames a room with the ID specified in  the request.",
+        "summary": "Rename a room",
         "parameters": [
           {
             "name": "id",
@@ -5516,13 +5585,14 @@
             ]
           }
         ],
-        "x-shortName": "Rename a room"
+        "x-shortName": "Rename a room",
+        "description": "Renames a room with the ID specified in  the request."
       },
       "delete": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Removes a room with the ID specified in the request.",
+        "summary": "Remove a room",
         "parameters": [
           {
             "name": "id",
@@ -5592,7 +5662,8 @@
             ]
           }
         ],
-        "x-shortName": "Remove a room"
+        "x-shortName": "Remove a room",
+        "description": "Removes a room with the ID specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}/archive": {
@@ -5600,7 +5671,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Moves a room with the ID specified in the request to the \"Archive\" section.",
+        "summary": "Archive a room",
         "parameters": [
           {
             "name": "id",
@@ -5670,7 +5741,8 @@
             ]
           }
         ],
-        "x-shortName": "Archive a room"
+        "x-shortName": "Archive a room",
+        "description": "Moves a room with the ID specified in the request to the \"Archive\" section."
       }
     },
     "/api/2.0/files/rooms/{id}/unarchive": {
@@ -5678,7 +5750,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Moves a room with the ID specified in the request from the \"Archive\" section to the \"Rooms\" section.",
+        "summary": "Unarchive a room",
         "parameters": [
           {
             "name": "id",
@@ -5748,7 +5820,8 @@
             ]
           }
         ],
-        "x-shortName": "Unarchive a room"
+        "x-shortName": "Unarchive a room",
+        "description": "Moves a room with the ID specified in the request from the \"Archive\" section to the \"Rooms\" section."
       }
     },
     "/api/2.0/files/rooms/{id}/share": {
@@ -5756,7 +5829,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Sets the access rights to a room with the ID specified in the request.",
+        "summary": "Set room access rights",
         "parameters": [
           {
             "name": "id",
@@ -5826,13 +5899,14 @@
             ]
           }
         ],
-        "x-shortName": "Set room access rights"
+        "x-shortName": "Set room access rights",
+        "description": "Sets the access rights to a room with the ID specified in the request."
       },
       "get": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Returns the access rights of a room with the ID specified in the request.",
+        "summary": "Get room access rights",
         "parameters": [
           {
             "name": "id",
@@ -5890,7 +5964,8 @@
             ]
           }
         ],
-        "x-shortName": "Get room access rights"
+        "x-shortName": "Get room access rights",
+        "description": "Returns the access rights of a room with the ID specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}/links": {
@@ -5898,7 +5973,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Sets an external or invitation link with the ID specified in the request.",
+        "summary": "Set an external or invitation link",
         "parameters": [
           {
             "name": "id",
@@ -5968,13 +6043,14 @@
             ]
           }
         ],
-        "x-shortName": "Set an external or invitation link"
+        "x-shortName": "Set an external or invitation link",
+        "description": "Sets an external or invitation link with the ID specified in the request."
       },
       "get": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Returns the links of a room with the ID specified in the request.",
+        "summary": "Get room links",
         "parameters": [
           {
             "name": "id",
@@ -6032,7 +6108,8 @@
             ]
           }
         ],
-        "x-shortName": "Get room links"
+        "x-shortName": "Get room links",
+        "description": "Returns the links of a room with the ID specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}/link": {
@@ -6040,7 +6117,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Returns the primary external link of a room with the ID specified in the request.",
+        "summary": "Get primary external link",
         "parameters": [
           {
             "name": "id",
@@ -6090,7 +6167,8 @@
             ]
           }
         ],
-        "x-shortName": "Get primary external link"
+        "x-shortName": "Get primary external link",
+        "description": "Returns the primary external link of a room with the ID specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}/tags": {
@@ -6098,7 +6176,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Adds the tags to a room with the ID specified in the request.",
+        "summary": "Add room tags",
         "parameters": [
           {
             "name": "id",
@@ -6168,13 +6246,14 @@
             ]
           }
         ],
-        "x-shortName": "Add room tags"
+        "x-shortName": "Add room tags",
+        "description": "Adds the tags to a room with the ID specified in the request."
       },
       "delete": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Removes the tags from a room with the ID specified in the request.",
+        "summary": "Remove room tags",
         "parameters": [
           {
             "name": "id",
@@ -6244,7 +6323,8 @@
             ]
           }
         ],
-        "x-shortName": "Remove room tags"
+        "x-shortName": "Remove room tags",
+        "description": "Removes the tags from a room with the ID specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}/logo": {
@@ -6252,7 +6332,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Creates a logo for a room with the ID specified in the request.",
+        "summary": "Create a room logo",
         "parameters": [
           {
             "name": "id",
@@ -6322,13 +6402,14 @@
             ]
           }
         ],
-        "x-shortName": "Create a room logo"
+        "x-shortName": "Create a room logo",
+        "description": "Creates a logo for a room with the ID specified in the request."
       },
       "delete": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Removes a logo from a room with the ID specified in the request.",
+        "summary": "Remove a room logo",
         "parameters": [
           {
             "name": "id",
@@ -6378,7 +6459,8 @@
             ]
           }
         ],
-        "x-shortName": "Remove a room logo"
+        "x-shortName": "Remove a room logo",
+        "description": "Removes a logo from a room with the ID specified in the request."
       }
     },
     "/api/2.0/files/rooms/{id}/pin": {
@@ -6386,7 +6468,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Pins a room with the ID specified in the request to the top of the list.",
+        "summary": "Pin a room",
         "parameters": [
           {
             "name": "id",
@@ -6436,7 +6518,8 @@
             ]
           }
         ],
-        "x-shortName": "Pin a room"
+        "x-shortName": "Pin a room",
+        "description": "Pins a room with the ID specified in the request to the top of the list."
       }
     },
     "/api/2.0/files/rooms/{id}/unpin": {
@@ -6444,7 +6527,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Unpins a room with the ID specified in the request from the top of the list.",
+        "summary": "Unpin a room",
         "parameters": [
           {
             "name": "id",
@@ -6494,7 +6577,8 @@
             ]
           }
         ],
-        "x-shortName": "Unpin a room"
+        "x-shortName": "Unpin a room",
+        "description": "Unpins a room with the ID specified in the request from the top of the list."
       }
     },
     "/api/2.0/files/rooms/{id}/resend": {
@@ -6502,7 +6586,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Resends the email invitations to a room with the ID specified in the request to the selected users.",
+        "summary": "Resend room invitations",
         "parameters": [
           {
             "name": "id",
@@ -6555,7 +6639,8 @@
             ]
           }
         ],
-        "x-shortName": "Resend room invitations"
+        "x-shortName": "Resend room invitations",
+        "description": "Resends the email invitations to a room with the ID specified in the request to the selected users."
       }
     },
     "/api/2.0/files/rooms/{id}/settings": {
@@ -6697,7 +6782,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Creates a room in the \"Rooms\" section stored in a third-party storage.",
+        "summary": "Create a third-party room",
         "parameters": [
           {
             "name": "id",
@@ -6766,7 +6851,8 @@
             ]
           }
         ],
-        "x-shortName": "Create a third-party room"
+        "x-shortName": "Create a third-party room",
+        "description": "Creates a room in the \"Rooms\" section stored in a third-party storage."
       }
     },
     "/api/2.0/files/tags": {
@@ -6774,7 +6860,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Creates a custom tag with the parameters specified in the request.",
+        "summary": "Create a tag",
         "requestBody": {
           "description": "Request parameters for creating a tag",
           "content": {
@@ -6800,13 +6886,13 @@
             "description": "New tag name",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -6825,25 +6911,26 @@
             ]
           }
         ],
-        "x-shortName": "Create a tag"
+        "x-shortName": "Create a tag",
+        "description": "Creates a custom tag with the parameters specified in the request."
       },
       "get": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Returns a list of custom tags.",
+        "summary": "Get tags",
         "responses": {
           "200": {
             "description": "List of tag names",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -6862,13 +6949,14 @@
             ]
           }
         ],
-        "x-shortName": "Get tags"
+        "x-shortName": "Get tags",
+        "description": "Returns a list of custom tags."
       },
       "delete": {
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Deletes a bunch of custom tags specified in the request.",
+        "summary": "Delete tags",
         "requestBody": {
           "description": "Batch tags request parameters",
           "content": {
@@ -6908,7 +6996,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete tags"
+        "x-shortName": "Delete tags",
+        "description": "Deletes a bunch of custom tags specified in the request."
       }
     },
     "/api/2.0/files/logos": {
@@ -6916,7 +7005,7 @@
         "tags": [
           "Files / Rooms"
         ],
-        "summary": "Uploads a temporary image to create a room logo.",
+        "summary": "Upload an image for room logo",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -6975,7 +7064,8 @@
             ]
           }
         ],
-        "x-shortName": "Upload an image for room logo"
+        "x-shortName": "Upload an image for room logo",
+        "description": "Uploads a temporary image to create a room logo."
       }
     },
     "/api/2.0/files/rooms/{id}/indexexport": {
@@ -7107,7 +7197,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Checks the document service location.",
+        "summary": "Check the document service URL",
         "requestBody": {
           "description": "Request parameters for checking the document service location",
           "content": {
@@ -7164,7 +7254,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the document service URL"
+        "x-shortName": "Check the document service URL",
+        "description": "Checks the document service location."
       }
     },
     "/api/2.0/files/thirdparty": {
@@ -7172,7 +7263,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the access to the third-party settings.",
+        "summary": "Change the third-party settings access",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7229,13 +7320,14 @@
             ]
           }
         ],
-        "x-shortName": "Change the third-party settings access"
+        "x-shortName": "Change the third-party settings access",
+        "description": "Changes the access to the third-party settings."
       },
       "get": {
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Returns a list of all the connected third-party accounts.",
+        "summary": "Get third-party accounts",
         "responses": {
           "200": {
             "description": "List of connected providers information",
@@ -7272,14 +7364,15 @@
             ]
           }
         ],
-        "x-shortName": "Get third-party accounts"
+        "x-shortName": "Get third-party accounts",
+        "description": "Returns a list of all the connected third-party accounts."
       },
       "post": {
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Saves the third-party storage service account. For WebDav, Yandex, kDrive and SharePoint, the login and password are used for authentication. For other providers, the authentication is performed using a token received via OAuth 2.0.",
-        "description": "List of provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.",
+        "summary": "Save a third-party account",
+        "description": "Saves the third-party storage service account. For WebDav, Yandex, kDrive and SharePoint, the login and password are used for authentication. For other providers, the authentication is performed using a token received via OAuth 2.0.\n\n**Note**: List of provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.",
         "requestBody": {
           "description": "Third-party request parameters",
           "content": {
@@ -7344,7 +7437,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Specifies whether to confirm the file deletion or not.",
+        "summary": "Confirm the file deletion",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7401,7 +7494,8 @@
             ]
           }
         ],
-        "x-shortName": "Confirm the file deletion"
+        "x-shortName": "Confirm the file deletion",
+        "description": "Specifies whether to confirm the file deletion or not."
       }
     },
     "/api/2.0/files/settings/downloadtargz": {
@@ -7409,7 +7503,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the format of the downloaded archive from .zip to .tar.gz. This method uses the body parameters.",
+        "summary": "Change the archive format (using body parameters)",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7466,7 +7560,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the archive format (using body parameters)"
+        "x-shortName": "Change the archive format (using body parameters)",
+        "description": "Changes the format of the downloaded archive from .zip to .tar.gz. This method uses the body parameters."
       }
     },
     "/api/2.0/files/settings/external": {
@@ -7474,7 +7569,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the ability to share a file externally.",
+        "summary": "Change the external sharing ability",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7531,7 +7626,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the external sharing ability"
+        "x-shortName": "Change the external sharing ability",
+        "description": "Changes the ability to share a file externally."
       }
     },
     "/api/2.0/files/settings/externalsocialmedia": {
@@ -7539,7 +7635,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the ability to share a file externally on social networks.",
+        "summary": "Change the external sharing ability on social networks",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7596,7 +7692,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the external sharing ability on social networks"
+        "x-shortName": "Change the external sharing ability on social networks",
+        "description": "Changes the ability to share a file externally on social networks."
       }
     },
     "/api/2.0/files/forcesave": {
@@ -7604,7 +7701,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the ability to force save a file.",
+        "summary": "Change the forcasaving ability",
         "responses": {
           "200": {
             "description": "Boolean value: true if the parameter is enabled",
@@ -7641,7 +7738,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the forcasaving ability"
+        "x-shortName": "Change the forcasaving ability",
+        "description": "Changes the ability to force save a file."
       }
     },
     "/api/2.0/files/settings": {
@@ -7649,7 +7747,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Returns all the file settings.",
+        "summary": "Get file settings",
         "responses": {
           "200": {
             "description": "File settings",
@@ -7672,7 +7770,8 @@
             }
           }
         },
-        "x-shortName": "Get file settings"
+        "x-shortName": "Get file settings",
+        "description": "Returns all the file settings."
       }
     },
     "/api/2.0/files/info": {
@@ -7680,7 +7779,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Returns the information about the Documents module.",
+        "summary": "Get the Documents information",
         "responses": {
           "200": {
             "description": "Module information: ID, product class name, title, description, icon URL, large icon URL, start URL, primary or nor, help URL",
@@ -7717,7 +7816,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the Documents information"
+        "x-shortName": "Get the Documents information",
+        "description": "Returns the information about the Documents module."
       }
     },
     "/api/2.0/files/@privacy/available": {
@@ -7725,7 +7825,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Checks if the Private Room settings are available or not.",
+        "summary": "Check the Private Room availability",
         "responses": {
           "200": {
             "description": "Boolean value: true if the Private Room settings are available",
@@ -7762,7 +7862,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the Private Room availability"
+        "x-shortName": "Check the Private Room availability",
+        "description": "Checks if the Private Room settings are available or not."
       }
     },
     "/api/2.0/files/storeforcesave": {
@@ -7770,7 +7871,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the ability to store the forcesaved file versions.",
+        "summary": "Change the ability to store the forcesaved files",
         "responses": {
           "200": {
             "description": "Boolean value: true if the operation is successful",
@@ -7807,7 +7908,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the ability to store the forcesaved files"
+        "x-shortName": "Change the ability to store the forcesaved files",
+        "description": "Changes the ability to store the forcesaved file versions."
       }
     },
     "/api/2.0/files/storeoriginal": {
@@ -7815,7 +7917,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the ability to upload documents in the original formats as well.",
+        "summary": "Change the ability to upload original formats",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7872,7 +7974,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the ability to upload original formats"
+        "x-shortName": "Change the ability to upload original formats",
+        "description": "Changes the ability to upload documents in the original formats as well."
       }
     },
     "/api/2.0/files/keepnewfilename": {
@@ -7880,7 +7983,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Specifies whether to ask a user for a file name on creation or not.",
+        "summary": "Ask a new file name",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -7937,7 +8040,8 @@
             ]
           }
         ],
-        "x-shortName": "Ask a new file name"
+        "x-shortName": "Ask a new file name",
+        "description": "Specifies whether to ask a user for a file name on creation or not."
       }
     },
     "/api/2.0/files/updateifexist": {
@@ -7945,7 +8049,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Updates a file version if a file with such a name already exists.",
+        "summary": "Update a file version if it exists",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -8002,7 +8106,8 @@
             ]
           }
         ],
-        "x-shortName": "Update a file version if it exists"
+        "x-shortName": "Update a file version if it exists",
+        "description": "Updates a file version if a file with such a name already exists."
       }
     },
     "/api/2.0/files/settings/autocleanup": {
@@ -8010,7 +8115,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Returns the trash bin auto-clearing setting.",
+        "summary": "Get the trash bin auto-clearing setting",
         "responses": {
           "200": {
             "description": "The auto-clearing setting properties: auto-clearing or not, a time interval when the auto-clearing will be performed",
@@ -8047,13 +8152,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the trash bin auto-clearing setting"
+        "x-shortName": "Get the trash bin auto-clearing setting",
+        "description": "Returns the trash bin auto-clearing setting."
       },
       "put": {
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Updates the trash bin auto-clearing setting.",
+        "summary": "Update the trash bin auto-clearing setting",
         "requestBody": {
           "description": "Auto-clearing request parameters",
           "content": {
@@ -8110,7 +8216,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the trash bin auto-clearing setting"
+        "x-shortName": "Update the trash bin auto-clearing setting",
+        "description": "Updates the trash bin auto-clearing setting."
       }
     },
     "/api/2.0/files/settings/dafaultaccessrights": {
@@ -8118,7 +8225,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Changes the default access rights in the sharing settings.",
+        "summary": "Change the default access rights",
         "requestBody": {
           "description": "Sharing rights (None, ReadWrite, Read, Restrict, Varies, Review, Comment, FillForms, CustomFilter, RoomAdmin, Editing, Collaborator)",
           "content": {
@@ -8193,7 +8300,8 @@
             ]
           }
         ],
-        "x-shortName": "Change the default access rights"
+        "x-shortName": "Change the default access rights",
+        "description": "Changes the default access rights in the sharing settings."
       }
     },
     "/api/2.0/files/settings/openeditorinsametab": {
@@ -8201,7 +8309,7 @@
         "tags": [
           "Files / Settings"
         ],
-        "summary": "Change the ability to open in a document in the same browser tab",
+        "summary": "Open document in same browser tab",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -8258,7 +8366,8 @@
             ]
           }
         ],
-        "x-shortName": "Open document in same browser tab"
+        "x-shortName": "Open document in same browser tab",
+        "description": "Change the ability to open in a document in the same browser tab"
       }
     },
     "/api/2.0/files/thirdparty/capabilities": {
@@ -8266,8 +8375,8 @@
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Returns a list of the available providers.",
-        "description": "Available provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.",
+        "summary": "Get providers",
+        "description": "Returns a list of the available providers.\n\n**Note**: Available provider keys: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive.",
         "responses": {
           "200": {
             "description": "List of provider keys",
@@ -8330,7 +8439,7 @@
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Removes the third-party storage service account with the ID specified in the request.",
+        "summary": "Remove a third-party account",
         "parameters": [
           {
             "name": "providerId",
@@ -8349,13 +8458,13 @@
             "description": "Third-party folder ID",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -8374,7 +8483,8 @@
             ]
           }
         ],
-        "x-shortName": "Remove a third-party account"
+        "x-shortName": "Remove a third-party account",
+        "description": "Removes the third-party storage service account with the ID specified in the request."
       }
     },
     "/api/2.0/files/thirdparty/common": {
@@ -8382,7 +8492,7 @@
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Returns a list of the third-party services connected to the \"Common\" section.",
+        "summary": "Get common third-party services",
         "responses": {
           "200": {
             "description": "List of common third-party folderst",
@@ -8419,7 +8529,8 @@
             ]
           }
         ],
-        "x-shortName": "Get common third-party services"
+        "x-shortName": "Get common third-party services",
+        "description": "Returns a list of the third-party services connected to the \"Common\" section."
       }
     },
     "/api/2.0/files/thirdparty/backup": {
@@ -8427,7 +8538,7 @@
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Return a backup of the connected third-party account.",
+        "summary": "Get a third-party account backup",
         "responses": {
           "200": {
             "description": "Folder for the third-party account backup",
@@ -8464,14 +8575,15 @@
             ]
           }
         ],
-        "x-shortName": "Get a third-party account backup"
+        "x-shortName": "Get a third-party account backup",
+        "description": "Return a backup of the connected third-party account."
       },
       "post": {
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Saves a backup of the connected third-party account.",
-        "description": "List of provider key: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive",
+        "summary": "Save a third-party account backup",
+        "description": "Saves a backup of the connected third-party account.\n\n**Note**: List of provider key: DropboxV2, Box, WebDav, Yandex, OneDrive, SharePoint, GoogleDrive, kDrive",
         "requestBody": {
           "description": "Third-party backup request parameters",
           "content": {
@@ -8536,8 +8648,8 @@
         "tags": [
           "Files / Third-party integration"
         ],
-        "summary": "Returns a list of the all providers.",
-        "description": "Available provider keys: Dropbox, Box, WebDav, OneDrive, GoogleDrive, kDrive, ownCloud, Nextcloud",
+        "summary": "Get all providers",
+        "description": "Returns a list of the all providers.\n\n**Note**: Available provider keys: Dropbox, Box, WebDav, OneDrive, GoogleDrive, kDrive, ownCloud, Nextcloud",
         "responses": {
           "200": {
             "description": "List of provider",
@@ -8592,7 +8704,7 @@
       "ASC.Api.Collections.ItemKeyValuePair<System.Text.Json.JsonElement, System.String>": {
         "type": "object",
         "properties": {
-          "key": { },
+          "key": {},
           "value": {
             "type": "string",
             "nullable": true
@@ -9013,14 +9125,14 @@
         "properties": {
           "folderIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of folder IDs",
             "nullable": true,
             "example": "some text"
           },
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of file IDs",
             "nullable": true,
             "example": "some text"
@@ -9033,14 +9145,14 @@
         "properties": {
           "folderIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of folder IDs",
             "nullable": true,
             "example": "some text"
           },
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of file IDs",
             "nullable": true,
             "example": "some text"
@@ -9071,14 +9183,14 @@
         "properties": {
           "folderIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of folder IDs",
             "nullable": true,
             "example": "some text"
           },
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of file IDs",
             "nullable": true,
             "example": "some text"
@@ -9414,14 +9526,14 @@
         "properties": {
           "folderIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of folder IDs",
             "nullable": true,
             "example": "some text"
           },
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of file IDs",
             "nullable": true,
             "example": "some text"
@@ -9498,14 +9610,14 @@
         "properties": {
           "folderIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of folder IDs",
             "nullable": true,
             "example": "some text"
           },
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of file IDs",
             "nullable": true,
             "example": "some text"
@@ -9527,12 +9639,12 @@
         "properties": {
           "folderIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "nullable": true
           },
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "nullable": true
           }
         },
@@ -9543,7 +9655,7 @@
         "properties": {
           "fileIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of file IDs",
             "nullable": true,
             "example": "some text"
@@ -10038,7 +10150,7 @@
         "properties": {
           "roomIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of room IDs",
             "format": "json",
             "nullable": true
@@ -10057,7 +10169,7 @@
         "properties": {
           "roomIds": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of room IDs",
             "format": "json",
             "nullable": true
@@ -14189,7 +14301,7 @@
           },
           "parameters": {
             "type": "array",
-            "items": { },
+            "items": {},
             "nullable": true,
             "readOnly": true
           },
@@ -14240,7 +14352,7 @@
           },
           "parameters": {
             "type": "array",
-            "items": { },
+            "items": {},
             "nullable": true,
             "readOnly": true
           }

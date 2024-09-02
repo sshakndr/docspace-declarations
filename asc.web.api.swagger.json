@@ -10,7 +10,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Checks if the current user is authenticated or not.",
+        "summary": "Check authentication",
         "responses": {
           "200": {
             "description": "Boolean value: true if the current user is authenticated",
@@ -33,13 +33,14 @@
             }
           }
         },
-        "x-shortName": "Check authentication"
+        "x-shortName": "Check authentication",
+        "description": "Checks if the current user is authenticated or not."
       },
       "post": {
         "tags": [
           "Authentication"
         ],
-        "summary": "Authenticates the current user by SMS, authenticator app, or without two-factor authentication.",
+        "summary": "Authenticate a user",
         "requestBody": {
           "description": "Authentication request parameters",
           "content": {
@@ -82,7 +83,8 @@
             }
           }
         },
-        "x-shortName": "Authenticate a user"
+        "x-shortName": "Authenticate a user",
+        "description": "Authenticates the current user by SMS, authenticator app, or without two-factor authentication."
       }
     },
     "/api/2.0/authentication/{code}": {
@@ -90,7 +92,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Authenticates the current user by SMS or two-factor authentication code.",
+        "summary": "Authenticate a user by code",
         "parameters": [
           {
             "name": "code",
@@ -143,7 +145,8 @@
             }
           }
         },
-        "x-shortName": "Authenticate a user by code"
+        "x-shortName": "Authenticate a user by code",
+        "description": "Authenticates the current user by SMS or two-factor authentication code."
       }
     },
     "/api/2.0/authentication/logout": {
@@ -151,47 +154,49 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Logs out of the current user account.",
+        "summary": "Log out",
         "responses": {
           "200": {
             "description": "Ok",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Log out"
+        "x-shortName": "Log out",
+        "description": "Logs out of the current user account."
       },
       "get": {
         "tags": [
           "Authentication"
         ],
-        "summary": "Logs out of the current user account.",
+        "summary": "Log out",
         "responses": {
           "200": {
             "description": "Ok",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Log out"
+        "x-shortName": "Log out",
+        "description": "Logs out of the current user account."
       }
     },
     "/api/2.0/authentication/confirm": {
@@ -199,7 +204,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Opens a confirmation email URL to validate a certain action (employee invitation, portal removal, phone activation, etc.).",
+        "summary": "Open confirmation email URL",
         "requestBody": {
           "description": "Confirmation email parameters",
           "content": {
@@ -242,7 +247,8 @@
             }
           }
         },
-        "x-shortName": "Open confirmation email URL"
+        "x-shortName": "Open confirmation email URL",
+        "description": "Opens a confirmation email URL to validate a certain action (employee invitation, portal removal, phone activation, etc.)."
       }
     },
     "/api/2.0/authentication/setphone": {
@@ -250,7 +256,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Sets a mobile phone for the current user.",
+        "summary": "Set a mobile phone",
         "requestBody": {
           "description": "Mobile phone request parameters",
           "content": {
@@ -293,7 +299,8 @@
             }
           }
         },
-        "x-shortName": "Set a mobile phone"
+        "x-shortName": "Set a mobile phone",
+        "description": "Sets a mobile phone for the current user."
       }
     },
     "/api/2.0/authentication/sendsms": {
@@ -301,7 +308,7 @@
         "tags": [
           "Authentication"
         ],
-        "summary": "Sends SMS with an authentication code.",
+        "summary": "Send SMS code",
         "requestBody": {
           "description": "Authentication request parameters",
           "content": {
@@ -344,7 +351,8 @@
             }
           }
         },
-        "x-shortName": "Send SMS code"
+        "x-shortName": "Send SMS code",
+        "description": "Sends SMS with an authentication code."
       }
     },
     "/api/2.0/capabilities": {
@@ -352,7 +360,7 @@
         "tags": [
           "Capabilities"
         ],
-        "summary": "Returns the information about portal capabilities.",
+        "summary": "Get portal capabilities",
         "responses": {
           "200": {
             "description": "Portal capabilities",
@@ -375,7 +383,8 @@
             }
           }
         },
-        "x-shortName": "Get portal capabilities"
+        "x-shortName": "Get portal capabilities",
+        "description": "Returns the information about portal capabilities."
       }
     },
     "/api/2.0/capabilities.json": {
@@ -383,7 +392,7 @@
         "tags": [
           "Capabilities"
         ],
-        "summary": "Returns the information about portal capabilities.",
+        "summary": "Get portal capabilities",
         "responses": {
           "200": {
             "description": "Portal capabilities",
@@ -406,7 +415,8 @@
             }
           }
         },
-        "x-shortName": "Get portal capabilities"
+        "x-shortName": "Get portal capabilities",
+        "description": "Returns the information about portal capabilities."
       }
     },
     "/api/2.0/migration/list": {
@@ -716,7 +726,7 @@
         "tags": [
           "Modules"
         ],
-        "summary": "Returns a list of all the portal modules.",
+        "summary": "Get modules",
         "responses": {
           "200": {
             "description": "List of modules",
@@ -753,7 +763,8 @@
             ]
           }
         ],
-        "x-shortName": "Get modules"
+        "x-shortName": "Get modules",
+        "description": "Returns a list of all the portal modules."
       }
     },
     "/api/2.0/modules/info": {
@@ -761,7 +772,7 @@
         "tags": [
           "Modules"
         ],
-        "summary": "Returns a list of all the portal modules with their information.",
+        "summary": "Get modules information",
         "responses": {
           "200": {
             "description": "List of modules with their information",
@@ -798,7 +809,8 @@
             ]
           }
         ],
-        "x-shortName": "Get modules information"
+        "x-shortName": "Get modules information",
+        "description": "Returns a list of all the portal modules with their information."
       }
     },
     "/api/2.0/portal/usedspace": {
@@ -806,7 +818,7 @@
         "tags": [
           "Portal / Quota"
         ],
-        "summary": "Returns the used space of the current portal.",
+        "summary": "Get the used portal space",
         "responses": {
           "200": {
             "description": "Used portal space",
@@ -846,7 +858,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the used portal space"
+        "x-shortName": "Get the used portal space",
+        "description": "Returns the used space of the current portal."
       }
     },
     "/api/2.0/portal/tariff": {
@@ -854,7 +867,7 @@
         "tags": [
           "Portal / Quota"
         ],
-        "summary": "Returns the current portal tariff.",
+        "summary": "Get a portal tariff",
         "parameters": [
           {
             "name": "refresh",
@@ -902,7 +915,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a portal tariff"
+        "x-shortName": "Get a portal tariff",
+        "description": "Returns the current portal tariff."
       }
     },
     "/api/2.0/portal/quota": {
@@ -910,7 +924,7 @@
         "tags": [
           "Portal / Quota"
         ],
-        "summary": "Returns the current portal quota.",
+        "summary": "Get a portal quota",
         "responses": {
           "200": {
             "description": "Current portal quota",
@@ -947,7 +961,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a portal quota"
+        "x-shortName": "Get a portal quota",
+        "description": "Returns the current portal quota."
       }
     },
     "/api/2.0/portal/quota/right": {
@@ -955,7 +970,7 @@
         "tags": [
           "Portal / Quota"
         ],
-        "summary": "Returns the recommended quota for the current portal.",
+        "summary": "Get the recommended quota",
         "responses": {
           "200": {
             "description": "Recommended portal quota",
@@ -992,7 +1007,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the recommended quota"
+        "x-shortName": "Get the recommended quota",
+        "description": "Returns the recommended quota for the current portal."
       }
     },
     "/api/2.0/portal": {
@@ -1000,7 +1016,7 @@
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Returns the current portal.",
+        "summary": "Get a portal",
         "responses": {
           "200": {
             "description": "Current portal information",
@@ -1037,7 +1053,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a portal"
+        "x-shortName": "Get a portal",
+        "description": "Returns the current portal."
       }
     },
     "/api/2.0/portal/getshortenlink": {
@@ -1045,7 +1062,7 @@
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Returns a link specified in the request in the shortened format.",
+        "summary": "Get a shortened link",
         "requestBody": {
           "description": "Shortened link request parameters",
           "content": {
@@ -1071,13 +1088,13 @@
             "description": "Shortened link",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -1096,7 +1113,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a shortened link"
+        "x-shortName": "Get a shortened link",
+        "description": "Returns a link specified in the request in the shortened format."
       }
     },
     "/api/2.0/portal/path": {
@@ -1104,7 +1122,7 @@
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Returns the full absolute path to the current portal.",
+        "summary": "Get a path to the portal",
         "parameters": [
           {
             "name": "virtualPath",
@@ -1121,13 +1139,13 @@
             "description": "Portal path",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -1146,7 +1164,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a path to the portal"
+        "x-shortName": "Get a path to the portal",
+        "description": "Returns the full absolute path to the current portal."
       }
     },
     "/api/2.0/portal/suspend": {
@@ -1154,7 +1173,7 @@
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Sends the instructions to suspend the current portal.",
+        "summary": "Send suspension instructions",
         "responses": {
           "200": {
             "description": "OK"
@@ -1174,13 +1193,14 @@
             ]
           }
         ],
-        "x-shortName": "Send suspension instructions"
+        "x-shortName": "Send suspension instructions",
+        "description": "Sends the instructions to suspend the current portal."
       },
       "put": {
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Deactivates the current portal.",
+        "summary": "Deactivate a portal",
         "responses": {
           "200": {
             "description": "OK"
@@ -1200,7 +1220,8 @@
             ]
           }
         ],
-        "x-shortName": "Deactivate a portal"
+        "x-shortName": "Deactivate a portal",
+        "description": "Deactivates the current portal."
       }
     },
     "/api/2.0/portal/delete": {
@@ -1208,7 +1229,7 @@
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Sends the instructions to remove the current portal.",
+        "summary": "Send removal instructions",
         "responses": {
           "200": {
             "description": "OK"
@@ -1228,25 +1249,26 @@
             ]
           }
         ],
-        "x-shortName": "Send removal instructions"
+        "x-shortName": "Send removal instructions",
+        "description": "Sends the instructions to remove the current portal."
       },
       "delete": {
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Deletes the current portal.",
+        "summary": "Delete a portal",
         "responses": {
           "200": {
             "description": "URL to the feedback form about removing a portal",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -1265,7 +1287,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete a portal"
+        "x-shortName": "Delete a portal",
+        "description": "Deletes the current portal."
       }
     },
     "/api/2.0/portal/continue": {
@@ -1273,7 +1296,7 @@
         "tags": [
           "Portal / Settings"
         ],
-        "summary": "Restores the current portal.",
+        "summary": "Restore a portal",
         "responses": {
           "200": {
             "description": "OK"
@@ -1293,7 +1316,8 @@
             ]
           }
         ],
-        "x-shortName": "Restore a portal"
+        "x-shortName": "Restore a portal",
+        "description": "Restores the current portal."
       }
     },
     "/api/2.0/portal/users/{userID}": {
@@ -1301,7 +1325,7 @@
         "tags": [
           "Portal / Users"
         ],
-        "summary": "Returns a user with the ID specified in the request from the current portal.",
+        "summary": "Get a user by ID",
         "parameters": [
           {
             "name": "userID",
@@ -1351,7 +1375,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a user by ID"
+        "x-shortName": "Get a user by ID",
+        "description": "Returns a user with the ID specified in the request from the current portal."
       }
     },
     "/api/2.0/portal/users/invite/{employeeType}": {
@@ -1359,7 +1384,7 @@
         "tags": [
           "Portal / Users"
         ],
-        "summary": "Returns an invitation link for joining the portal.",
+        "summary": "Get an invitation link",
         "parameters": [
           {
             "name": "employeeType",
@@ -1377,13 +1402,13 @@
             "description": "Invitation link",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -1402,7 +1427,8 @@
             ]
           }
         ],
-        "x-shortName": "Get an invitation link"
+        "x-shortName": "Get an invitation link",
+        "description": "Returns an invitation link for joining the portal."
       }
     },
     "/api/2.0/portal/userscount": {
@@ -1410,7 +1436,7 @@
         "tags": [
           "Portal / Users"
         ],
-        "summary": "Returns a number of portal users.",
+        "summary": "Get a number of portal users",
         "responses": {
           "200": {
             "description": "Number of portal users",
@@ -1450,7 +1476,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a number of portal users"
+        "x-shortName": "Get a number of portal users",
+        "description": "Returns a number of portal users."
       }
     },
     "/api/2.0/portal/present/mark": {
@@ -1458,7 +1485,7 @@
         "tags": [
           "Portal / Users"
         ],
-        "summary": "Marks a gift message as read.",
+        "summary": "Mark a gift message as read",
         "responses": {
           "200": {
             "description": "OK"
@@ -1478,7 +1505,8 @@
             ]
           }
         ],
-        "x-shortName": "Mark a gift message as read"
+        "x-shortName": "Mark a gift message as read",
+        "description": "Marks a gift message as read."
       }
     },
     "/api/2.0/portal/sendcongratulations": {
@@ -1486,7 +1514,7 @@
         "tags": [
           "Portal / Users"
         ],
-        "summary": "Sends congratulations to the user after registering the portal.",
+        "summary": "Send congratulations",
         "parameters": [
           {
             "name": "Userid",
@@ -1513,7 +1541,8 @@
             "description": "OK"
           }
         },
-        "x-shortName": "Send congratulations"
+        "x-shortName": "Send congratulations",
+        "description": "Sends congratulations to the user after registering the portal."
       }
     },
     "/api/2.0/security/activeconnections": {
@@ -1521,7 +1550,7 @@
         "tags": [
           "Security / Active connections"
         ],
-        "summary": "Returns all the active connections to the portal.",
+        "summary": "Get active connections",
         "responses": {
           "200": {
             "description": "Active portal connections",
@@ -1558,7 +1587,8 @@
             ]
           }
         ],
-        "x-shortName": "Get active connections"
+        "x-shortName": "Get active connections",
+        "description": "Returns all the active connections to the portal."
       }
     },
     "/api/2.0/security/activeconnections/logoutallchangepassword": {
@@ -1566,19 +1596,19 @@
         "tags": [
           "Security / Active connections"
         ],
-        "summary": "Logs out from all the active connections of the current user and changes their password.",
+        "summary": "Log out and change password",
         "responses": {
           "200": {
             "description": "URL to the confirmation message for changing a password",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -1597,7 +1627,8 @@
             ]
           }
         ],
-        "x-shortName": "Log out and change password"
+        "x-shortName": "Log out and change password",
+        "description": "Logs out from all the active connections of the current user and changes their password."
       }
     },
     "/api/2.0/security/activeconnections/logoutall/{userId}": {
@@ -1605,7 +1636,7 @@
         "tags": [
           "Security / Active connections"
         ],
-        "summary": "Logs out from all the active connections of the user with the ID specified in the request.",
+        "summary": "Log out for the user by ID",
         "parameters": [
           {
             "name": "userId",
@@ -1638,7 +1669,8 @@
             ]
           }
         ],
-        "x-shortName": "Log out for the user by ID"
+        "x-shortName": "Log out for the user by ID",
+        "description": "Logs out from all the active connections of the user with the ID specified in the request."
       }
     },
     "/api/2.0/security/activeconnections/logoutallexceptthis": {
@@ -1646,19 +1678,19 @@
         "tags": [
           "Security / Active connections"
         ],
-        "summary": "Logs out from all the active connections except the current connection.",
+        "summary": "Log out from all connections",
         "responses": {
           "200": {
             "description": "Current user name",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -1677,7 +1709,8 @@
             ]
           }
         ],
-        "x-shortName": "Log out from all connections"
+        "x-shortName": "Log out from all connections",
+        "description": "Logs out from all the active connections except the current connection."
       }
     },
     "/api/2.0/security/activeconnections/logout/{loginEventId}": {
@@ -1685,7 +1718,7 @@
         "tags": [
           "Security / Active connections"
         ],
-        "summary": "Logs out from the connection with the ID specified in the request.",
+        "summary": "Log out from the connection",
         "parameters": [
           {
             "name": "loginEventId",
@@ -1735,7 +1768,8 @@
             ]
           }
         ],
-        "x-shortName": "Log out from the connection"
+        "x-shortName": "Log out from the connection",
+        "description": "Logs out from the connection with the ID specified in the request."
       }
     },
     "/api/2.0/security/audit/events/last": {
@@ -1743,7 +1777,7 @@
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Returns a list of the latest changes (creation, modification, deletion, etc.) made by users to the entities (tasks, opportunities, files, etc.) on the portal.",
+        "summary": "Get audit trail data",
         "responses": {
           "200": {
             "description": "List of audit trail data",
@@ -1780,7 +1814,8 @@
             ]
           }
         ],
-        "x-shortName": "Get audit trail data"
+        "x-shortName": "Get audit trail data",
+        "description": "Returns a list of the latest changes (creation, modification, deletion, etc.) made by users to the entities (tasks, opportunities, files, etc.) on the portal."
       }
     },
     "/api/2.0/security/audit/events/filter": {
@@ -1788,7 +1823,7 @@
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Returns a list of the audit events by the parameters specified in the request.",
+        "summary": "Get filtered audit trail data",
         "parameters": [
           {
             "name": "userId",
@@ -1903,7 +1938,8 @@
             ]
           }
         ],
-        "x-shortName": "Get filtered audit trail data"
+        "x-shortName": "Get filtered audit trail data",
+        "description": "Returns a list of the audit events by the parameters specified in the request."
       }
     },
     "/api/2.0/security/audit/types": {
@@ -1911,24 +1947,25 @@
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Returns all the available audit trail types.",
+        "summary": "Get audit trail types",
         "responses": {
           "200": {
             "description": "Audit trail types",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Get audit trail types"
+        "x-shortName": "Get audit trail types",
+        "description": "Returns all the available audit trail types."
       }
     },
     "/api/2.0/security/audit/mappers": {
@@ -1936,7 +1973,7 @@
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Returns the mappers for the audit trail types.",
+        "summary": "Get audit trail mappers",
         "parameters": [
           {
             "name": "productType",
@@ -1960,18 +1997,19 @@
             "description": "Audit trail mappers",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Get audit trail mappers"
+        "x-shortName": "Get audit trail mappers",
+        "description": "Returns the mappers for the audit trail types."
       }
     },
     "/api/2.0/security/audit/events/report": {
@@ -1979,19 +2017,19 @@
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Generates the audit trail report.",
+        "summary": "Generate the audit trail report",
         "responses": {
           "200": {
             "description": "URL to the xlsx report file",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -2010,7 +2048,8 @@
             ]
           }
         ],
-        "x-shortName": "Generate the audit trail report"
+        "x-shortName": "Generate the audit trail report",
+        "description": "Generates the audit trail report."
       }
     },
     "/api/2.0/security/audit/settings/lifetime": {
@@ -2018,7 +2057,7 @@
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Returns the audit trail settings.",
+        "summary": "Get the audit trail settings",
         "responses": {
           "200": {
             "description": "Audit settings",
@@ -2055,13 +2094,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the audit trail settings"
+        "x-shortName": "Get the audit trail settings",
+        "description": "Returns the audit trail settings."
       },
       "post": {
         "tags": [
           "Security / Audit trail data"
         ],
-        "summary": "Sets the audit trail settings for the current portal.",
+        "summary": "Set the audit trail settings",
         "requestBody": {
           "description": "Audit trail settings",
           "content": {
@@ -2118,7 +2158,8 @@
             ]
           }
         ],
-        "x-shortName": "Set the audit trail settings"
+        "x-shortName": "Set the audit trail settings",
+        "description": "Sets the audit trail settings for the current portal."
       }
     },
     "/api/2.0/security/csp": {
@@ -2215,7 +2256,7 @@
         "tags": [
           "Security / Firebase"
         ],
-        "summary": "Saves the Firebase device token specified in the request for the Documents application.",
+        "summary": "Save the Documents Firebase device token",
         "requestBody": {
           "description": "Firebase request parameters",
           "content": {
@@ -2272,7 +2313,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the Documents Firebase device token"
+        "x-shortName": "Save the Documents Firebase device token",
+        "description": "Saves the Firebase device token specified in the request for the Documents application."
       }
     },
     "/api/2.0/settings/push/docsubscribe": {
@@ -2280,7 +2322,7 @@
         "tags": [
           "Security / Firebase"
         ],
-        "summary": "Subscribes to the Documents push notification.",
+        "summary": "Subscribe to Documents push notification",
         "requestBody": {
           "description": "Firebase request parameters",
           "content": {
@@ -2337,7 +2379,8 @@
             ]
           }
         ],
-        "x-shortName": "Subscribe to Documents push notification"
+        "x-shortName": "Subscribe to Documents push notification",
+        "description": "Subscribes to the Documents push notification."
       }
     },
     "/api/2.0/security/audit/login/last": {
@@ -2345,7 +2388,7 @@
         "tags": [
           "Security / Login history"
         ],
-        "summary": "Returns all the latest user login activity, including successful logins and error logs.",
+        "summary": "Get login history",
         "responses": {
           "200": {
             "description": "List of login events",
@@ -2382,7 +2425,8 @@
             ]
           }
         ],
-        "x-shortName": "Get login history"
+        "x-shortName": "Get login history",
+        "description": "Returns all the latest user login activity, including successful logins and error logs."
       }
     },
     "/api/2.0/security/audit/login/filter": {
@@ -2390,7 +2434,7 @@
         "tags": [
           "Security / Login history"
         ],
-        "summary": "Returns a list of the login events by the parameters specified in the request.",
+        "summary": "Get filtered login events",
         "parameters": [
           {
             "name": "userId",
@@ -2464,7 +2508,8 @@
             ]
           }
         ],
-        "x-shortName": "Get filtered login events"
+        "x-shortName": "Get filtered login events",
+        "description": "Returns a list of the login events by the parameters specified in the request."
       }
     },
     "/api/2.0/security/audit/login/report": {
@@ -2472,19 +2517,19 @@
         "tags": [
           "Security / Login history"
         ],
-        "summary": "Generates the login history report.",
+        "summary": "Generate the login history report",
         "responses": {
           "200": {
             "description": "URL to the xlsx report file",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -2503,7 +2548,8 @@
             ]
           }
         ],
-        "x-shortName": "Generate the login history report"
+        "x-shortName": "Generate the login history report",
+        "description": "Generates the login history report."
       }
     },
     "/api/2.0/smtpsettings/smtp": {
@@ -2511,7 +2557,7 @@
         "tags": [
           "Security / SMTP settings"
         ],
-        "summary": "Returns the current portal SMTP settings.",
+        "summary": "Get the SMTP settings",
         "responses": {
           "200": {
             "description": "SMTP settings",
@@ -2548,13 +2594,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the SMTP settings"
+        "x-shortName": "Get the SMTP settings",
+        "description": "Returns the current portal SMTP settings."
       },
       "post": {
         "tags": [
           "Security / SMTP settings"
         ],
-        "summary": "Saves the SMTP settings for the current portal.",
+        "summary": "Save the SMTP settings",
         "requestBody": {
           "description": "SMTP settings",
           "content": {
@@ -2611,13 +2658,14 @@
             ]
           }
         ],
-        "x-shortName": "Save the SMTP settings"
+        "x-shortName": "Save the SMTP settings",
+        "description": "Saves the SMTP settings for the current portal."
       },
       "delete": {
         "tags": [
           "Security / SMTP settings"
         ],
-        "summary": "Resets the SMTP settings of the current portal.",
+        "summary": "Reset the SMTP settings",
         "responses": {
           "200": {
             "description": "Default SMTP settings",
@@ -2654,7 +2702,8 @@
             ]
           }
         ],
-        "x-shortName": "Reset the SMTP settings"
+        "x-shortName": "Reset the SMTP settings",
+        "description": "Resets the SMTP settings of the current portal."
       }
     },
     "/api/2.0/smtpsettings/smtp/test": {
@@ -2662,7 +2711,7 @@
         "tags": [
           "Security / SMTP settings"
         ],
-        "summary": "Tests the SMTP settings for the current portal (sends test message to the user email).",
+        "summary": "Test the SMTP settings",
         "responses": {
           "200": {
             "description": "SMTP operation status",
@@ -2699,7 +2748,8 @@
             ]
           }
         ],
-        "x-shortName": "Test the SMTP settings"
+        "x-shortName": "Test the SMTP settings",
+        "description": "Tests the SMTP settings for the current portal (sends test message to the user email)."
       }
     },
     "/api/2.0/smtpsettings/smtp/test/status": {
@@ -2707,7 +2757,7 @@
         "tags": [
           "Security / SMTP settings"
         ],
-        "summary": "Returns the SMTP test process status.",
+        "summary": "Get the SMTP test process status",
         "responses": {
           "200": {
             "description": "SMTP operation status",
@@ -2744,7 +2794,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the SMTP test process status"
+        "x-shortName": "Get the SMTP test process status",
+        "description": "Returns the SMTP test process status."
       }
     },
     "/api/2.0/settings/authservice": {
@@ -2752,7 +2803,7 @@
         "tags": [
           "Settings / Authorization"
         ],
-        "summary": "Returns the authorization services.",
+        "summary": "Get the authorization services",
         "responses": {
           "200": {
             "description": "Authorization services",
@@ -2789,13 +2840,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the authorization services"
+        "x-shortName": "Get the authorization services",
+        "description": "Returns the authorization services."
       },
       "post": {
         "tags": [
           "Settings / Authorization"
         ],
-        "summary": "Saves the authorization keys.",
+        "summary": "Save the authorization keys",
         "requestBody": {
           "description": "Request parameters for authorization service",
           "content": {
@@ -2852,7 +2904,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the authorization keys"
+        "x-shortName": "Save the authorization keys",
+        "description": "Saves the authorization keys."
       }
     },
     "/api/2.0/settings": {
@@ -2860,7 +2913,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns a list of all the available portal settings with the current values for each parameter.",
+        "summary": "Get the portal settings",
         "parameters": [
           {
             "name": "withpassword",
@@ -2894,7 +2947,8 @@
             }
           }
         },
-        "x-shortName": "Get the portal settings"
+        "x-shortName": "Get the portal settings",
+        "description": "Returns a list of all the available portal settings with the current values for each parameter."
       }
     },
     "/api/2.0/settings/maildomainsettings": {
@@ -2902,7 +2956,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Saves the mail domain settings specified in the request to the portal.",
+        "summary": "Save the mail domain settings",
         "requestBody": {
           "description": "Request parameters for mail domain settings",
           "content": {
@@ -2928,13 +2982,13 @@
             "description": "Message about the result of saving the mail domain settings",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -2953,7 +3007,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the mail domain settings"
+        "x-shortName": "Save the mail domain settings",
+        "description": "Saves the mail domain settings specified in the request to the portal."
       }
     },
     "/api/2.0/settings/cultures": {
@@ -2961,7 +3016,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns a list of all the available portal languages in the format of a two-letter or four-letter language code (e.g. \"de\", \"en-US\", etc.).",
+        "summary": "Get supported languages",
         "responses": {
           "200": {
             "description": "List of all the available portal languages",
@@ -2984,7 +3039,8 @@
             }
           }
         },
-        "x-shortName": "Get supported languages"
+        "x-shortName": "Get supported languages",
+        "description": "Returns a list of all the available portal languages in the format of a two-letter or four-letter language code (e.g. \"de\", \"en-US\", etc.)."
       }
     },
     "/api/2.0/settings/timezones": {
@@ -2992,7 +3048,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns a list of all the available portal time zones.",
+        "summary": "Get time zones",
         "responses": {
           "200": {
             "description": "List of all the available time zones with their IDs and display names",
@@ -3029,7 +3085,8 @@
             ]
           }
         ],
-        "x-shortName": "Get time zones"
+        "x-shortName": "Get time zones",
+        "description": "Returns a list of all the available portal time zones."
       }
     },
     "/api/2.0/settings/machine": {
@@ -3037,19 +3094,19 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns the portal hostname.",
+        "summary": "Get hostname",
         "responses": {
           "200": {
             "description": "Portal hostname",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -3068,7 +3125,8 @@
             ]
           }
         ],
-        "x-shortName": "Get hostname"
+        "x-shortName": "Get hostname",
+        "description": "Returns the portal hostname."
       }
     },
     "/api/2.0/settings/dns": {
@@ -3076,7 +3134,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Saves the DNS settings specified in the request to the current portal.",
+        "summary": "Save the DNS settings",
         "requestBody": {
           "description": "DNS settings request parameters",
           "content": {
@@ -3102,13 +3160,13 @@
             "description": "Message about changing DNS",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -3127,7 +3185,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the DNS settings"
+        "x-shortName": "Save the DNS settings",
+        "description": "Saves the DNS settings specified in the request to the current portal."
       }
     },
     "/api/2.0/settings/logo": {
@@ -3135,19 +3194,19 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns the portal logo image URL.",
+        "summary": "Get a portal logo",
         "responses": {
           "200": {
             "description": "Portal logo image URL",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -3166,7 +3225,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a portal logo"
+        "x-shortName": "Get a portal logo",
+        "description": "Returns the portal logo image URL."
       }
     },
     "/api/2.0/settings/wizard/complete": {
@@ -3174,7 +3234,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Completes the Wizard settings.",
+        "summary": "Complete the Wizard settings",
         "requestBody": {
           "description": "Wizard settings request parameters",
           "content": {
@@ -3231,7 +3291,8 @@
             ]
           }
         ],
-        "x-shortName": "Complete the Wizard settings"
+        "x-shortName": "Complete the Wizard settings",
+        "description": "Completes the Wizard settings."
       }
     },
     "/api/2.0/settings/colortheme": {
@@ -3239,7 +3300,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns the portal color theme.",
+        "summary": "Get a color theme",
         "responses": {
           "200": {
             "description": "Settings of the portal themes",
@@ -3262,13 +3323,14 @@
             }
           }
         },
-        "x-shortName": "Get a color theme"
+        "x-shortName": "Get a color theme",
+        "description": "Returns the portal color theme."
       },
       "put": {
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Saves the portal color theme specified in the request.",
+        "summary": "Save a color theme",
         "requestBody": {
           "description": "Portal theme settings",
           "content": {
@@ -3325,13 +3387,14 @@
             ]
           }
         ],
-        "x-shortName": "Save a color theme"
+        "x-shortName": "Save a color theme",
+        "description": "Saves the portal color theme specified in the request."
       },
       "delete": {
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Deletes the portal color theme with the ID specified in the request.",
+        "summary": "Delete a color theme",
         "parameters": [
           {
             "name": "id",
@@ -3380,7 +3443,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete a color theme"
+        "x-shortName": "Delete a color theme",
+        "description": "Deletes the portal color theme with the ID specified in the request."
       }
     },
     "/api/2.0/settings/closeadminhelper": {
@@ -3388,7 +3452,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Closes the admin helper notification.",
+        "summary": "Close the admin helper notification",
         "responses": {
           "200": {
             "description": "OK"
@@ -3408,7 +3472,8 @@
             ]
           }
         ],
-        "x-shortName": "Close the admin helper notification"
+        "x-shortName": "Close the admin helper notification",
+        "description": "Closes the admin helper notification."
       }
     },
     "/api/2.0/settings/emailactivation": {
@@ -3416,7 +3481,7 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Updates the email activation settings.",
+        "summary": "Update the email activation settings",
         "requestBody": {
           "description": "Email activation settings",
           "content": {
@@ -3473,7 +3538,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the email activation settings"
+        "x-shortName": "Update the email activation settings",
+        "description": "Updates the email activation settings."
       }
     },
     "/api/2.0/settings/socket": {
@@ -3481,19 +3547,19 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns the socket settings.",
+        "summary": "Get the socket settings",
         "responses": {
           "200": {
             "description": "Socket settings: hub URL",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -3512,7 +3578,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the socket settings"
+        "x-shortName": "Get the socket settings",
+        "description": "Returns the socket settings."
       }
     },
     "/api/2.0/settings/payment": {
@@ -3520,19 +3587,19 @@
         "tags": [
           "Settings / Common settings"
         ],
-        "summary": "Returns the portal payment settings.",
+        "summary": "Get the payment settings",
         "responses": {
           "200": {
             "description": "Payment settings: sales email, feedback and support URL, link to pay for a portal, Standalone or not, current license, maximum quota quantity",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -3551,7 +3618,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the payment settings"
+        "x-shortName": "Get the payment settings",
+        "description": "Returns the portal payment settings."
       }
     },
     "/api/2.0/settings/cookiesettings": {
@@ -3559,7 +3627,7 @@
         "tags": [
           "Settings / Cookies"
         ],
-        "summary": "Returns the cookies lifetime value in minutes.",
+        "summary": "Get cookies lifetime",
         "responses": {
           "200": {
             "description": "Lifetime value in minutes",
@@ -3596,13 +3664,14 @@
             ]
           }
         ],
-        "x-shortName": "Get cookies lifetime"
+        "x-shortName": "Get cookies lifetime",
+        "description": "Returns the cookies lifetime value in minutes."
       },
       "put": {
         "tags": [
           "Settings / Cookies"
         ],
-        "summary": "Updates the cookies lifetime value in minutes.",
+        "summary": "Update cookies lifetime",
         "requestBody": {
           "description": "Cookies settings request parameters",
           "content": {
@@ -3628,13 +3697,13 @@
             "description": "Message about the result of saving new settings",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -3653,7 +3722,8 @@
             ]
           }
         ],
-        "x-shortName": "Update cookies lifetime"
+        "x-shortName": "Update cookies lifetime",
+        "description": "Updates the cookies lifetime value in minutes."
       }
     },
     "/api/2.0/settings/customnavigation/getall": {
@@ -3661,7 +3731,7 @@
         "tags": [
           "Settings / Custom Navigation"
         ],
-        "summary": "Returns a list of the custom navigation items.",
+        "summary": "Get the custom navigation items",
         "responses": {
           "200": {
             "description": "List of the custom navigation items",
@@ -3698,7 +3768,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the custom navigation items"
+        "x-shortName": "Get the custom navigation items",
+        "description": "Returns a list of the custom navigation items."
       }
     },
     "/api/2.0/settings/customnavigation/getsample": {
@@ -3706,7 +3777,7 @@
         "tags": [
           "Settings / Custom Navigation"
         ],
-        "summary": "Returns a custom navigation item sample.",
+        "summary": "Get a custom navigation item sample",
         "responses": {
           "200": {
             "description": "Custom navigation item",
@@ -3743,7 +3814,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a custom navigation item sample"
+        "x-shortName": "Get a custom navigation item sample",
+        "description": "Returns a custom navigation item sample."
       }
     },
     "/api/2.0/settings/customnavigation/get/{id}": {
@@ -3751,7 +3823,7 @@
         "tags": [
           "Settings / Custom Navigation"
         ],
-        "summary": "Returns a custom navigation item by the ID specified in the request.",
+        "summary": "Get a custom navigation item by ID",
         "parameters": [
           {
             "name": "id",
@@ -3801,7 +3873,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a custom navigation item by ID"
+        "x-shortName": "Get a custom navigation item by ID",
+        "description": "Returns a custom navigation item by the ID specified in the request."
       }
     },
     "/api/2.0/settings/customnavigation/create": {
@@ -3809,7 +3882,7 @@
         "tags": [
           "Settings / Custom Navigation"
         ],
-        "summary": "Adds a custom navigation item with the parameters specified in the request.",
+        "summary": "Add a custom navigation item",
         "requestBody": {
           "description": "Custom navigation parameters",
           "content": {
@@ -3866,7 +3939,8 @@
             ]
           }
         ],
-        "x-shortName": "Add a custom navigation item"
+        "x-shortName": "Add a custom navigation item",
+        "description": "Adds a custom navigation item with the parameters specified in the request."
       }
     },
     "/api/2.0/settings/customnavigation/delete/{id}": {
@@ -3874,7 +3948,7 @@
         "tags": [
           "Settings / Custom Navigation"
         ],
-        "summary": "Deletes a custom navigation item with the ID specified in the request.",
+        "summary": "Delete a custom navigation item",
         "parameters": [
           {
             "name": "id",
@@ -3906,7 +3980,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete a custom navigation item"
+        "x-shortName": "Delete a custom navigation item",
+        "description": "Deletes a custom navigation item with the ID specified in the request."
       }
     },
     "/api/2.0/settings/encryption/start": {
@@ -3914,7 +3989,7 @@
         "tags": [
           "Settings / Encryption"
         ],
-        "summary": "Starts the storage encryption process.",
+        "summary": "Start the storage encryption process",
         "requestBody": {
           "description": "Storage encryption request parameters",
           "content": {
@@ -3971,7 +4046,8 @@
             ]
           }
         ],
-        "x-shortName": "Start the storage encryption process"
+        "x-shortName": "Start the storage encryption process",
+        "description": "Starts the storage encryption process."
       }
     },
     "/api/2.0/settings/encryption/progress": {
@@ -3979,7 +4055,7 @@
         "tags": [
           "Settings / Encryption"
         ],
-        "summary": "Returns the storage encryption progress.",
+        "summary": "Get the storage encryption progress",
         "responses": {
           "200": {
             "description": "Storage encryption progress",
@@ -4019,7 +4095,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the storage encryption progress"
+        "x-shortName": "Get the storage encryption progress",
+        "description": "Returns the storage encryption progress."
       }
     },
     "/api/2.0/settings/greetingsettings": {
@@ -4027,19 +4104,19 @@
         "tags": [
           "Settings / Greeting settings"
         ],
-        "summary": "Returns the greeting settings for the current portal.",
+        "summary": "Get greeting settings",
         "responses": {
           "200": {
             "description": "Greeting settings: tenant name",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4058,13 +4135,14 @@
             ]
           }
         ],
-        "x-shortName": "Get greeting settings"
+        "x-shortName": "Get greeting settings",
+        "description": "Returns the greeting settings for the current portal."
       },
       "post": {
         "tags": [
           "Settings / Greeting settings"
         ],
-        "summary": "Saves the greeting settings specified in the request to the current portal.",
+        "summary": "Save the greeting settings",
         "requestBody": {
           "description": "Greeting settings",
           "content": {
@@ -4090,13 +4168,13 @@
             "description": "Message about saving greeting settings successfully",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4115,7 +4193,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the greeting settings"
+        "x-shortName": "Save the greeting settings",
+        "description": "Saves the greeting settings specified in the request to the current portal."
       }
     },
     "/api/2.0/settings/greetingsettings/isdefault": {
@@ -4123,7 +4202,7 @@
         "tags": [
           "Settings / Greeting settings"
         ],
-        "summary": "Checks if the greeting settings of the current portal are set to default or not.",
+        "summary": "Check the default greeting settings",
         "responses": {
           "200": {
             "description": "Boolean value: true if the greeting settings of the current portal are set to default",
@@ -4160,7 +4239,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the default greeting settings"
+        "x-shortName": "Check the default greeting settings",
+        "description": "Checks if the greeting settings of the current portal are set to default or not."
       }
     },
     "/api/2.0/settings/greetingsettings/restore": {
@@ -4168,19 +4248,19 @@
         "tags": [
           "Settings / Greeting settings"
         ],
-        "summary": "Restores the current portal greeting settings.",
+        "summary": "Restore the greeting settings",
         "responses": {
           "200": {
             "description": "Greeting settings: tenant name",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4199,7 +4279,8 @@
             ]
           }
         ],
-        "x-shortName": "Restore the greeting settings"
+        "x-shortName": "Restore the greeting settings",
+        "description": "Restores the current portal greeting settings."
       }
     },
     "/api/2.0/settings/iprestrictions": {
@@ -4207,7 +4288,7 @@
         "tags": [
           "Settings / IP restrictions"
         ],
-        "summary": "Returns the IP portal restrictions.",
+        "summary": "Get the IP portal restrictions",
         "responses": {
           "200": {
             "description": "List of IP restrictions parameters",
@@ -4244,13 +4325,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the IP portal restrictions"
+        "x-shortName": "Get the IP portal restrictions",
+        "description": "Returns the IP portal restrictions."
       },
       "put": {
         "tags": [
           "Settings / IP restrictions"
         ],
-        "summary": "Saves the new portal IP restrictions specified in the request.",
+        "summary": "Save the IP restrictions",
         "requestBody": {
           "description": "IP restrictions request parameters",
           "content": {
@@ -4307,7 +4389,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the IP restrictions"
+        "x-shortName": "Save the IP restrictions",
+        "description": "Saves the new portal IP restrictions specified in the request."
       }
     },
     "/api/2.0/settings/iprestrictions/settings": {
@@ -4315,7 +4398,7 @@
         "tags": [
           "Settings / IP restrictions"
         ],
-        "summary": "Returns the IP restriction settings.",
+        "summary": "Get the IP restriction settings",
         "responses": {
           "200": {
             "description": "IP restriction settings",
@@ -4352,13 +4435,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the IP restriction settings"
+        "x-shortName": "Get the IP restriction settings",
+        "description": "Returns the IP restriction settings."
       },
       "put": {
         "tags": [
           "Settings / IP restrictions"
         ],
-        "summary": "Updates the IP restriction settings with a parameter specified in the request.",
+        "summary": "Update the IP restriction settings",
         "requestBody": {
           "description": "New IP restriction settings",
           "content": {
@@ -4415,7 +4499,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the IP restriction settings"
+        "x-shortName": "Update the IP restriction settings",
+        "description": "Updates the IP restriction settings with a parameter specified in the request."
       }
     },
     "/api/2.0/settings/license/refresh": {
@@ -4423,7 +4508,7 @@
         "tags": [
           "Settings / License"
         ],
-        "summary": "Refreshes the license.",
+        "summary": "Refresh the license",
         "responses": {
           "200": {
             "description": "Boolean value: true if the operation is successful",
@@ -4460,7 +4545,8 @@
             ]
           }
         ],
-        "x-shortName": "Refresh the license"
+        "x-shortName": "Refresh the license",
+        "description": "Refreshes the license."
       }
     },
     "/api/2.0/settings/license/accept": {
@@ -4468,19 +4554,19 @@
         "tags": [
           "Settings / License"
         ],
-        "summary": "Activates a license for the portal.",
+        "summary": "Activate a license",
         "responses": {
           "200": {
             "description": "Message about the result of activating license",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4499,7 +4585,8 @@
             ]
           }
         ],
-        "x-shortName": "Activate a license"
+        "x-shortName": "Activate a license",
+        "description": "Activates a license for the portal."
       }
     },
     "/api/2.0/settings/license/required": {
@@ -4507,7 +4594,7 @@
         "tags": [
           "Settings / License"
         ],
-        "summary": "Requests a portal license if necessary.",
+        "summary": "Request a license",
         "responses": {
           "200": {
             "description": "Boolean value: true if the license is required",
@@ -4530,7 +4617,8 @@
             }
           }
         },
-        "x-shortName": "Request a license"
+        "x-shortName": "Request a license",
+        "description": "Requests a portal license if necessary."
       }
     },
     "/api/2.0/settings/license": {
@@ -4538,7 +4626,7 @@
         "tags": [
           "Settings / License"
         ],
-        "summary": "Uploads a portal license specified in the request.",
+        "summary": "Upload a license",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -4568,13 +4656,13 @@
             "description": "License",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4593,7 +4681,8 @@
             ]
           }
         ],
-        "x-shortName": "Upload a license"
+        "x-shortName": "Upload a license",
+        "description": "Uploads a portal license specified in the request."
       }
     },
     "/api/2.0/settings/security/loginSettings": {
@@ -4601,7 +4690,7 @@
         "tags": [
           "Settings / Login settings"
         ],
-        "summary": "Updates the login settings with the parameters specified in the request.",
+        "summary": "Update login settings",
         "requestBody": {
           "description": "Login settings request parameters",
           "content": {
@@ -4658,13 +4747,14 @@
             ]
           }
         ],
-        "x-shortName": "Update login settings"
+        "x-shortName": "Update login settings",
+        "description": "Updates the login settings with the parameters specified in the request."
       },
       "get": {
         "tags": [
           "Settings / Login settings"
         ],
-        "summary": "Returns the portal login settings.",
+        "summary": "Get login settings",
         "responses": {
           "200": {
             "description": "Login settings",
@@ -4701,7 +4791,8 @@
             ]
           }
         ],
-        "x-shortName": "Get login settings"
+        "x-shortName": "Get login settings",
+        "description": "Returns the portal login settings."
       }
     },
     "/api/2.0/settings/messagesettings": {
@@ -4709,7 +4800,7 @@
         "tags": [
           "Settings / Messages"
         ],
-        "summary": "Displays the contact form on the \"Sign In\" page, allowing users to send a message to the DocSpace administrator in case they encounter any issues while accessing DocSpace.",
+        "summary": "Enable the administrator message settings",
         "requestBody": {
           "description": "Request parameters for administrator message settings",
           "content": {
@@ -4735,13 +4826,13 @@
             "description": "Message about the result of saving new settings",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -4760,7 +4851,8 @@
             ]
           }
         ],
-        "x-shortName": "Enable the administrator message settings"
+        "x-shortName": "Enable the administrator message settings",
+        "description": "Displays the contact form on the \"Sign In\" page, allowing users to send a message to the DocSpace administrator in case they encounter any issues while accessing DocSpace."
       }
     },
     "/api/2.0/settings/sendadmmail": {
@@ -4768,7 +4860,7 @@
         "tags": [
           "Settings / Messages"
         ],
-        "summary": "Sends a message to the administrator email when unauthorized users encounter issues accessing DocSpace.",
+        "summary": "Send a message to the administrator",
         "requestBody": {
           "description": "Request parameters for administrator message settings",
           "content": {
@@ -4794,18 +4886,19 @@
             "description": "Message about the result of sending a message",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Send a message to the administrator"
+        "x-shortName": "Send a message to the administrator",
+        "description": "Sends a message to the administrator email when unauthorized users encounter issues accessing DocSpace."
       }
     },
     "/api/2.0/settings/sendjoininvite": {
@@ -4813,7 +4906,7 @@
         "tags": [
           "Settings / Messages"
         ],
-        "summary": "Sends an invitation email with a link to the DocSpace.",
+        "summary": "Sends an invitation email",
         "requestBody": {
           "description": "Request parameters for administrator message settings",
           "content": {
@@ -4839,18 +4932,19 @@
             "description": "Message about sending a link to confirm joining the DocSpace",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           }
         },
-        "x-shortName": "Sends an invitation email"
+        "x-shortName": "Sends an invitation email",
+        "description": "Sends an invitation email with a link to the DocSpace."
       }
     },
     "/api/2.0/settings/notification/{type}": {
@@ -4858,7 +4952,7 @@
         "tags": [
           "Settings / Notifications"
         ],
-        "summary": "Checks if the notification type specified in the request is enabled or not.",
+        "summary": "Check notification availability",
         "parameters": [
           {
             "name": "type",
@@ -4906,7 +5000,8 @@
             ]
           }
         ],
-        "x-shortName": "Check notification availability"
+        "x-shortName": "Check notification availability",
+        "description": "Checks if the notification type specified in the request is enabled or not."
       }
     },
     "/api/2.0/settings/notification": {
@@ -4914,7 +5009,7 @@
         "tags": [
           "Settings / Notifications"
         ],
-        "summary": "Enables the notification type specified in the request.",
+        "summary": "Enable notifications",
         "requestBody": {
           "description": "Notification settings request parameters",
           "content": {
@@ -4971,7 +5066,8 @@
             ]
           }
         ],
-        "x-shortName": "Enable notifications"
+        "x-shortName": "Enable notifications",
+        "description": "Enables the notification type specified in the request."
       }
     },
     "/api/2.0/settings/notification/rooms": {
@@ -4979,7 +5075,7 @@
         "tags": [
           "Settings / Notifications"
         ],
-        "summary": "Returns a list of rooms with the disabled notifications",
+        "summary": "Get room notification settings",
         "responses": {
           "200": {
             "description": "Room notification settings",
@@ -5016,13 +5112,14 @@
             ]
           }
         ],
-        "x-shortName": "Get room notification settings"
+        "x-shortName": "Get room notification settings",
+        "description": "Returns a list of rooms with the disabled notifications"
       },
       "post": {
         "tags": [
           "Settings / Notifications"
         ],
-        "summary": "Sets a notification status for a room with the ID specified in the request.",
+        "summary": "Set room notification status",
         "requestBody": {
           "description": "Request parameters for the room notification settings",
           "content": {
@@ -5079,7 +5176,8 @@
             ]
           }
         ],
-        "x-shortName": "Set room notification status"
+        "x-shortName": "Set room notification status",
+        "description": "Sets a notification status for a room with the ID specified in the request."
       }
     },
     "/api/2.0/settings/owner": {
@@ -5087,7 +5185,7 @@
         "tags": [
           "Settings / Owner"
         ],
-        "summary": "Sends the instructions to change the DocSpace owner.",
+        "summary": "Send the owner change instructions",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -5113,13 +5211,13 @@
             "description": "Message about changing the portal owner",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -5138,13 +5236,14 @@
             ]
           }
         ],
-        "x-shortName": "Send the owner change instructions"
+        "x-shortName": "Send the owner change instructions",
+        "description": "Sends the instructions to change the DocSpace owner."
       },
       "put": {
         "tags": [
           "Settings / Owner"
         ],
-        "summary": "Updates the current portal owner with a new one specified in the request.",
+        "summary": "Update the portal owner",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -5184,7 +5283,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the portal owner"
+        "x-shortName": "Update the portal owner",
+        "description": "Updates the current portal owner with a new one specified in the request."
       }
     },
     "/api/2.0/settings/userquotasettings": {
@@ -5197,13 +5297,13 @@
             "description": "Ok",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -5229,7 +5329,7 @@
         "tags": [
           "Settings / Quota"
         ],
-        "summary": "Saves the room quota settings specified in the request to the current portal.",
+        "summary": "Save the room quota settings",
         "requestBody": {
           "description": "Request parameters for the quota settings",
           "content": {
@@ -5286,7 +5386,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the room quota settings"
+        "x-shortName": "Save the room quota settings",
+        "description": "Saves the room quota settings specified in the request to the current portal."
       }
     },
     "/api/2.0/settings/tenantquotasettings": {
@@ -5294,7 +5395,7 @@
         "tags": [
           "Settings / Quota"
         ],
-        "summary": "Saves the tenant quota settings specified in the request to the current portal.",
+        "summary": "Save the tenant quota settings",
         "requestBody": {
           "description": "Request parameters for the tenant quota settings",
           "content": {
@@ -5351,7 +5452,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the tenant quota settings"
+        "x-shortName": "Save the tenant quota settings",
+        "description": "Saves the tenant quota settings specified in the request to the current portal."
       }
     },
     "/api/2.0/settings/whitelabel/save": {
@@ -5359,7 +5461,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Saves the white label settings specified in the request.",
+        "summary": "Save the white label settings",
         "parameters": [
           {
             "name": "IsDark",
@@ -5434,7 +5536,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the white label settings"
+        "x-shortName": "Save the white label settings",
+        "description": "Saves the white label settings specified in the request."
       }
     },
     "/api/2.0/settings/whitelabel/savefromfiles": {
@@ -5442,7 +5545,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Saves the white label settings from files.",
+        "summary": "Save the white label settings from files",
         "parameters": [
           {
             "name": "IsDark",
@@ -5497,7 +5600,8 @@
             ]
           }
         ],
-        "x-shortName": "Save the white label settings from files"
+        "x-shortName": "Save the white label settings from files",
+        "description": "Saves the white label settings from files."
       }
     },
     "/api/2.0/settings/whitelabel/logos": {
@@ -5505,7 +5609,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Returns the white label logos.",
+        "summary": "Get the white label logos",
         "parameters": [
           {
             "name": "IsDark",
@@ -5546,7 +5650,8 @@
             }
           }
         },
-        "x-shortName": "Get the white label logos"
+        "x-shortName": "Get the white label logos",
+        "description": "Returns the white label logos."
       }
     },
     "/api/2.0/settings/whitelabel/logos/isdefault": {
@@ -5554,7 +5659,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Specifies if the white label logos are default or not.",
+        "summary": "Check the default white label logos",
         "parameters": [
           {
             "name": "IsDark",
@@ -5609,7 +5714,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the default white label logos"
+        "x-shortName": "Check the default white label logos",
+        "description": "Specifies if the white label logos are default or not."
       }
     },
     "/api/2.0/settings/whitelabel/logotext": {
@@ -5617,7 +5723,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Returns the white label logo text.",
+        "summary": "Get the white label logo text",
         "parameters": [
           {
             "name": "IsDark",
@@ -5641,13 +5747,13 @@
             "description": "Logo text",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -5666,7 +5772,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the white label logo text"
+        "x-shortName": "Get the white label logo text",
+        "description": "Returns the white label logo text."
       }
     },
     "/api/2.0/settings/whitelabel/restore": {
@@ -5674,7 +5781,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Restores the white label options.",
+        "summary": "Restore the white label options",
         "parameters": [
           {
             "name": "IsDark",
@@ -5729,7 +5836,8 @@
             ]
           }
         ],
-        "x-shortName": "Restore the white label options"
+        "x-shortName": "Restore the white label options",
+        "description": "Restores the white label options."
       }
     },
     "/api/2.0/settings/companywhitelabel": {
@@ -5737,7 +5845,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Returns the licensor data.",
+        "summary": "Get the licensor data",
         "responses": {
           "200": {
             "description": "List of company white label settings",
@@ -5774,7 +5882,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the licensor data"
+        "x-shortName": "Get the licensor data",
+        "description": "Returns the licensor data."
       }
     },
     "/api/2.0/settings/rebranding/company": {
@@ -5782,7 +5891,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Saves the company white label settings specified in the request.",
+        "summary": "Save the company white label settings",
         "requestBody": {
           "description": "Company white label settings",
           "content": {
@@ -5839,13 +5948,14 @@
             ]
           }
         ],
-        "x-shortName": "Save the company white label settings"
+        "x-shortName": "Save the company white label settings",
+        "description": "Saves the company white label settings specified in the request."
       },
       "get": {
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Returns the company white label settings.",
+        "summary": "Get the company white label settings",
         "responses": {
           "200": {
             "description": "Company white label settings",
@@ -5882,13 +5992,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the company white label settings"
+        "x-shortName": "Get the company white label settings",
+        "description": "Returns the company white label settings."
       },
       "delete": {
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Deletes the company white label settings.",
+        "summary": "Delete the company white label settings",
         "responses": {
           "200": {
             "description": "Default company white label settings",
@@ -5925,7 +6036,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete the company white label settings"
+        "x-shortName": "Delete the company white label settings",
+        "description": "Deletes the company white label settings."
       }
     },
     "/api/2.0/settings/rebranding/additional": {
@@ -5933,7 +6045,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Saves the additional white label settings specified in the request.",
+        "summary": "Save the additional white label settings",
         "requestBody": {
           "description": "Additional white label settings",
           "content": {
@@ -5990,13 +6102,14 @@
             ]
           }
         ],
-        "x-shortName": "Save the additional white label settings"
+        "x-shortName": "Save the additional white label settings",
+        "description": "Saves the additional white label settings specified in the request."
       },
       "get": {
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Returns the additional white label settings.",
+        "summary": "Get the additional white label settings",
         "responses": {
           "200": {
             "description": "Additional white label settings",
@@ -6033,13 +6146,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the additional white label settings"
+        "x-shortName": "Get the additional white label settings",
+        "description": "Returns the additional white label settings."
       },
       "delete": {
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Deletes the additional white label settings.",
+        "summary": "Delete the additional white label settings",
         "responses": {
           "200": {
             "description": "Default additional white label settings",
@@ -6076,7 +6190,8 @@
             ]
           }
         ],
-        "x-shortName": "Delete the additional white label settings"
+        "x-shortName": "Delete the additional white label settings",
+        "description": "Deletes the additional white label settings."
       }
     },
     "/api/2.0/settings/enableWhitelabel": {
@@ -6084,7 +6199,7 @@
         "tags": [
           "Settings / Rebranding"
         ],
-        "summary": "Checks if the white label is enabled or not.",
+        "summary": "Check the white label availability",
         "responses": {
           "200": {
             "description": "Boolean value: true if the white label is enabled",
@@ -6121,7 +6236,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the white label availability"
+        "x-shortName": "Check the white label availability",
+        "description": "Checks if the white label is enabled or not."
       }
     },
     "/api/2.0/settings/security": {
@@ -6129,7 +6245,7 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Returns the security settings for the modules specified in the request.",
+        "summary": "Get the security settings",
         "parameters": [
           {
             "name": "ids",
@@ -6179,13 +6295,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the security settings"
+        "x-shortName": "Get the security settings",
+        "description": "Returns the security settings for the modules specified in the request."
       },
       "put": {
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Sets the security settings to the module with the ID specified in the request.",
+        "summary": "Set the module security settings",
         "requestBody": {
           "description": "Module request parameters",
           "content": {
@@ -6242,7 +6359,8 @@
             ]
           }
         ],
-        "x-shortName": "Set the module security settings"
+        "x-shortName": "Set the module security settings",
+        "description": "Sets the security settings to the module with the ID specified in the request."
       }
     },
     "/api/2.0/settings/security/{id}": {
@@ -6250,7 +6368,7 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Returns the availability of the module with the ID specified in the request.",
+        "summary": "Get the module availability",
         "parameters": [
           {
             "name": "id",
@@ -6300,7 +6418,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the module availability"
+        "x-shortName": "Get the module availability",
+        "description": "Returns the availability of the module with the ID specified in the request."
       }
     },
     "/api/2.0/settings/security/modules": {
@@ -6308,19 +6427,19 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Returns a list of all the enabled modules.",
+        "summary": "Get the enabled modules",
         "responses": {
           "200": {
             "description": "List of enabled modules",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -6339,7 +6458,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the enabled modules"
+        "x-shortName": "Get the enabled modules",
+        "description": "Returns a list of all the enabled modules."
       }
     },
     "/api/2.0/settings/security/password": {
@@ -6347,7 +6467,7 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Returns the portal password settings.",
+        "summary": "Get the password settings",
         "responses": {
           "200": {
             "description": "Password settings",
@@ -6384,13 +6504,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the password settings"
+        "x-shortName": "Get the password settings",
+        "description": "Returns the portal password settings."
       },
       "put": {
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Sets the portal password settings.",
+        "summary": "Set the password settings",
         "requestBody": {
           "description": "Password settings",
           "content": {
@@ -6447,7 +6568,8 @@
             ]
           }
         ],
-        "x-shortName": "Set the password settings"
+        "x-shortName": "Set the password settings",
+        "description": "Sets the portal password settings."
       }
     },
     "/api/2.0/settings/security/access": {
@@ -6455,7 +6577,7 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Sets the access settings to the products with the IDs specified in the request.",
+        "summary": "Set the access settings to products",
         "requestBody": {
           "description": "Module request parameters",
           "content": {
@@ -6512,7 +6634,8 @@
             ]
           }
         ],
-        "x-shortName": "Set the access settings to products"
+        "x-shortName": "Set the access settings to products",
+        "description": "Sets the access settings to the products with the IDs specified in the request."
       }
     },
     "/api/2.0/settings/security/administrator/{productid}": {
@@ -6520,7 +6643,7 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Returns a list of all the product administrators with the ID specified in the request.",
+        "summary": "Get the product administrators",
         "parameters": [
           {
             "name": "productid",
@@ -6570,7 +6693,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the product administrators"
+        "x-shortName": "Get the product administrators",
+        "description": "Returns a list of all the product administrators with the ID specified in the request."
       }
     },
     "/api/2.0/settings/security/administrator": {
@@ -6578,7 +6702,7 @@
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Checks if the selected user is a product administrator with the ID specified in the request.",
+        "summary": "Check a product administrator",
         "parameters": [
           {
             "name": "productid",
@@ -6606,13 +6730,13 @@
             "description": "Object with the user security information: product ID, user ID, administrator or not",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -6631,13 +6755,14 @@
             ]
           }
         ],
-        "x-shortName": "Check a product administrator"
+        "x-shortName": "Check a product administrator",
+        "description": "Checks if the selected user is a product administrator with the ID specified in the request."
       },
       "put": {
         "tags": [
           "Settings / Security"
         ],
-        "summary": "Sets the selected user as a product administrator with the ID specified in the request.",
+        "summary": "Set a product administrator",
         "requestBody": {
           "description": "Security request parameters",
           "content": {
@@ -6663,13 +6788,13 @@
             "description": "Object with the user security information: product ID, user ID, administrator or not",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -6688,7 +6813,8 @@
             ]
           }
         ],
-        "x-shortName": "Set a product administrator"
+        "x-shortName": "Set a product administrator",
+        "description": "Sets the selected user as a product administrator with the ID specified in the request."
       }
     },
     "/api/2.0/settings/ssov2": {
@@ -6696,7 +6822,7 @@
         "tags": [
           "Settings / SSO"
         ],
-        "summary": "Returns the current portal SSO settings.",
+        "summary": "Get the SSO settings",
         "responses": {
           "200": {
             "description": "SSO settings",
@@ -6719,13 +6845,14 @@
             }
           }
         },
-        "x-shortName": "Get the SSO settings"
+        "x-shortName": "Get the SSO settings",
+        "description": "Returns the current portal SSO settings."
       },
       "post": {
         "tags": [
           "Settings / SSO"
         ],
-        "summary": "Saves the SSO settings for the current portal.",
+        "summary": "Save the SSO settings",
         "requestBody": {
           "description": "SSO settings request parameters",
           "content": {
@@ -6782,13 +6909,14 @@
             ]
           }
         ],
-        "x-shortName": "Save the SSO settings"
+        "x-shortName": "Save the SSO settings",
+        "description": "Saves the SSO settings for the current portal."
       },
       "delete": {
         "tags": [
           "Settings / SSO"
         ],
-        "summary": "Resets the SSO settings of the current portal.",
+        "summary": "Reset the SSO settings",
         "responses": {
           "200": {
             "description": "Default SSO settings",
@@ -6825,7 +6953,8 @@
             ]
           }
         ],
-        "x-shortName": "Reset the SSO settings"
+        "x-shortName": "Reset the SSO settings",
+        "description": "Resets the SSO settings of the current portal."
       }
     },
     "/api/2.0/settings/ssov2/default": {
@@ -6833,7 +6962,7 @@
         "tags": [
           "Settings / SSO"
         ],
-        "summary": "Returns the default portal SSO settings.",
+        "summary": "Get the default SSO settings",
         "responses": {
           "200": {
             "description": "Default SSO settings",
@@ -6870,7 +6999,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the default SSO settings"
+        "x-shortName": "Get the default SSO settings",
+        "description": "Returns the default portal SSO settings."
       }
     },
     "/api/2.0/settings/ssov2/constants": {
@@ -6878,19 +7008,19 @@
         "tags": [
           "Settings / SSO"
         ],
-        "summary": "Returns the SSO settings constants.",
+        "summary": "Get the SSO settings constants",
         "responses": {
           "200": {
             "description": "The SSO settings constants: SSO name ID format type, SSO binding type, SSO signing algorithm type, SSO SP certificate action type, SSO IDP certificate action type",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -6909,7 +7039,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the SSO settings constants"
+        "x-shortName": "Get the SSO settings constants",
+        "description": "Returns the SSO settings constants."
       }
     },
     "/api/2.0/settings/statistics/spaceusage/{id}": {
@@ -6917,7 +7048,7 @@
         "tags": [
           "Settings / Statistics"
         ],
-        "summary": "Returns the space usage statistics of the module with the ID specified in the request.",
+        "summary": "Get the space usage statistics",
         "parameters": [
           {
             "name": "id",
@@ -6967,7 +7098,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the space usage statistics"
+        "x-shortName": "Get the space usage statistics",
+        "description": "Returns the space usage statistics of the module with the ID specified in the request."
       }
     },
     "/api/2.0/settings/statistics/visit": {
@@ -6975,7 +7107,7 @@
         "tags": [
           "Settings / Statistics"
         ],
-        "summary": "Returns the user visit statistics for the period specified in the request.",
+        "summary": "Get the visit statistics",
         "parameters": [
           {
             "name": "fromDate",
@@ -7030,7 +7162,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the visit statistics"
+        "x-shortName": "Get the visit statistics",
+        "description": "Returns the user visit statistics for the period specified in the request."
       }
     },
     "/api/2.0/settings/storage": {
@@ -7038,7 +7171,7 @@
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Returns a list of all the portal storages.",
+        "summary": "Get storages",
         "responses": {
           "200": {
             "description": "List of storages with the following parameters",
@@ -7075,13 +7208,14 @@
             ]
           }
         ],
-        "x-shortName": "Get storages"
+        "x-shortName": "Get storages",
+        "description": "Returns a list of all the portal storages."
       },
       "put": {
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Updates a storage with the parameters specified in the request.",
+        "summary": "Update a storage",
         "requestBody": {
           "description": "Storage settings request parameters",
           "content": {
@@ -7138,13 +7272,14 @@
             ]
           }
         ],
-        "x-shortName": "Update a storage"
+        "x-shortName": "Update a storage",
+        "description": "Updates a storage with the parameters specified in the request."
       },
       "delete": {
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Resets the storage settings to the default parameters.",
+        "summary": "Reset the storage settings",
         "responses": {
           "200": {
             "description": "OK"
@@ -7164,7 +7299,8 @@
             ]
           }
         ],
-        "x-shortName": "Reset the storage settings"
+        "x-shortName": "Reset the storage settings",
+        "description": "Resets the storage settings to the default parameters."
       }
     },
     "/api/2.0/settings/storage/progress": {
@@ -7172,7 +7308,7 @@
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Returns the storage progress.",
+        "summary": "Get the storage progress",
         "responses": {
           "200": {
             "description": "Storage progress",
@@ -7212,7 +7348,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the storage progress"
+        "x-shortName": "Get the storage progress",
+        "description": "Returns the storage progress."
       }
     },
     "/api/2.0/settings/storage/cdn": {
@@ -7220,7 +7357,7 @@
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Returns a list of all the CDN storages.",
+        "summary": "Get the CDN storages",
         "responses": {
           "200": {
             "description": "List of the CDN storages with the following parameters",
@@ -7257,13 +7394,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the CDN storages"
+        "x-shortName": "Get the CDN storages",
+        "description": "Returns a list of all the CDN storages."
       },
       "put": {
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Updates the CDN storage with the parameters specified in the request.",
+        "summary": "Update the CDN storage",
         "requestBody": {
           "description": "CDN storage settings request parameters",
           "content": {
@@ -7320,13 +7458,14 @@
             ]
           }
         ],
-        "x-shortName": "Update the CDN storage"
+        "x-shortName": "Update the CDN storage",
+        "description": "Updates the CDN storage with the parameters specified in the request."
       },
       "delete": {
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Resets the CDN storage settings to the default parameters.",
+        "summary": "Reset the CDN storage settings",
         "responses": {
           "200": {
             "description": "OK"
@@ -7346,7 +7485,8 @@
             ]
           }
         ],
-        "x-shortName": "Reset the CDN storage settings"
+        "x-shortName": "Reset the CDN storage settings",
+        "description": "Resets the CDN storage settings to the default parameters."
       }
     },
     "/api/2.0/settings/storage/backup": {
@@ -7354,7 +7494,7 @@
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Returns a list of all the backup storages.",
+        "summary": "Get the backup storages",
         "responses": {
           "200": {
             "description": "List of the backup storages with the following parameters",
@@ -7391,7 +7531,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the backup storages"
+        "x-shortName": "Get the backup storages",
+        "description": "Returns a list of all the backup storages."
       }
     },
     "/api/2.0/settings/storage/s3/regions": {
@@ -7399,19 +7540,19 @@
         "tags": [
           "Settings / Storage"
         ],
-        "summary": "Returns a list of all Amazon regions.",
+        "summary": "Get Amazon regions",
         "responses": {
           "200": {
             "description": "List of the Amazon regions",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -7430,7 +7571,8 @@
             ]
           }
         ],
-        "x-shortName": "Get Amazon regions"
+        "x-shortName": "Get Amazon regions",
+        "description": "Returns a list of all Amazon regions."
       }
     },
     "/api/2.0/settings/customschemas": {
@@ -7438,7 +7580,7 @@
         "tags": [
           "Settings / Team templates"
         ],
-        "summary": "Returns all portal team templates that allow users to name their organization (or group), add members, and define their activities within the portal.",
+        "summary": "Get team templates",
         "responses": {
           "200": {
             "description": "List of team templates with the following parameters",
@@ -7475,13 +7617,14 @@
             ]
           }
         ],
-        "x-shortName": "Get team templates"
+        "x-shortName": "Get team templates",
+        "description": "Returns all portal team templates that allow users to name their organization (or group), add members, and define their activities within the portal."
       },
       "post": {
         "tags": [
           "Settings / Team templates"
         ],
-        "summary": "Saves the names from the team template with the ID specified in the request.",
+        "summary": "Save the naming settings",
         "requestBody": {
           "description": "Team template parameters",
           "content": {
@@ -7538,13 +7681,14 @@
             ]
           }
         ],
-        "x-shortName": "Save the naming settings"
+        "x-shortName": "Save the naming settings",
+        "description": "Saves the names from the team template with the ID specified in the request."
       },
       "put": {
         "tags": [
           "Settings / Team templates"
         ],
-        "summary": "Creates a custom team template with the parameters specified in the request.",
+        "summary": "Create a custom team template",
         "requestBody": {
           "description": "Team template parameters",
           "content": {
@@ -7601,7 +7745,8 @@
             ]
           }
         ],
-        "x-shortName": "Create a custom team template"
+        "x-shortName": "Create a custom team template",
+        "description": "Creates a custom team template with the parameters specified in the request."
       }
     },
     "/api/2.0/settings/customschemas/{id}": {
@@ -7609,7 +7754,7 @@
         "tags": [
           "Settings / Team templates"
         ],
-        "summary": "Returns a team template by the ID specified in the request.",
+        "summary": "Get a team template by ID",
         "parameters": [
           {
             "name": "id",
@@ -7658,7 +7803,8 @@
             ]
           }
         ],
-        "x-shortName": "Get a team template by ID"
+        "x-shortName": "Get a team template by ID",
+        "description": "Returns a team template by the ID specified in the request."
       }
     },
     "/api/2.0/settings/tfaapp": {
@@ -7666,7 +7812,7 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Returns the current two-factor authentication settings.",
+        "summary": "Get the TFA settings",
         "responses": {
           "200": {
             "description": "TFA settings",
@@ -7703,13 +7849,14 @@
             ]
           }
         ],
-        "x-shortName": "Get the TFA settings"
+        "x-shortName": "Get the TFA settings",
+        "description": "Returns the current two-factor authentication settings."
       },
       "put": {
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Updates the two-factor authentication settings with the parameters specified in the request.",
+        "summary": "Update the TFA settings",
         "requestBody": {
           "description": "TFA settings request parameters",
           "content": {
@@ -7766,7 +7913,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the TFA settings"
+        "x-shortName": "Update the TFA settings",
+        "description": "Updates the two-factor authentication settings with the parameters specified in the request."
       }
     },
     "/api/2.0/settings/tfaapp/validate": {
@@ -7774,7 +7922,7 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Validates the two-factor authentication code specified in the request.",
+        "summary": "Validate the TFA code",
         "requestBody": {
           "description": "TFA validation request parameters",
           "content": {
@@ -7831,7 +7979,8 @@
             ]
           }
         ],
-        "x-shortName": "Validate the TFA code"
+        "x-shortName": "Validate the TFA code",
+        "description": "Validates the two-factor authentication code specified in the request."
       }
     },
     "/api/2.0/settings/tfaapp/confirm": {
@@ -7839,19 +7988,19 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Returns the confirmation email URL for authorization via SMS or TFA application.",
+        "summary": "Get confirmation email",
         "responses": {
           "200": {
             "description": "Confirmation email URL",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -7870,7 +8019,8 @@
             ]
           }
         ],
-        "x-shortName": "Get confirmation email"
+        "x-shortName": "Get confirmation email",
+        "description": "Returns the confirmation email URL for authorization via SMS or TFA application."
       }
     },
     "/api/2.0/settings/tfaappwithlink": {
@@ -7878,7 +8028,7 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Returns the confirmation email URL for updating TFA settings.",
+        "summary": "Get confirmation email for updating TFA settings",
         "requestBody": {
           "description": "TFA settings request parameters",
           "content": {
@@ -7904,13 +8054,13 @@
             "description": "Confirmation email URL",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -7929,7 +8079,8 @@
             ]
           }
         ],
-        "x-shortName": "Get confirmation email for updating TFA settings"
+        "x-shortName": "Get confirmation email for updating TFA settings",
+        "description": "Returns the confirmation email URL for updating TFA settings."
       }
     },
     "/api/2.0/settings/tfaapp/setup": {
@@ -7937,7 +8088,7 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Generates the setup TFA code for the current user.",
+        "summary": "Generate setup code",
         "responses": {
           "200": {
             "description": "Setup code",
@@ -7974,7 +8125,8 @@
             ]
           }
         ],
-        "x-shortName": "Generate setup code"
+        "x-shortName": "Generate setup code",
+        "description": "Generates the setup TFA code for the current user."
       }
     },
     "/api/2.0/settings/tfaappcodes": {
@@ -7982,19 +8134,19 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Returns the two-factor authentication application codes.",
+        "summary": "Get the TFA codes",
         "responses": {
           "200": {
             "description": "List of TFA application codes",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -8013,7 +8165,8 @@
             ]
           }
         ],
-        "x-shortName": "Get the TFA codes"
+        "x-shortName": "Get the TFA codes",
+        "description": "Returns the two-factor authentication application codes."
       }
     },
     "/api/2.0/settings/tfaappnewcodes": {
@@ -8021,19 +8174,19 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Requests the new backup codes for the two-factor authentication application.",
+        "summary": "Update the TFA codes",
         "responses": {
           "200": {
             "description": "New backup codes",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -8052,7 +8205,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the TFA codes"
+        "x-shortName": "Update the TFA codes",
+        "description": "Requests the new backup codes for the two-factor authentication application."
       }
     },
     "/api/2.0/settings/tfaappnewapp": {
@@ -8060,7 +8214,7 @@
         "tags": [
           "Settings / TFA settings"
         ],
-        "summary": "Unlinks the current two-factor authentication application from the user account specified in the request.",
+        "summary": "Unlink the TFA application",
         "requestBody": {
           "description": "TFA settings request parameters",
           "content": {
@@ -8086,13 +8240,13 @@
             "description": "Login URL",
             "content": {
               "text/plain": {
-                "schema": { }
+                "schema": {}
               },
               "application/json": {
-                "schema": { }
+                "schema": {}
               },
               "text/json": {
-                "schema": { }
+                "schema": {}
               }
             }
           },
@@ -8111,7 +8265,8 @@
             ]
           }
         ],
-        "x-shortName": "Unlink the TFA application"
+        "x-shortName": "Unlink the TFA application",
+        "description": "Unlinks the current two-factor authentication application from the user account specified in the request."
       }
     },
     "/api/2.0/settings/tips": {
@@ -8119,7 +8274,7 @@
         "tags": [
           "Settings / Tips"
         ],
-        "summary": "Updates the tip settings with a parameter specified in the request.",
+        "summary": "Update the tip settings",
         "requestBody": {
           "description": "Settings request parameters",
           "content": {
@@ -8176,7 +8331,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the tip settings"
+        "x-shortName": "Update the tip settings",
+        "description": "Updates the tip settings with a parameter specified in the request."
       }
     },
     "/api/2.0/settings/tips/change/subscription": {
@@ -8184,7 +8340,7 @@
         "tags": [
           "Settings / Tips"
         ],
-        "summary": "Updates the tip subscription.",
+        "summary": "Update the tip subscription",
         "responses": {
           "200": {
             "description": "Boolean value: true if the user is subscribed to the tips",
@@ -8221,7 +8377,8 @@
             ]
           }
         ],
-        "x-shortName": "Update the tip subscription"
+        "x-shortName": "Update the tip subscription",
+        "description": "Updates the tip subscription."
       }
     },
     "/api/2.0/settings/tips/subscription": {
@@ -8229,7 +8386,7 @@
         "tags": [
           "Settings / Tips"
         ],
-        "summary": "Checks if the current user is subscribed to the tips or not.",
+        "summary": "Check the tip subscription",
         "responses": {
           "200": {
             "description": "Boolean value: true if the user is subscribed to the tips",
@@ -8266,7 +8423,8 @@
             ]
           }
         ],
-        "x-shortName": "Check the tip subscription"
+        "x-shortName": "Check the tip subscription",
+        "description": "Checks if the current user is subscribed to the tips or not."
       }
     },
     "/api/2.0/settings/webhook": {
@@ -8274,7 +8432,7 @@
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Returns a list of the tenant webhooks.",
+        "summary": "Get webhooks",
         "responses": {
           "200": {
             "description": "List of tenant webhooks with their config parameters",
@@ -8311,13 +8469,14 @@
             ]
           }
         ],
-        "x-shortName": "Get webhooks"
+        "x-shortName": "Get webhooks",
+        "description": "Returns a list of the tenant webhooks."
       },
       "post": {
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Creates a new tenant webhook with the parameters specified in the request.",
+        "summary": "Create a webhook",
         "requestBody": {
           "description": "Webhook request parameters",
           "content": {
@@ -8374,13 +8533,14 @@
             ]
           }
         ],
-        "x-shortName": "Create a webhook"
+        "x-shortName": "Create a webhook",
+        "description": "Creates a new tenant webhook with the parameters specified in the request."
       },
       "put": {
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Updates the tenant webhook with the parameters specified in the request.",
+        "summary": "Update a webhook",
         "requestBody": {
           "description": "New webhook request parameters",
           "content": {
@@ -8437,7 +8597,8 @@
             ]
           }
         ],
-        "x-shortName": "Update a webhook"
+        "x-shortName": "Update a webhook",
+        "description": "Updates the tenant webhook with the parameters specified in the request."
       }
     },
     "/api/2.0/settings/webhook/{id}": {
@@ -8445,7 +8606,7 @@
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Removes the tenant webhook with the ID specified in the request.",
+        "summary": "Remove a webhook",
         "parameters": [
           {
             "name": "id",
@@ -8495,13 +8656,14 @@
             ]
           }
         ],
-        "x-shortName": "Remove a webhook"
+        "x-shortName": "Remove a webhook",
+        "description": "Removes the tenant webhook with the ID specified in the request."
       },
       "put": {
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Disables a webhook with the ID specified in the request.",
+        "summary": "Disable a webhook",
         "parameters": [
           {
             "name": "id",
@@ -8551,7 +8713,8 @@
             ]
           }
         ],
-        "x-shortName": "Disable a webhook"
+        "x-shortName": "Disable a webhook",
+        "description": "Disables a webhook with the ID specified in the request."
       }
     },
     "/api/2.0/settings/webhooks/log": {
@@ -8559,7 +8722,7 @@
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Returns the logs of the webhook activities.",
+        "summary": "Get webhook logs",
         "parameters": [
           {
             "name": "deliveryFrom",
@@ -8665,7 +8828,8 @@
             ]
           }
         ],
-        "x-shortName": "Get webhook logs"
+        "x-shortName": "Get webhook logs",
+        "description": "Returns the logs of the webhook activities."
       }
     },
     "/api/2.0/settings/webhook/{id}/retry": {
@@ -8673,7 +8837,7 @@
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Retries a webhook with the ID specified in the request.",
+        "summary": "Retry a webhook",
         "parameters": [
           {
             "name": "id",
@@ -8723,7 +8887,8 @@
             ]
           }
         ],
-        "x-shortName": "Retry a webhook"
+        "x-shortName": "Retry a webhook",
+        "description": "Retries a webhook with the ID specified in the request."
       }
     },
     "/api/2.0/settings/webhook/retry": {
@@ -8731,7 +8896,7 @@
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Retries all the webhooks with the IDs specified in the request.",
+        "summary": "Retry webhooks",
         "requestBody": {
           "description": "Request parameters to retry webhooks",
           "content": {
@@ -8788,7 +8953,8 @@
             ]
           }
         ],
-        "x-shortName": "Retry webhooks"
+        "x-shortName": "Retry webhooks",
+        "description": "Retries all the webhooks with the IDs specified in the request."
       }
     },
     "/api/2.0/settings/webhooks": {
@@ -8796,7 +8962,7 @@
         "tags": [
           "Settings / Webhooks"
         ],
-        "summary": "Returns settings of all webhooks.",
+        "summary": "Get webhook settings",
         "responses": {
           "200": {
             "description": "List of webhook settings",
@@ -8833,7 +8999,8 @@
             ]
           }
         ],
-        "x-shortName": "Get webhook settings"
+        "x-shortName": "Get webhook settings",
+        "description": "Returns settings of all webhooks."
       }
     },
     "/api/2.0/settings/webplugins": {
@@ -9753,7 +9920,7 @@
             "type": "integer",
             "description": "Maximum total size",
             "format": "int64",
-            "example": 9223372036854775807
+            "example": 9223372036854776000
           },
           "countUser": {
             "type": "integer",
@@ -13023,7 +13190,7 @@
         "properties": {
           "disabledRooms": {
             "type": "array",
-            "items": { },
+            "items": {},
             "description": "List of rooms with the disabled notifications",
             "nullable": true
           }
